@@ -1,0 +1,8 @@
+{
+  "name": "svg-to-jsx-gui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/balajmarius/svg-to-jsx-gui.git",
+  "author": "Balaj Marius <balajmarius93@gmail.com>",
+  "license": "MIT"
+}
