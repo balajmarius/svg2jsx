@@ -17,13 +17,13 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(PATHS.static, 'index.html')
+      template: path.resolve(PATHS.static, 'index.html'),
     })
   ],
 
   devServer: {
     contentBase: PATHS.dist,
-    clientLogLevel: 'error',
+    stats: 'errors-only',
     inline: true,
     port: 9000,
   },
@@ -31,14 +31,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(html|js)$/,
+        test: /\.(svelte|js)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
-        test: /\.html$/,
+        test: /\.svelte$/,
         exclude: /node_modules/,
         use: 'svelte-loader',
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ]
       },
     ]
   },

@@ -1,1 +1,1 @@
-console.log('test 123')
+import './styles/style.scss'
