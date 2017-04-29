@@ -1,32 +1,45 @@
 <div>
 
-  <h2>Editor</h2>
+  <Header/>
 
-  <Editor/>
+  <Editor content='{{svg}}' on:input='onSVGEditorChange(event)'/>
 
 </div>
 
 <script>
-  import { Editor } from './partials'
+  import { DEFAULT_VALUE } from './constants'
+  import { Editor, Header } from './partials'
+  import { getTransformedSVG } from './service'
 
   export default {
 
-    oncreate() {
+    data() {
+
+      return {
+        svg: DEFAULT_VALUE.SVG,
+        jsx: DEFAULT_VALUE.JSX,
+        loading: null,
+        error: null,
+      }
+
     },
 
     methods: {
+
+      onSVGEditorChange(event) {
+
+        const { value } = event.target
+
+        console.log(value)
+
+      },
+
     },
 
     components: {
-      Editor
+      Editor,
+      Header,
     }
 
   }
 </script>
-
-
-<style>
-  div {
-    background: red;
-  }
-</style>
