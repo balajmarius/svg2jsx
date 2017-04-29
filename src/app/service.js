@@ -1,3 +1,3 @@
 import * as API from '../shared/service'
 
-export const getTransformedSVG = () => console.log('bam')
+export const getTransformedSVG = data => API.post('transform', data)
