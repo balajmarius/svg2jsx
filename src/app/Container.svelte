@@ -1,5 +1,7 @@
 <div>
 
+  {{ loading }}
+
   <Header/>
 
   <Editor content='{{svg}}' on:input='onSVGEditorChange(event)'/>
@@ -29,8 +31,6 @@
       onSVGEditorChange(event) {
 
         const { value } = event.target
-
-        console.log(value)
 
       },
 
