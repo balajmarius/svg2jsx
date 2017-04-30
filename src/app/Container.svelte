@@ -4,7 +4,7 @@
 
   <div class='editor'>
 
-    {{#if error}}
+    {{#if error && svg}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
 
@@ -41,7 +41,7 @@
 
         event.preventDefault()
 
-        return this.set({ svg: DEFAULT_STATE.svg })
+        return this.set(DEFAULT_STATE)
 
       },
 
