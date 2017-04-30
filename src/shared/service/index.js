@@ -8,4 +8,4 @@ export const post = (route, data) => fetch(`${API}/${route}`, {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify(data),
-})
+}).then(res => res.json())

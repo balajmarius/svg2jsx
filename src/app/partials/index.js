@@ -1,7 +1,7 @@
-import Editor from './Editor.svelte'
 import Header from './Header.svelte'
+import Textarea from './Textarea.svelte'
 
 export {
-  Editor,
   Header,
+  Textarea,
 }

@@ -1,0 +1,99 @@
+@import '_reset.scss';
+@import '_variables.scss';
+
+body {
+  background: $dark-base;
+  font-family: $font-family-monospace;
+  font-size: $font-size-base;
+  color: $text-color;
+}
+
+// app 
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+// header
+.header {
+  background: $blue-base;
+
+  span {
+    opacity: 0.5;
+  }
+
+  &__content {
+    display: flex;
+    font-family: $font-family-sans;
+    padding: $offset;
+
+    > a {
+      margin-left: auto;
+      color: $text-color;
+      font-family: $font-family-monospace;
+      border-bottom: 1px dotted $text-color;
+      padding: 0 0 3px;
+      text-decoration: none;
+    }
+  }
+
+  &__tabs {
+    border-top: 1px solid $darker-base;
+    border-bottom: 1px solid $darker-base;
+    background: $grey-base;
+    display: flex;
+
+    > div {
+      flex: 1;
+      display: flex;
+      padding: $offset;
+      align-items: center;
+
+      button {
+        margin-left: auto;
+        font-size: $font-size-base;
+        background: transparent;
+        cursor: pointer;
+        border-bottom: 1px dotted $text-color-light;
+        color: $text-color-light;
+        padding: 0 0 3px;
+        font-family: $font-family-monospace;
+        position: relative;
+        
+        &:hover {
+          color: $text-color;
+          border-bottom-color: $text-color;
+        }
+
+        &:active {
+          top: 1px;
+        }
+      }
+
+      &:first-of-type {
+        border-right: 1px solid $dark-base;
+      }
+    }
+  }
+}
+
+// editor
+.editor {
+  flex: 1;
+  display: flex;
+
+  &__code {
+    flex: 1;
+    line-height: 1.4;
+    font-family: $font-family-monospace;
+    background: $dark-base;
+    color: $text-color;
+    font-size: $font-size-base;
+    padding: $offset;
+
+    &:first-of-type {
+      border-right: 1px solid $grey-base;
+    }
+  }
+}

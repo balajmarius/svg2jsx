@@ -1,0 +1,18 @@
+// font-family
+$font-family-monospace: 'Inconsolata', monospace;
+$font-family-sans: 'Rubik', Helvetica, sans-serif;
+
+// font-size
+$font-size-base: 14px;
+
+// color
+$text-color: #F4F2F4;
+$text-color-light: transparentize($text-color, 0.4);
+
+$blue-base: #407FE3;
+$dark-base: #192229;
+$darker-base: darken($dark-base, 1.5);
+$grey-base: lighten($dark-base, 5);
+
+// sizes
+$offset: 20px;

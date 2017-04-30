@@ -23,6 +23,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "clipboard": "^1.6.1",
     "debounce": "^1.0.2",
     "svelte": "^1.18.1",
     "whatwg-fetch": "^2.0.3"

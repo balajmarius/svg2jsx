@@ -1,44 +1,67 @@
-<div>
+<section>
 
-  {{ loading }}
+  <Header on:clear='onClearClick(event)' on:copy='onCopyClick()'/>
 
-  <Header/>
+  <div class='editor'>
 
-  <Editor content='{{svg}}' on:input='onSVGEditorChange(event)'/>
+    <Textarea value='{{svg}}' on:input='onEditorChange(event.target.value)'/>
+  
+    <Textarea value='{{jsx}}' disabled/>
 
-</div>
+  </div>
+
+</section>
 
 <script>
-  import { DEFAULT_VALUE } from './constants'
-  import { Editor, Header } from './partials'
+  import { DEFAULT_STATE } from './constants'
+  import { Textarea, Header } from './partials'
   import { getTransformedSVG } from './service'
 
   export default {
 
     data() {
 
-      return {
-        svg: DEFAULT_VALUE.SVG,
-        jsx: DEFAULT_VALUE.JSX,
-        loading: null,
-        error: null,
-      }
+      return DEFAULT_STATE
 
     },
 
     methods: {
 
-      onSVGEditorChange(event) {
+      onCopyClick() {
 
-        const { value } = event.target
+        console.log('booom')
+
+      },
+
+      onClearClick(event) {
+
+        event.preventDefault()
+
+        return this.set({ svg: DEFAULT_STATE.svg })
+
+      },
+
+      onEditorChange(svg) {
+
+        return getTransformedSVG({ svg })
+          .then(response => {
+
+            const { jsx, error } = response
+
+            if (error) return this.set({ error })
+
+            return this.set({ jsx, error })
+
+          })
+          .catch(error => this.set({ error }))
 
       },
 
     },
 
     components: {
-      Editor,
       Header,
+      Textarea,
     }
 
   }
