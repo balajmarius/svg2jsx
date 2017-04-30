@@ -29,7 +29,7 @@
 
       onCopyClick() {
 
-        console.log('booom')
+        console.log('copy')
 
       },
 
