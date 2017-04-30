@@ -7,7 +7,7 @@
 
   </div>
 
-  <div class='header__tabs'>   
+  <div class='header__tabs'>
 
     <div class='header__tab'>
 
@@ -19,7 +19,7 @@
     <div class='header__tab'>
       
       <h2>JSX <span>(JSX valid SVG)</span></h2>
-      <button on:click='fire("copy", event)'>Copy</button>
+      <button data-clipboard-text='{{jsx}}'>Copy</button>
 
     </div>
   </div>
