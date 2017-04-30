@@ -4,6 +4,10 @@
 
   <div class='editor'>
 
+    {{#if error}}
+      <div class='editor__error'>{{error}}</div>
+    {{/if}}
+
     <Textarea value='{{svg}}' on:input='onEditorChange(event.target.value)'/>
   
     <Textarea value='{{jsx}}' disabled/>
