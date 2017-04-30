@@ -1,8 +1,8 @@
-import './shared/style/_reset.scss'
+import './shared/style/_style.scss'
 
-// app
 import { Container as App } from './app'
 
-// render app
+console.log('👍 Available for work - balajmarius93@gmail.com')
+
 const target = document.querySelector('#root')
 const app = new App({ target })
