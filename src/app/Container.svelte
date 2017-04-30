@@ -1,10 +1,10 @@
 <section>
 
-  <Header on:clear='onClearClick(event)' on:copy='onCopyClick()'/>
+  <Header on:clear='onClearClick(event)' jsx='{{jsx}}'/>
 
   <div class='editor'>
 
-    {{#if error && svg}}
+    {{#if error}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
 
@@ -17,6 +17,7 @@
 </section>
 
 <script>
+  import Clipboard from 'clipboard'
   import { DEFAULT_STATE } from './constants'
   import { Textarea, Header } from './partials'
   import { getTransformedSVG } from './service'
@@ -29,13 +30,13 @@
 
     },
 
+    oncreate() {
+
+      new Clipboard('[data-clipboard-text]')
+
+    },
+
     methods: {
-
-      onCopyClick() {
-
-        console.log('copy')
-
-      },
 
       onClearClick(event) {
 
