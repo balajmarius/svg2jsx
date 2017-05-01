@@ -1,16 +1,24 @@
 <section>
 
-  <Header on:clear='onClearClick(event)' jsx='{{jsx}}'/>
+  <Header
+    on:clear='onClearClick(event)'
+    on:convert='onQuotesClick(event)'
+    singleQuotes='{{singleQuotes}}'
+    jsx='{{jsx}}'/>
 
   <div class='editor'>
 
-    {{#if error}}
+    {{#if error && svg}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
 
-    <Textarea value='{{svg}}' on:input='onEditorChange(event.target.value)'/>
+    <Textarea
+      on:input='onEditorChange(event.target.value)'
+      value='{{svg}}'/>
   
-    <Textarea value='{{jsx}}' disabled/>
+    <Textarea
+      value='{{convertQuotes(jsx, singleQuotes)}}'
+      disabled/>
 
   </div>
 
@@ -18,7 +26,8 @@
 
 <script>
   import Clipboard from 'clipboard'
-  import { DEFAULT_STATE } from './constants'
+
+  import { DEFAULT_STATE, DOUBLE_QUOTE_REGEX, SINGLE_QUOTE } from './constants'
   import { Textarea, Header } from './partials'
   import { getTransformedSVG } from './service'
 
@@ -36,17 +45,37 @@
 
     },
 
+    helpers: {
+
+      convertQuotes(jsx, singleQuotes) {
+
+        if (singleQuotes) return jsx.replace(DOUBLE_QUOTE_REGEX, SINGLE_QUOTE)
+
+        return jsx
+
+      },
+
+    },
+
     methods: {
 
       onClearClick(event) {
-
-        event.preventDefault()
 
         return this.set(DEFAULT_STATE)
 
       },
 
+      onQuotesClick(event) {
+
+        const { singleQuotes } = this.get()
+
+        return this.set({ singleQuotes: !singleQuotes })
+
+      },
+
       onEditorChange(svg) {
+
+        this.set({ svg })
 
         return getTransformedSVG({ svg })
           .then(response => {

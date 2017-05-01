@@ -20,6 +20,15 @@ section {
 .header {
   background: $blue-base;
 
+  a {
+    color: $text-color;
+    font-family: $font-family-monospace;
+    border-bottom: 1px dotted $text-color;
+    text-decoration: none;
+    margin: 0 0 0 $offset/2;
+    padding: 0 0 3px;
+  }
+
   span {
     opacity: 0.5;
   }
@@ -29,13 +38,8 @@ section {
     font-family: $font-family-sans;
     padding: $offset;
 
-    > a {
+    > div {
       margin-left: auto;
-      color: $text-color;
-      font-family: $font-family-monospace;
-      border-bottom: 1px dotted $text-color;
-      padding: 0 0 3px;
-      text-decoration: none;
     }
   }
 
@@ -51,14 +55,18 @@ section {
       padding: $offset;
       align-items: center;
 
-      button {
+      div {
         margin-left: auto;
+      }
+
+      button {        
         font-size: $font-size-base;
         background: transparent;
         cursor: pointer;
         border-bottom: 1px dotted $text-color-light;
         color: $text-color-light;
         padding: 0 0 3px;
+        margin: 0 0 0 $offset/2;
         font-family: $font-family-monospace;
         position: relative;
         

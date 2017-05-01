@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
@@ -18,7 +19,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(PATHS.static, 'index.html'),
-    })
+    }),
   ],
 
   devServer: {
@@ -51,7 +52,7 @@ module.exports = {
           { loader: "css-loader" },
           { loader: "sass-loader" },
         ]
-      },
+      }
     ]
   },
 

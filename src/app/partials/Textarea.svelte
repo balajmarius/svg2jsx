@@ -2,8 +2,7 @@
   class='editor__code'
   bind:value='value'
   disabled='{{disabled}}'
-  on:input='fire("input", event)'
-/>
+  on:input='fire("input", event)'/>
 
 <script>
   import debounce from 'debounce'
