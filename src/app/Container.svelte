@@ -4,7 +4,7 @@
 
   <div class='editor'>
 
-    {{#if error}}
+    {{#if error && svg}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
 
@@ -18,6 +18,7 @@
 
 <script>
   import Clipboard from 'clipboard'
+
   import { DEFAULT_STATE } from './constants'
   import { Textarea, Header } from './partials'
   import { getTransformedSVG } from './service'
@@ -47,6 +48,8 @@
       },
 
       onEditorChange(svg) {
+
+        this.set({ svg })
 
         return getTransformedSVG({ svg })
           .then(response => {
