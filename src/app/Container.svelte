@@ -94,7 +94,7 @@
             return this.set({ jsx, error, loading: DEFAULT_STATE.loading })
 
           })
-          .catch(error => this.set({ error }))
+          .catch(error => this.set({ error, loading: DEFAULT_STATE.loading }))
 
       },
 
