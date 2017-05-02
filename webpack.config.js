@@ -30,25 +30,30 @@ module.exports = {
   },
 
   module: {
-    rules: [{
-      test: /\.(svelte|js)$/,
-      exclude: /node_modules/,
-      use: 'babel-loader',
-    }, {
-      test: /\.svelte$/,
-      exclude: /node_modules/,
-      use: 'svelte-loader',
-    }, {
-      test: /\.html$/,
-      use: 'html-loader',
-    }, {
-      test: /\.scss$/,
-      use: [
-        { loader: "style-loader" },
-        { loader: "css-loader" },
-        { loader: "sass-loader" },
-      ]
-    }, ]
+    rules: [
+      {
+        test: /\.(svelte|js)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.svelte$/,
+        exclude: /node_modules/,
+        use: 'svelte-loader',
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" },
+        ]
+      }
+    ]
   },
 
   devtool: 'inline-source-map',
