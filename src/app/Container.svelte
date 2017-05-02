@@ -4,11 +4,12 @@
     on:clear='onClearClick(event)'
     on:convert='onQuotesClick(event)'
     singleQuotes='{{singleQuotes}}'
+    loading='{{loading}}'
     jsx='{{jsx}}'/>
 
   <div class='editor'>
 
-    {{#if error && svg}}
+    {{#if showError}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
 
@@ -45,6 +46,12 @@
 
     },
 
+    computed: {
+
+      showError: (loading, error, svg) => error && svg && !loading
+
+    },
+
     helpers: {
 
       convertQuotes(jsx, singleQuotes) {
@@ -75,16 +82,16 @@
 
       onEditorChange(svg) {
 
-        this.set({ svg })
+        this.set({ svg, loading: !DEFAULT_STATE.loading })
 
         return getTransformedSVG({ svg })
           .then(response => {
 
             const { jsx, error } = response
 
-            if (error) return this.set({ error })
+            if (error) return this.set({ error, loading: DEFAULT_STATE.loading })
 
-            return this.set({ jsx, error })
+            return this.set({ jsx, error, loading: DEFAULT_STATE.loading })
 
           })
           .catch(error => this.set({ error }))

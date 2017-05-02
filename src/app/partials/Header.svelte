@@ -25,7 +25,13 @@
 
     <div class='header__tab'>
       
-      <h2>JSX <span>(JSX valid SVG)</span></h2>
+      <h2>
+        JSX
+        <span>(JSX valid SVG)</span>
+        {{#if loading}}
+          <span>Please wait..</span>
+        {{/if}}
+      </h2>
       
       <div>
         <button on:click='fire("convert", event)'>
