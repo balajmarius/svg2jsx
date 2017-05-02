@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
@@ -18,7 +19,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(PATHS.static, 'index.html'),
-    })
+    }),
   ],
 
   devServer: {
@@ -29,30 +30,25 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
-        test: /\.(svelte|js)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
-      {
-        test: /\.svelte$/,
-        exclude: /node_modules/,
-        use: 'svelte-loader',
-      },
-      {
-        test: /\.html$/,
-        use: 'html-loader',
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "sass-loader" },
-        ]
-      },
-    ]
+    rules: [{
+      test: /\.(svelte|js)$/,
+      exclude: /node_modules/,
+      use: 'babel-loader',
+    }, {
+      test: /\.svelte$/,
+      exclude: /node_modules/,
+      use: 'svelte-loader',
+    }, {
+      test: /\.html$/,
+      use: 'html-loader',
+    }, {
+      test: /\.scss$/,
+      use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" },
+        { loader: "sass-loader" },
+      ]
+    }, ]
   },
 
   devtool: 'inline-source-map',
