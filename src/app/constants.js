@@ -2,6 +2,7 @@ export const DEFAULT_STATE = {
   svg: '',
   jsx: '',
   singleQuotes: true,
+  loading: false,
   error: null,
 }
 
