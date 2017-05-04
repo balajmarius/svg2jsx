@@ -14,13 +14,14 @@
   <div class='header__tabs'>
 
     <div class='header__tab'>
+      
       <h2>SVG <span>(Paste your code)</span></h2>
       
       <div>
-        <button>Upload file</button>
+        <button on:click='fire("upload", event)'>Upload file</button>
         <button on:click='fire("clear", event)'>Clear</button>
-        <input type='file'/>
       </div>
+
     </div>
 
     <div class='header__tab'>
@@ -28,16 +29,17 @@
       <h2>
         JSX
         <span>(React valid SVG)</span>
-        {{#if loading}}
-          <span>Please wait..</span>
-        {{/if}}
+        {{#if loading}}<span>Please wait..</span>{{/if}}
       </h2>
       
       <div>
+
         <button on:click='fire("convert", event)'>
           To {{#if singleQuotes}} double {{else}} single {{/if}} quotes
         </button>
+
         <button data-clipboard-text='{{jsx}}'>Copy</button>
+
       </div>
 
     </div>

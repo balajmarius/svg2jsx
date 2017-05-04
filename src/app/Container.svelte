@@ -3,6 +3,7 @@
   <Header
     on:clear='onClear(event)'
     on:convert='onQuotesChange(event)'
+    on:upload='onUpload(event)'
     singleQuotes='{{singleQuotes}}'
     loading='{{loading}}'
     jsx='{{jsx}}'/>
@@ -14,7 +15,7 @@
     {{/if}}
 
     <Textarea
-      on:input='onEditorChange(event.target.value)'
+      on:input='convertSvg(event.target.value)'
       value='{{svg}}'/>
   
     <Textarea
@@ -23,14 +24,21 @@
 
   </div>
 
+  <input 
+    ref:upload
+    on:change='getFileContents(event)'
+    accept='image/svg'
+    type='file'/>
+
 </section>
 
 <script>
   import Clipboard from 'clipboard'
 
   import { DEFAULT_STATE, DOUBLE_QUOTE_REGEX, SINGLE_QUOTE } from './constants'
+  import * as service from './service'
+
   import { Textarea, Header } from './partials'
-  import { getTransformedSVG } from './service'
 
   export default {
 
@@ -42,6 +50,7 @@
 
     oncreate() {
 
+      // initialize clipboard.js
       new Clipboard('[data-clipboard-text]')
 
     },
@@ -56,47 +65,68 @@
 
       convertQuotes(jsx, singleQuotes) {
 
+        // replace double quotes
         if (singleQuotes) return jsx.replace(DOUBLE_QUOTE_REGEX, SINGLE_QUOTE)
 
         return jsx
 
-      },
+      }
 
     },
 
     methods: {
 
-      onClear(event) {
+      onClear() {
 
+        // reset state
         return this.set(DEFAULT_STATE)
 
       },
 
-      onQuotesChange(event) {
+      onUpload() {
+
+        // open upload window
+        return this.refs.upload.click()
+
+      },
+
+      onQuotesChange() {
 
         const { singleQuotes } = this.get()
 
+        // toggle quotes
         return this.set({ singleQuotes: !singleQuotes })
 
       },
 
-      onEditorChange(svg) {
+      getFileContents(event) {
 
-        this.set({ svg, loading: !DEFAULT_STATE.loading })
+        const svgFile = event.target.files[0]
 
-        return getTransformedSVG({ svg })
-          .then(response => {
-
-            const { jsx, error } = response
-
-            if (error) return this.set({ error, loading: DEFAULT_STATE.loading })
-
-            return this.set({ jsx, error, loading: DEFAULT_STATE.loading })
-
-          })
-          .catch(error => this.set({ error, loading: DEFAULT_STATE.loading }))
+        // read the file and convert
+        return service.getFileContents(svgFile)
+          .then(svg => this.convertSvg(svg))
+          .catch(error => this.set({ error }))
 
       },
+
+      convertSvg(svg) {
+
+        this.set({ svg, loading: true })
+
+        return service.getTransformedSvg(svg)
+          .then(({ jsx, error }) => {
+
+            // show error and hide the loader
+            if (error) return this.set({ error, loading: false })
+
+            // set jsx, error to undefined and hide the loader
+            return this.set({ jsx, error, loading: false })
+
+          })
+          .catch(error => this.set({ error, loading: false }))
+
+      }
 
     },
 

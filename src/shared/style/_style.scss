@@ -9,6 +9,12 @@ body {
   line-height: 1.4;
 }
 
+input {
+  &[type='file'] {
+    display: none;
+  }
+}
+
 // app 
 section {
   display: flex;
@@ -31,10 +37,6 @@ section {
 
   span {
     opacity: 0.5;
-  }
-
-  input {
-    display: none;
   }
 
   &__content {
