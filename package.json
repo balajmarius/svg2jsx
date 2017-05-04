@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start:development": "webpack-dev-server --config config/webpack.config.js",
-    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js"
+    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js && cp -R public ../svg-to-jsx-server/"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
