@@ -6,7 +6,7 @@
   "author": "Balaj Marius <balajmarius93@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:development": "webpack-dev-server --config config/webpack.config.js",
+    "start:development": "webpack-dev-server --config config/webpack.config.dev.js",
     "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js && cp -R public ../svg-to-jsx-server/"
   },
   "devDependencies": {
