@@ -25,5 +25,6 @@ yarn build
 
 ### Todo 📝
 
-- [ ] Upload
+- [x] Upload
+- [ ] Option to remove line breaks
 - [ ] Add react-native SVG support
