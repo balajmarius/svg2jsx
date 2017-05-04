@@ -17,6 +17,12 @@ yarn
 yarn start:development
 ```
 
+### Build 😷
+
+```
+yarn build
+```
+
 ### Todo 📝
 
 - [ ] Upload
