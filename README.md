@@ -1,5 +1,5 @@
 # SVG to JSX 🍭
-> Minimal Svelte application
+> Converts SVG to valid React SVG, written in Svelte
 
 ### [Live 👈](http://svg2jsx.herokuapp.com/)
 
@@ -16,3 +16,14 @@ yarn
 ```
 yarn start:development
 ```
+
+### Build 😷
+
+```
+yarn build
+```
+
+### Todo 📝
+
+- [ ] Upload
+- [ ] Add react-native SVG support
