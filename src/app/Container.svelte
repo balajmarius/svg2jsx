@@ -1,8 +1,8 @@
 <section>
 
   <Header
-    on:clear='onClearClick(event)'
-    on:convert='onQuotesClick(event)'
+    on:clear='onClear(event)'
+    on:convert='onQuotesChange(event)'
     singleQuotes='{{singleQuotes}}'
     loading='{{loading}}'
     jsx='{{jsx}}'/>
@@ -66,13 +66,13 @@
 
     methods: {
 
-      onClearClick(event) {
+      onClear(event) {
 
         return this.set(DEFAULT_STATE)
 
       },
 
-      onQuotesClick(event) {
+      onQuotesChange(event) {
 
         const { singleQuotes } = this.get()
 
