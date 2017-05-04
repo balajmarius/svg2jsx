@@ -27,7 +27,7 @@
       
       <h2>
         JSX
-        <span>(JSX valid SVG)</span>
+        <span>(React valid SVG)</span>
         {{#if loading}}
           <span>Please wait..</span>
         {{/if}}
