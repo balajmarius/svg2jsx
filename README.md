@@ -16,3 +16,7 @@ yarn
 ```
 yarn start:development
 ```
+
+### Todo 📝
+
+- [ ] Add react-native SVG support
