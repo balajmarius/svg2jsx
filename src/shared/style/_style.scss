@@ -33,6 +33,10 @@ section {
     opacity: 0.5;
   }
 
+  input {
+    display: none;
+  }
+
   &__content {
     display: flex;
     font-family: $font-family-sans;
