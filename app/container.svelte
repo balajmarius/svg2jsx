@@ -9,7 +9,6 @@
     jsx='{{jsx}}'/>
 
   <div class='editor'>
-
     {{#if showError}}
       <div class='editor__error'>{{error}}</div>
     {{/if}}
@@ -21,7 +20,6 @@
     <Textarea
       value='{{convertQuotes(jsx, singleQuotes)}}'
       disabled/>
-
   </div>
 
   <input 
@@ -29,16 +27,15 @@
     on:change='getFileContents(event)'
     accept='image/svg'
     type='file'/>
-
 </section>
 
 <script>
   import Clipboard from 'clipboard'
 
-  import { DEFAULT_STATE, DOUBLE_QUOTE_REGEX, SINGLE_QUOTE } from './constants'
+  import { DEFAULT_STATE, DOUBLE_QUOTE_REGEX } from './constants'
   import * as service from './service'
 
-  import { Textarea, Header } from './partials'
+  import { Textarea, Header } from './components'
 
   export default {
 
@@ -62,20 +59,18 @@
     },
 
     helpers: {
-
       convertQuotes(jsx, singleQuotes) {
 
         // replace double quotes
-        if (singleQuotes) return jsx.replace(DOUBLE_QUOTE_REGEX, SINGLE_QUOTE)
+        if (singleQuotes) return jsx.replace(DOUBLE_QUOTE_REGEX, '\'')
 
         return jsx
 
       }
-
     },
 
     methods: {
-
+      
       onClear() {
 
         // reset state
@@ -93,7 +88,6 @@
       onQuotesChange() {
 
         const { singleQuotes } = this.get()
-
         // toggle quotes
         return this.set({ singleQuotes: !singleQuotes })
 
@@ -101,7 +95,7 @@
 
       getFileContents(event) {
 
-        const svgFile = event.target.files[0]
+        const [ svgFile ] = event.target.files
 
         // read the file and convert
         return service.getFileContents(svgFile)
@@ -112,17 +106,14 @@
 
       convertSvg(svg) {
 
-        this.set({ svg, loading: true })
-
-        return service.getTransformedSvg(svg)
+        return Promise.resolve()
+          .then(() => this.set({ svg, loading: true }))
+          .then(() => service.getTransformedSvg(svg))
           .then(({ jsx, error }) => {
-
             // show error and hide the loader
             if (error) return this.set({ error, loading: false })
-
             // set jsx, error to undefined and hide the loader
             return this.set({ jsx, error, loading: false })
-
           })
           .catch(error => this.set({ error, loading: false }))
 
@@ -134,6 +125,5 @@
       Header,
       Textarea,
     }
-
   }
 </script>

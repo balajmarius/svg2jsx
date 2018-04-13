@@ -1,13 +1,14 @@
 {
-  "name": "svg-to-jsx-gui",
-  "version": "1.0.0",
-  "main": "src/app.js",
+  "name": "svg2jsx-gui",
+  "version": "1.1.0",
+  "main": "app/index.js",
   "repository": "https://github.com/balajmarius/svg-to-jsx-gui.git",
   "author": "Balaj Marius <balajmarius93@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start:development": "webpack-dev-server --config config/webpack.config.dev.js",
-    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js && cp -R public ../svg-to-jsx-server/"
+    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js",
+    "start": "node server/"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

@@ -1,3 +1,5 @@
+export const API = '/api'
+
 export const DEFAULT_STATE = {
   svg: '',
   jsx: '',
@@ -7,6 +9,4 @@ export const DEFAULT_STATE = {
 }
 
 export const DEBOUNCE_TIME = 200
-
 export const DOUBLE_QUOTE_REGEX = /"/g
-export const SINGLE_QUOTE = '\''

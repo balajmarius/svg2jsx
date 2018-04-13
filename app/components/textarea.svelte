@@ -9,17 +9,10 @@
   import { DEBOUNCE_TIME } from '../constants'
 
   export default {
-
     events: {
-
       input(node, callback) {
-
         node.addEventListener('input', debounce(callback, DEBOUNCE_TIME), false)
-
-      },
-
-    },
-
+      }
+    }
   }
-
 </script>

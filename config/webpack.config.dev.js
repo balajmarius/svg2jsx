@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
+  src: path.join(__dirname, '../app'),
   dist: path.join(__dirname, '../public'),
   static: path.join(__dirname, '../static'),
 }
@@ -56,5 +56,5 @@ module.exports = {
     ]
   },
 
-  devtool: 'inline-source-map',
+  devtool: 'inline-source-map'
 }

@@ -4,15 +4,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../public'),
+  src: path.join(__dirname, '../app'),
+  dist: path.join(__dirname, '../server/public'),
   static: path.join(__dirname, '../static'),
 }
 
 module.exports = {
-
-  profile:true,
-
+  profile: true,
   entry: PATHS.src,
 
   output: {
@@ -21,7 +19,9 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin([ PATHS.dist ], { root: process.cwd() }),
+    new CleanWebpackPlugin([ PATHS.dist ], {
+      root: process.cwd()
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
