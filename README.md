@@ -1,4 +1,4 @@
-# SVG to JSX 🍭
+# svg2jsx 🍭
 > Converts SVG to valid React SVG, written in Svelte
 
 ### [Live 👈](http://svg2jsx.herokuapp.com/)
