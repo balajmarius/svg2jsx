@@ -15,6 +15,10 @@
 
     <Textarea
       on:input='convertSvg(event.target.value)'
+      on:drop='onDrop(event)'
+      on:dragover='onDragOver(event)'
+      on:dragenter='onDragEnter(event)'
+      on:dragexit='onDragExit(event)'
       value='{{svg}}'/>
   
     <Textarea
@@ -90,6 +94,36 @@
         const { singleQuotes } = this.get()
         // toggle quotes
         return this.set({ singleQuotes: !singleQuotes })
+
+      },
+
+      onDrop(event) {
+
+        event.stopPropagation()
+        event.preventDefault()
+
+        this.refs.upload.files = event.dataTransfer.files
+
+      },
+
+      onDragOver(event) {
+
+        event.stopPropagation()
+        event.preventDefault()
+
+      },
+
+      onDragEnter(event) {
+
+        event.stopPropagation()
+        event.preventDefault()
+
+      },
+
+      onDragExit(event) {
+
+        event.stopPropagation()
+        event.preventDefault()
 
       },
 
