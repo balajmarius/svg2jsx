@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "plugins": ["jest"],
+  "rules": {
+    "arrow-parens": "off",
+    "prefer-template": "off",
+    "react/jsx-filename-extension": false
+  },
+  "env": {
+    "jest/globals": true
+  }
+}
