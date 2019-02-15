@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@svg2jsx/app",
+  "version": "1.0.0",
+  "description": "The svg2jsx UI.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "next": "8.0.1",
+    "react": "16.8.2",
+    "react-dom": "16.8.2"
+  }
+}
