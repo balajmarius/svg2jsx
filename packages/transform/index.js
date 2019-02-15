@@ -7,8 +7,8 @@ const format = require('./lib/formatter');
 /**
  * Clean-up and transform SVG into valid JSX.
  *
- * @param {string} svg The SVG string.
- * @param {Object} options The prettier config.
+ * @param   {string} svg     The SVG string.
+ * @param   {Object} options The prettier config.
  * @returns {string}
  */
 const transformer = async (svg, options = {}) => {

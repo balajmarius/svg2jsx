@@ -3,7 +3,7 @@ const plainObject = require('lodash.isplainobject');
 /**
  * Stringify style.
  *
- * @param {Array} style Style data.
+ * @param   {Array} style Style data.
  * @returns {string}
  */
 const stringifyStyle = (style = {}) => {
@@ -25,7 +25,7 @@ const stringifyStyle = (style = {}) => {
 /**
  * Stringify attributes.
  *
- * @param {Object} attrs Node attributes data.
+ * @param   {Object} attrs Node attributes data.
  * @returns {string}
  */
 const stringifyAttributes = (attributes = {}) => {
@@ -50,7 +50,7 @@ const stringifyAttributes = (attributes = {}) => {
 /**
  * Stringify SVG tree.
  *
- * @param {Object} node The SVG tree.
+ * @param   {Object} node The SVG tree.
  * @returns {string}
  */
 const stringify = (node) => {

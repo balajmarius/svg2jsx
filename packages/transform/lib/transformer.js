@@ -17,7 +17,7 @@ const customAttributes = {
 /**
  * Apply transforms to SVG styles.
  *
- * @param {string} style Stylesheet.
+ * @param   {string} style Stylesheet.
  * @returns {string}
  */
 const transformStyle = (style) => {
@@ -30,7 +30,7 @@ const transformStyle = (style) => {
 /**
  * Apply transforms to SVG tree and stringify.
  *
- * @param {Object} node The SVG parent node.
+ * @param   {Object} node The SVG parent node.
  * @returns {string}
  */
 const transform = (node) => {

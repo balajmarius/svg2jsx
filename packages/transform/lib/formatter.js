@@ -3,8 +3,8 @@ const prettier = require('prettier');
 /**
  * Format SVG string.
  *
- * @param {string} svg The SVG string.
- * @param {Object} options Prettier options.
+ * @param  {string}  svg     The SVG string.
+ * @param  {Object}  options Prettier options.
  * @return {string}
  */
 const format = (svg, options) => {

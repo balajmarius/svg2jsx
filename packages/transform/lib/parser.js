@@ -3,7 +3,7 @@ const parser = require('svg-parser');
 /**
  * Parse styles.
  *
- * @param {string} style Stylesheet.
+ * @param  {string} style Stylesheet.
  * @return {Object}
  */
 const parseStyle = (style) => {
