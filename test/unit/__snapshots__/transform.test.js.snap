@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`transform tests clean attributes 1`] = `
+"<svg fill=\\"red\\" />;
+"
+`;
+
+exports[`transform tests convert attributes 1`] = `
+"<svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />;
+"
+`;
+
+exports[`transform tests convert inline styles to style objects 1`] = `
+"<svg style={{ marginLeft: 20, paddingTop: 20 }} />;
+"
+`;
+
+exports[`transform tests remove unnecessary nodes 1`] = `
+"<svg />;
+"
+`;

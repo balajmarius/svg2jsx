@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "@svg2jsx/transform",
+  "version": "1.0.0",
+  "description": "The svg2jsx transformer",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "css-to-react-native": "2.3.0",
+    "lodash.camelcase": "4.3.0",
+    "lodash.clonedeep": "4.5.0",
+    "lodash.isplainobject": "4.0.6",
+    "prettier": "1.16.4",
+    "svg-parser": "1.0.5",
+    "svgo": "1.1.1"
+  }
+}
