@@ -3,9 +3,7 @@ const Svgo = require('svgo');
 /**
  * Create SVGO instance.
  */
-const cleaner = new Svgo({
-  plugins: [],
-});
+const cleaner = new Svgo();
 
 /**
  * Clean and optimize SVG.
