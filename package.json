@@ -22,11 +22,12 @@
     "start:app": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.0.0",
     "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-jest": "22.3.0",
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",

@@ -15,8 +15,8 @@ const transformer = async (svg, options = {}) => {
   const cleaned = await clean(svg);
   const parsed = parse(cleaned);
   const transformed = transform(parsed);
-  const morphed = stringify(transformed, options);
-  const formatted = format(morphed);
+  const morphed = stringify(transformed);
+  const formatted = format(morphed, options);
 
   return formatted;
 };

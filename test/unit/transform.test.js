@@ -34,4 +34,13 @@ describe('transform tests', () => {
     expect(transformed).toEqual(expect.stringMatching(/paddingTop: 20/));
     expect(transformed).toMatchSnapshot();
   });
+
+  test('allow prettier config options', async () => {
+    const transformed = await transform('<svg data-test="svg-test" />', {
+      semi: false,
+    });
+
+    expect(transformed).toEqual(expect.not.stringMatching(/;/));
+    expect(transformed).toMatchSnapshot();
+  });
 });

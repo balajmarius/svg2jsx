@@ -6,8 +6,11 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "compression": "1.7.3",
+    "express": "4.16.4",
     "next": "8.0.1",
     "react": "16.8.2",
-    "react-dom": "16.8.2"
+    "react-dom": "16.8.2",
+    "styled-components": "4.1.3"
   }
 }

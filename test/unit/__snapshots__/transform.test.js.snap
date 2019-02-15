@@ -1,21 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`transform tests allow prettier config options 1`] = `
+"const SvgComponent = () => <svg data-test=\\"svg-test\\" />
+"
+`;
+
 exports[`transform tests clean attributes 1`] = `
-"<svg fill=\\"red\\" />;
+"const SvgComponent = () => <svg fill=\\"red\\" />;
 "
 `;
 
 exports[`transform tests convert attributes 1`] = `
-"<svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />;
+"const SvgComponent = () => (
+  <svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />
+);
 "
 `;
 
 exports[`transform tests convert inline styles to style objects 1`] = `
-"<svg style={{ marginLeft: 20, paddingTop: 20 }} />;
+"const SvgComponent = () => <svg style={{ marginLeft: 20, paddingTop: 20 }} />;
 "
 `;
 
 exports[`transform tests remove unnecessary nodes 1`] = `
-"<svg />;
+"const SvgComponent = () => <svg />;
 "
 `;

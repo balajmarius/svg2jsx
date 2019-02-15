@@ -1,13 +1,19 @@
 const prettier = require('prettier');
 
 /**
+ * Format SVG string.
  *
  * @param {string} svg The SVG string.
  * @param {Object} options Prettier options.
  * @return {string}
  */
 const format = (svg, options) => {
-  const formatted = prettier.format(svg, {
+  const component = `
+    const SvgComponent = () => (
+      ${svg}
+    )
+  `;
+  const formatted = prettier.format(component, {
     ...options,
     parser: 'babel',
   });
