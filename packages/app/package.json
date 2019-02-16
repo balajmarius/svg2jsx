@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "compression": "1.7.3",
+    "@svg2jsx/transform": "1.0.0",
     "express": "4.16.4",
     "next": "8.0.1",
     "react": "16.8.2",

@@ -17,7 +17,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
     "test": "./node_modules/.bin/jest test/unit/",
-    "development:app": "./node_modules/.bin/next packages/app",
+    "development:app": "NODE_ENV=development && node packages/app/server.js",
     "build:app": "yarn lint && ./node_modules/.bin/next build packages/app",
     "start:app": "./node_modules/.bin/next start packages/app"
   },
