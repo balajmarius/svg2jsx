@@ -17,12 +17,11 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
     "test": "./node_modules/.bin/jest test/unit/",
-    "dev:app": "./node_modules/.bin/next packages/app",
-    "build:app": "./node_modules/.bin/next build packages/app",
+    "development:app": "./node_modules/.bin/next packages/app",
+    "build:app": "yarn lint && ./node_modules/.bin/next build packages/app",
     "start:app": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.1.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.0.0",
