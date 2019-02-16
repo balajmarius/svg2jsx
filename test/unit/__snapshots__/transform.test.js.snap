@@ -2,11 +2,15 @@
 
 exports[`transform tests allow prettier config options 1`] = `
 "const SvgComponent = () => <svg data-test=\\"svg-test\\" />
+
+export default SvgComponent
 "
 `;
 
 exports[`transform tests clean attributes 1`] = `
 "const SvgComponent = () => <svg fill=\\"red\\" />;
+
+export default SvgComponent;
 "
 `;
 
@@ -14,15 +18,59 @@ exports[`transform tests convert attributes 1`] = `
 "const SvgComponent = () => (
   <svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />
 );
+
+export default SvgComponent;
 "
 `;
 
 exports[`transform tests convert inline styles to style objects 1`] = `
 "const SvgComponent = () => <svg style={{ marginLeft: 20, paddingTop: 20 }} />;
+
+export default SvgComponent;
+"
+`;
+
+exports[`transform tests convert nested nodes 1`] = `
+"const SvgComponent = () => (
+  <svg width=\\"660\\" height=\\"220\\" style={{ outline: \\"1px solid red\\" }}>
+    <defs>
+      <clipPath id=\\"a\\">
+        <path d=\\"M0 0l75 100 150 75-25-125z\\" />
+      </clipPath>
+    </defs>
+    ><circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
+  </svg>
+);
+
+export default SvgComponent;
+"
+`;
+
+exports[`transform tests don't convert "clip-path" 1`] = `
+"const SvgComponent = () => (
+  <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+    <path clip-path=\\"url(#SVGID_2_134rwd)\\" d=\\"M43 24c1.1-1.5 2.3-3\\" />
+  </svg>
+);
+
+export default SvgComponent;
+"
+`;
+
+exports[`transform tests quote string style values 1`] = `
+"const SvgComponent = () => (
+  <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+    <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
+  </svg>
+);
+
+export default SvgComponent;
 "
 `;
 
 exports[`transform tests remove unnecessary nodes 1`] = `
 "const SvgComponent = () => <svg />;
+
+export default SvgComponent;
 "
 `;

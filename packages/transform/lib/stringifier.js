@@ -1,4 +1,5 @@
-const plainObject = require('lodash.isplainobject');
+const isPlainObject = require('lodash.isplainobject');
+const isString = require('lodash.isstring');
 
 /**
  * Stringify style.
@@ -13,10 +14,13 @@ const stringifyStyle = (style = {}) => {
     return '';
   }
 
-  const buffer = proprietiesNames.reduce((accumulator, propriety) => {
-    const value = style[propriety];
+  const buffer = proprietiesNames.reduce((accumulator, proprietyName) => {
+    const propriety = style[proprietyName];
 
-    return accumulator + `${propriety}: ${value}, `;
+    if (isString(propriety)) {
+      return accumulator + `${proprietyName}: "${propriety}", `;
+    }
+    return accumulator + `${proprietyName}: ${propriety}, `;
   }, '');
 
   return buffer;
@@ -38,7 +42,7 @@ const stringifyAttributes = (attributes = {}) => {
   const buffer = attributesNames.reduce((accumulator, attributeName) => {
     const attribute = attributes[attributeName];
 
-    if (plainObject(attribute)) {
+    if (isPlainObject(attribute)) {
       return accumulator + ` ${attributeName}={{ ${stringifyStyle(attribute)} }}`;
     }
     return accumulator + ` ${attributeName}="${attribute}"`;
@@ -48,9 +52,9 @@ const stringifyAttributes = (attributes = {}) => {
 };
 
 /**
- * Stringify SVG tree.
+ * Stringify svg tree.
  *
- * @param   {Object} node The SVG tree.
+ * @param   {Object} node Parsed svg.
  * @returns {string}
  */
 const stringify = (node) => {
@@ -61,10 +65,10 @@ const stringify = (node) => {
     const childrensBuffer = node.children.reduce((accumulator, childrenNode) => {
       const children = stringify(childrenNode);
 
-      return accumulator + '>' + children + `/></${node.name}>`;
+      return accumulator + '>' + children;
     }, buffer);
 
-    return childrensBuffer;
+    return childrensBuffer + `</${node.name}>`;
   }
 
   return buffer + '/>';

@@ -18,7 +18,7 @@ const parseStyle = (style) => {
 /**
  * Parse SVG string into tree data.
  *
- * @param {string} svg The SVG string.
+ * @param {string} svg Svg string.
  * @returns {Object}
  */
 const parse = (svg) => parser.parse(svg);

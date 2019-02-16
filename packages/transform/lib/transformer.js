@@ -12,6 +12,7 @@ const { parseStyle } = require('./parser');
  */
 const customAttributes = {
   class: 'className',
+  'clip-path': 'clip-path',
 };
 
 /**
@@ -30,7 +31,7 @@ const transformStyle = (style) => {
 /**
  * Apply transforms to SVG tree and stringify.
  *
- * @param   {Object} node The SVG parent node.
+ * @param   {Object} node Svg parent node.
  * @returns {string}
  */
 const transform = (node) => {

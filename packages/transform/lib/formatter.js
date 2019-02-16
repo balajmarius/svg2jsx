@@ -11,7 +11,9 @@ const format = (svg, options) => {
   const component = `
     const SvgComponent = () => (
       ${svg}
-    )
+    );
+
+    export default SvgComponent;
   `;
   const formatted = prettier.format(component, {
     ...options,
