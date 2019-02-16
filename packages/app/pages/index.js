@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Button = () => <button>Hello world</button>;
+function HomePage() {
+  return <div>Homepage</div>;
+}
 
-export default Button;
+export default HomePage;
