@@ -16,4 +16,9 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn test
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Unit Test
+          command: yarn test
