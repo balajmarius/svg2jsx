@@ -1,10 +1,9 @@
 version: 2
 jobs:
-  working_directory: ~/svg2jsx-gui
-
   build:
     docker:
       - image: circleci/node:11.6.0
+    working_directory: ~/svg2jsx-gui
 
     steps:
       - checkout
