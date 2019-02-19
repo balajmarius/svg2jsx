@@ -1,11 +1,11 @@
 const express = require('express');
 const next = require('next');
+const bodyParser = require('body-parser');
 const transform = require('@svg2jsx/transform');
 
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-
-const app = next({ dev });
+const app = next({ dev, dir: './packages/app' });
 const handle = app.getRequestHandler();
 
 app
@@ -13,14 +13,14 @@ app
   .then(() => {
     const server = express();
 
-    server.get('*', (req, res) => {
-      handle(req, res);
-    });
+    server.use(bodyParser.json());
+
+    server.get('*', (req, res) => handle(req, res));
 
     server.post('/', async (req, res) => {
       try {
-        const transformed = await transform(req.data);
-        res.send(transformed);
+        const svg = await transform(req.body.svg);
+        res.send({ svg });
       } catch (error) {
         res.sendStatus(500);
       }
@@ -28,9 +28,9 @@ app
 
     server.listen(port, (error) => {
       if (error) {
-        throw error;
+        throw new Error(error);
       }
-      console.log(`⚡️ App started on http://localhost:${port}`);
+      console.log(`☄️ App ready on http://localhost:${port}`);
     });
   })
   .catch(() => {

@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@svg2jsx/transform": "1.0.0",
+    "body-parser": "1.18.3",
     "express": "4.16.4",
     "next": "8.0.1",
     "react": "16.8.2",
