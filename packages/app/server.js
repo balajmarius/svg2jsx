@@ -1,5 +1,5 @@
-const express = require('express');
 const next = require('next');
+const express = require('express');
 const bodyParser = require('body-parser');
 const transform = require('@svg2jsx/transform');
 

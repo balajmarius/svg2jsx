@@ -77,7 +77,7 @@ class Document extends DocumentNext {
           <meta name="copyright" content="Copyright Balaj Marius 2019. All Rights Reserved." />
           {styleTags}
           <GlobalStyles />
-          <link href="static/favicon.ico" rel="shortcut icon" />
+          <link href="/static/favicon.ico" rel="shortcut icon" />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto|Inconsolata"
             rel="stylesheet"
