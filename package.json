@@ -17,9 +17,9 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
     "test": "./node_modules/.bin/jest test/unit/",
-    "development:app": "NODE_ENV=development && node packages/app/server.js",
-    "build:app": "./node_modules/.bin/next build packages/app",
-    "start:app": "./node_modules/.bin/next start packages/app"
+    "app:development": "NODE_ENV=development && node packages/app/server.js",
+    "app:build": "./node_modules/.bin/next build packages/app",
+    "app:start": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
     "eslint": "5.13.0",
@@ -32,5 +32,9 @@
     "eslint-plugin-react": "7.12.4",
     "jest": "24.1.0",
     "prettier": "1.16.4"
+  },
+  "dependencies": {
+    "@zeit/next-typescript": "^1.1.1",
+    "next": "^8.0.1"
   }
 }
