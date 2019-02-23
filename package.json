@@ -22,8 +22,6 @@
     "app:start": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
-    "@types/next": "8.0.1",
-    "@types/react": "16.8.3",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.0.0",
