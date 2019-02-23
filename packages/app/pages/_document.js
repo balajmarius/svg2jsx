@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-import StyleReset from '../shared/styles';
-
 class AugmentedDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -27,7 +25,6 @@ class AugmentedDocument extends Document {
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto|Inconsolata"
             />
-            <StyleReset />
             {originalStyles}
             {styleTags}
           </Fragment>
@@ -38,8 +35,8 @@ class AugmentedDocument extends Document {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="description" content="Convert SVG to valid JSX" />
             <meta name="keywords" content="svg, jsx, svg2jsx" />
-            <meta name="author" content="Balaj Marius" />
-            <meta name="copyright" content="Copyright Balaj Marius 2019. All Rights Reserved." />
+            <meta name="author" content="Bălaj Marius" />
+            <meta name="copyright" content="Copyright Bălaj Marius 2019. All Rights Reserved." />
             <link href="/static/favicon.ico" rel="shortcut icon" />
             <title>Editor - Convert SVG to valid JSX</title>
           </Fragment>
