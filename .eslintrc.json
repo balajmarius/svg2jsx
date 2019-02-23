@@ -5,7 +5,8 @@
     "radix": "off",
     "arrow-parens": "off",
     "prefer-template": "off",
-    "react/jsx-filename-extension": false
+    "react/jsx-filename-extension": false,
+    "react/prop-types": false
   },
   "env": {
     "jest/globals": true

@@ -5,6 +5,7 @@ const transform = require('@svg2jsx/transform');
 
 const port = process.env.PORT || 3000;
 const dev = process.env.NODE_ENV !== 'production';
+
 const app = next({ dev, dir: './packages/app' });
 const handle = app.getRequestHandler();
 
