@@ -27,9 +27,6 @@ export default createGlobalStyle`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  body {
-    line-height: 1;
-  }
   ol, ul {
     list-style: none;
   }
@@ -46,6 +43,7 @@ export default createGlobalStyle`
     border-spacing: 0;
   }
   body {
+    line-height: 1;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     background-color: ${Colour.black};
     color: ${Colour.white};

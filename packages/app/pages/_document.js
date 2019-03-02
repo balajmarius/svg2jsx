@@ -14,6 +14,7 @@ class AugmentedDocument extends Document {
         });
 
       const initialProps = await Document.getInitialProps(ctx);
+
       const styleTags = sheet.getStyleElement();
       const originalStyles = initialProps.styles;
 
@@ -37,7 +38,7 @@ class AugmentedDocument extends Document {
             <meta name="keywords" content="svg, jsx, svg2jsx" />
             <meta name="author" content="Bălaj Marius" />
             <meta name="copyright" content="Copyright Bălaj Marius 2019. All Rights Reserved." />
-            <link href="/static/favicon.ico" rel="shortcut icon" />
+            <link rel="shortcut icon" href="/static/favicon.ico" />
             <title>Editor - Convert SVG to valid JSX</title>
           </Fragment>
         ),

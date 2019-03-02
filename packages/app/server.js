@@ -20,8 +20,9 @@ app
 
     server.post('/', async (req, res) => {
       try {
-        const svg = await transform(req.body.svg);
-        res.send({ svg });
+        const svg = req.body.data;
+        const jsx = await transform(svg);
+        res.send({ jsx });
       } catch (error) {
         res.sendStatus(500);
       }
