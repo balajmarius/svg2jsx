@@ -12,7 +12,7 @@ export const Colour = {
 export const FontSize = {
   base: '12px',
   medium: '16px',
-  large: '24px',
+  large: '18px',
 };
 
 export const FontFamily = {
