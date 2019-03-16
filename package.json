@@ -22,6 +22,7 @@
     "app:start": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "1.10.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.0.0",

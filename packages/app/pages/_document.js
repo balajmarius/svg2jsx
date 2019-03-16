@@ -5,18 +5,18 @@ import { ServerStyleSheet } from 'styled-components';
 class AugmentedDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+    const initialRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
-        originalRenderPage({
+        initialRenderPage({
           enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
 
       const styleTags = sheet.getStyleElement();
-      const originalStyles = initialProps.styles;
+      const initialStyles = initialProps.styles;
 
       return {
         ...initialProps,
@@ -24,9 +24,9 @@ class AugmentedDocument extends Document {
           <Fragment>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Roboto|Inconsolata"
+              href="https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata"
             />
-            {originalStyles}
+            {initialStyles}
             {styleTags}
           </Fragment>
         ),
