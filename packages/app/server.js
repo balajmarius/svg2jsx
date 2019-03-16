@@ -32,6 +32,7 @@ app
       if (error) {
         throw new Error(error);
       }
+      /* eslint-disable no-console */
       console.log(`☄️ App ready on http://localhost:${port}`);
     });
   })
