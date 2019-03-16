@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import Colour from './Colour';
+import { Colour, FontFamily, FontSize } from './Globals';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -22,6 +22,8 @@ export default createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    text-decoration: none;
+    color: inherit;
   }
   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
@@ -44,7 +46,8 @@ export default createGlobalStyle`
   }
   body {
     line-height: 1;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: ${FontSize.base};
+    font-family: ${FontFamily.sans};
     background-color: ${Colour.black};
     color: ${Colour.white};
   }
