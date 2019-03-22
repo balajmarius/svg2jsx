@@ -13,7 +13,7 @@ import Subheadings from '../components/Subheadings';
 import IconGear from '../icons/IconGear';
 
 const Section = styled.section`
-  padding: 10px 30px;
+  padding: 10px 50px;
   border-bottom: 2px solid ${color.black};
   background: ${stripedBackground('left', color.grey)};
 `;

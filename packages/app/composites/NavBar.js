@@ -14,7 +14,7 @@ import IconStar from '../icons/IconStar';
 import IconGithub from '../icons/IconGithub';
 
 const Header = styled.header`
-  padding: 15px;
+  padding: 15px 25px;
   background: ${color.purple};
   border-bottom: 2px solid ${color.black};
 `;

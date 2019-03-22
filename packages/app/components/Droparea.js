@@ -7,6 +7,7 @@ import { noop } from '../shared/utils';
 
 const DropRoot = styled.div`
   outline: 0;
+  position: relative;
 `;
 
 function Droparea({ children, onDrop }) {

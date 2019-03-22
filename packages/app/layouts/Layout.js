@@ -11,12 +11,12 @@ const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
   }
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul, pre {
     margin: 0;
     padding: 0;
     font-weight: normal;
   }
-  input, button {
+  textarea, input, button {
     border: 0;
     outline: 0;
   }
@@ -26,7 +26,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${fontSize.base};
     font-family: ${fontFamily.sans};
   }
- 
 `;
 
 function Layout({ children }) {
