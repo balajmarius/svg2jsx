@@ -6,7 +6,8 @@
     "arrow-parens": "off",
     "prefer-template": "off",
     "react/jsx-filename-extension": false,
-    "react/prop-types": false
+    "react/prop-types": false,
+    "import/prefer-default-export": false
   },
   "env": {
     "jest/globals": true
