@@ -3,26 +3,19 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import { color } from '../shared/constants';
+import { stripedBackground } from '../shared/utils';
 
 import Grid from '../components/Grid';
 import GridCell from '../components/GridCell';
 import Switch from '../components/Switch';
-import Headings from '../components/Headings';
+import Subheadings from '../components/Subheadings';
 
 import IconGear from '../icons/IconGear';
 
 const Section = styled.section`
   padding: 10px 30px;
   border-bottom: 2px solid ${color.black};
-  background: linear-gradient(
-    to left,
-    ${color.grey},
-    ${color.grey} calc(50% - 1px),
-    ${color.black} calc(50% - 1px),
-    ${color.black} calc(50% + 1px),
-    ${color.grey} calc(50% + 1px),
-    ${color.grey}
-  );
+  background: ${stripedBackground('left', color.grey)};
 `;
 
 const Status = styled.div`
@@ -46,7 +39,7 @@ function SettingsBar({ variant }) {
         <GridCell>
           <Grid columns="1fr auto 1fr" gap={10}>
             <GridCell>
-              <Headings primary="SVG" secondary="Input" />
+              <Subheadings primary="SVG" secondary="Input" />
             </GridCell>
             <GridCell>
               <Status variant={variant}>
@@ -54,7 +47,7 @@ function SettingsBar({ variant }) {
               </Status>
             </GridCell>
             <GridCell>
-              <Headings primary="JSX" secondary="Output" inverse />
+              <Subheadings primary="JSX" secondary="Output" inverse />
             </GridCell>
           </Grid>
         </GridCell>
