@@ -7,15 +7,18 @@
   "license": "MIT",
   "dependencies": {
     "@svg2jsx/transform": "1.0.0",
+    "axios": "0.18.0",
     "body-parser": "1.18.3",
     "express": "4.16.4",
     "lodash.debounce": "4.0.8",
     "next": "8.0.1",
+    "prettier": "1.16.4",
+    "prism-react-renderer": "0.1.6",
     "prop-types": "15.7.2",
     "react": "16.8.2",
-    "react-ace": "6.4.0",
     "react-dom": "16.8.2",
     "react-dropzone": "10.0.5",
+    "react-simple-code-editor": "0.9.4",
     "styled-components": "4.1.3"
   }
 }
