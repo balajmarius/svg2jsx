@@ -6,6 +6,7 @@ import { color, fontFamily, fontSize } from '../shared/constants';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -14,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-weight: normal;
+  }
+  input, button {
+    border: 0;
+    outline: 0;
   }
   body {    
     color: ${color.white};

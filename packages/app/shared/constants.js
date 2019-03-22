@@ -1,7 +1,7 @@
 export const color = {
   black: '#0d0d0d',
   grey: '#363644',
-  darkGrey: '#1c1c21',
+  darkGrey: '#232329',
   lightGrey: '#949494',
   white: '#ffffff',
   purple: '#5522e6',
@@ -12,7 +12,7 @@ export const color = {
 export const fontSize = {
   base: '12px',
   medium: '16px',
-  large: '20px',
+  large: '18px',
 };
 
 export const fontFamily = {
