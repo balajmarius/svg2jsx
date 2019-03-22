@@ -1,14 +1,15 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
-import Navbar from '../components/Navbar';
-import Settings from '../components/Settings';
+import Layout from '../layouts/Layout';
+
+import NavBar from '../composites/NavBar';
+import SettingsBar from '../composites/SettingsBar';
 
 function HomePage() {
   return (
     <Layout>
-      <Navbar />
-      <Settings />
+      <NavBar />
+      <SettingsBar />
     </Layout>
   );
 }
