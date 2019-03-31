@@ -14,15 +14,13 @@ function createServer() {
 
   server.use(bodyParser.json());
 
-  server.get('*', (req, res) => {
-    return handle(req, res);
-  });
+  server.get('*', (req, res) => handle(req, res));
 
-  server.post('/', (req, res) => {
-    return transform(req.body.data)
+  server.post('/', (req, res) =>
+    transform(req.body.data)
       .then((jsx) => res.send({ jsx }))
-      .catch((error) => res.sendStatus({ error }));
-  });
+      .catch((error) => res.sendStatus({ error })),
+  );
 
   server.listen(port);
 }
