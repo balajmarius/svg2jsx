@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 import { useDropzone } from 'react-dropzone';
 
 import { noop } from '../shared/utils';
+import { color } from '../shared/constants';
 
-const DropRoot = styled.div`
+const Dropable = styled.div`
   outline: 0;
   position: relative;
+  border-right: 1px solid ${color.codGrey};
 `;
 
 function Droparea({ children, onDrop }) {
@@ -17,10 +19,10 @@ function Droparea({ children, onDrop }) {
   const inputProps = getInputProps();
 
   return (
-    <DropRoot {...rootProps} onClick={noop}>
+    <Dropable {...rootProps} onClick={noop}>
       <input {...inputProps} />
       {children(rootProps)}
-    </DropRoot>
+    </Dropable>
   );
 }
 

@@ -8,7 +8,7 @@ import { stripedBackground } from '../shared/utils';
 import Grid from '../components/Grid';
 import GridCell from '../components/GridCell';
 import Switch from '../components/Switch';
-import Subheadings from '../components/Subheadings';
+import Headings from '../components/Headings';
 
 import IconGear from '../icons/IconGear';
 
@@ -34,12 +34,12 @@ function SettingsBar({ variant }) {
     <Section>
       <Grid columns="1fr 2fr 1fr">
         <GridCell>
-          <Switch label="Optimize SVG" />
+          <Switch label="SVGO" />
         </GridCell>
         <GridCell>
           <Grid columns="1fr auto 1fr" gap={10}>
             <GridCell>
-              <Subheadings primary="SVG" secondary="Input" />
+              <Headings primary="SVG" secondary="Input" />
             </GridCell>
             <GridCell>
               <Status variant={variant}>
@@ -47,7 +47,7 @@ function SettingsBar({ variant }) {
               </Status>
             </GridCell>
             <GridCell>
-              <Subheadings primary="JSX" secondary="Output" inverse />
+              <Headings primary="JSX" secondary="Output" inverse />
             </GridCell>
           </Grid>
         </GridCell>

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { color, transition } from '../shared/constants';
+import { color } from '../shared/constants';
 
 import Text from './Text';
 
@@ -30,7 +30,7 @@ const Knob = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  transition: ${transition.easeInOut};
+  transition: 300ms ease-in-out;
   transform: ${({ checked }) => (checked ? 'translateX(11px)' : 'none')};
   background: ${({ checked }) => (checked ? color.green : color.grey)};
 `;

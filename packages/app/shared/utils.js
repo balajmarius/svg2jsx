@@ -1,5 +1,7 @@
 import { color } from './constants';
 
+export const noop = () => {};
+
 export const stripedBackground = (direction, backgroundColor, stripeColor = color.black) => `
   linear-gradient(
     to ${direction},
@@ -12,4 +14,4 @@ export const stripedBackground = (direction, backgroundColor, stripeColor = colo
   );
 `;
 
-export const noop = () => {};
+export const readFile = () => {};

@@ -5,14 +5,14 @@ import Text from './Text';
 import Grid from './Grid';
 import GridCell from './GridCell';
 
-function Subheadings({ primary, secondary, inverse }) {
+function Headings({ primary, secondary, inverse }) {
   const align = inverse ? 'left' : 'right';
   const direction = inverse ? 'rtl' : 'ltr';
 
   return (
     <Grid columns="1fr auto" direction={direction} gap={10}>
       <GridCell>
-        <Text align={align} display="monospace" size="medium" textColor="lightGrey">
+        <Text align={align} display="mono" size="medium" textColor="lightGrey">
           {secondary}
         </Text>
       </GridCell>
@@ -25,14 +25,14 @@ function Subheadings({ primary, secondary, inverse }) {
   );
 }
 
-Subheadings.propTypes = {
+Headings.propTypes = {
   inverse: PropTypes.bool,
   primary: PropTypes.string.isRequired,
   secondary: PropTypes.string.isRequired,
 };
 
-Subheadings.defaultProps = {
+Headings.defaultProps = {
   inverse: false,
 };
 
-export default Subheadings;
+export default Headings;

@@ -9,6 +9,11 @@
     "react/prop-types": false,
     "import/prefer-default-export": false
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
   "env": {
     "jest/globals": true
   }

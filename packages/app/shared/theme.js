@@ -53,8 +53,6 @@ function createStyle(acequire, exports) {
   const className = 'ace_svg2jsx';
 
   /* eslint-disable no-param-reassign */
-  exports.padding = 15;
-  exports.isDark = true;
   exports.cssText = style;
   exports.cssClass = className;
 
