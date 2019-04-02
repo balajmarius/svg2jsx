@@ -14,6 +14,7 @@ export const color = {
 };
 
 export const fontSize = {
+  tiny: '10px',
   base: '12px',
   normal: '14px',
   medium: '16px',
