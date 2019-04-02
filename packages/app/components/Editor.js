@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import AceEditor from 'react-ace';
 
@@ -38,4 +38,4 @@ Editor.defaultProps = {
   onChange: undefined,
 };
 
-export default Editor;
+export default memo(Editor);

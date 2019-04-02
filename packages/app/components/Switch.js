@@ -10,6 +10,7 @@ const Label = styled.label`
   display: inline-flex;
   cursor: pointer;
   align-items: center;
+  text-transform: uppercase;
 `;
 
 const Input = styled.input`
@@ -30,7 +31,7 @@ const Knob = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  transition: 300ms ease-in-out;
+  transition: 150ms ease-in-out;
   transform: ${({ checked }) => (checked ? 'translateX(11px)' : 'none')};
   background: ${({ checked }) => (checked ? color.green : color.grey)};
 `;
@@ -38,7 +39,7 @@ const Knob = styled.div`
 function Switch({ label, checked, onChange }) {
   return (
     <Label>
-      <Text textColor="lightGrey" fontWeight="bold">
+      <Text textColor="lightGrey" fontWeight="bold" size="tiny">
         {label}
       </Text>
       <Bar checked={checked}>
