@@ -19,7 +19,7 @@ function createServer() {
   server.post('/', (req, res) =>
     transform(req.body.data)
       .then((jsx) => res.send({ jsx }))
-      .catch((error) => res.sendStatus({ error })),
+      .catch((error) => res.send({ error })),
   );
 
   server.listen(port);
