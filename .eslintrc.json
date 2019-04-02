@@ -16,5 +16,10 @@
   },
   "env": {
     "jest/globals": true
+  },
+  "globals": {
+    "FileReader": true,
+    "DOMException": true,
+    "fetch": true
   }
 }
