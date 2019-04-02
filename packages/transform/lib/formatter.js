@@ -8,19 +8,14 @@ const prettier = require('prettier');
  * @return {string}
  */
 const format = (svg, options) => {
-  const component = `
-    const SvgComponent = () => (
-      ${svg}
-    );
-
-    export default SvgComponent;
-  `;
-  const formatted = prettier.format(component, {
+  const formatted = prettier.format(svg, {
     ...options,
     parser: 'babel',
   });
 
-  return formatted;
+  // remove unnecessary
+  // semicolon added by prettier
+  return formatted.replace(/;/g, '');
 };
 
 module.exports = format;
