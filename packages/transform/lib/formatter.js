@@ -34,7 +34,7 @@ const templates = {
  * Creates React component.
  *
  * @param {string} svg Transformed SVG string.
- * @param {string="functional", "class"} options.type Desired component type.
+ * @param {string="functional","class"} options.type Desired component type.
  * @return {string}
  */
 const reactify = (svg, { type = 'functional' }) => {

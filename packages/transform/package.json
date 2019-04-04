@@ -8,7 +8,6 @@
   "dependencies": {
     "css-to-react-native": "2.3.0",
     "lodash.camelcase": "4.3.0",
-    "lodash.clonedeep": "4.5.0",
     "lodash.isplainobject": "4.0.6",
     "lodash.isstring": "4.0.1",
     "lodash.template": "4.4.0",

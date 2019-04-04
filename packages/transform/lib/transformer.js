@@ -1,5 +1,4 @@
 const camelCase = require('lodash.camelcase');
-const cloneDeep = require('lodash.clonedeep');
 const reactifyStyle = require('css-to-react-native').default;
 
 const { parseStyle } = require('./parser');
@@ -35,11 +34,10 @@ const transformStyle = (style) => {
  * @returns {string}
  */
 const transform = (node) => {
-  const clonedNode = cloneDeep(node);
   const attributeNames = Object.keys(node.attributes);
 
-  clonedNode.attributes = attributeNames.reduce((accumulator, attributeName) => {
-    const attribute = clonedNode.attributes[attributeName];
+  const attributes = attributeNames.reduce((accumulator, attributeName) => {
+    const attribute = node.attributes[attributeName];
 
     const isStyleAttribute = attributeName === 'style';
     const isDataAttribute = attributeName.startsWith('data-');
@@ -68,11 +66,13 @@ const transform = (node) => {
     };
   }, {});
 
-  if (clonedNode.children) {
-    clonedNode.children = clonedNode.children.map(transform);
-  }
+  const children = node.children.map(transform);
 
-  return clonedNode;
+  return {
+    ...node,
+    children,
+    attributes,
+  };
 };
 
 module.exports = transform;
