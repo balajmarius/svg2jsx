@@ -8,7 +8,7 @@ const { parseStyle } = require('./parser');
  * Custom attributes.
  *
  * @readonly
- * @enum {string}
+ * @type {Map<string, string>}
  */
 const customAttributes = {
   class: 'className',
@@ -16,9 +16,9 @@ const customAttributes = {
 };
 
 /**
- * Apply transforms to SVG styles.
+ * Apply transforms to styles.
  *
- * @param   {string} style Stylesheet.
+ * @param {string} style Style string.
  * @returns {string}
  */
 const transformStyle = (style) => {
@@ -29,9 +29,9 @@ const transformStyle = (style) => {
 };
 
 /**
- * Apply transforms to SVG tree and stringify.
+ * Apply transforms to SVG tree.
  *
- * @param   {Object} node Svg parent node.
+ * @param {Object} node Root node.
  * @returns {string}
  */
 const transform = (node) => {

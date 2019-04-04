@@ -1,9 +1,9 @@
 const parser = require('svg-parser');
 
 /**
- * Parse styles.
+ * Creates list from CSS string.
  *
- * @param  {string} style Stylesheet.
+ * @param {string} style CSS string.
  * @return {Object}
  */
 const parseStyle = (style) => {
@@ -16,9 +16,9 @@ const parseStyle = (style) => {
 };
 
 /**
- * Parse SVG string into tree data.
+ * Creates tree data from SVG string.
  *
- * @param   {string} svg Svg string.
+ * @param {string} svg SVG string.
  * @returns {Object}
  */
 const parse = (svg) => parser.parse(svg);

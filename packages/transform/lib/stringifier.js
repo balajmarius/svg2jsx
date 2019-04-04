@@ -4,7 +4,7 @@ const isString = require('lodash.isstring');
 /**
  * Stringify style.
  *
- * @param   {Array} style Style data.
+ * @param {Object=} style Node style.
  * @returns {string}
  */
 const stringifyStyle = (style = {}) => {
@@ -29,7 +29,7 @@ const stringifyStyle = (style = {}) => {
 /**
  * Stringify attributes.
  *
- * @param   {Object} attrs Node attributes data.
+ * @param {Object=} attributes Node attributes.
  * @returns {string}
  */
 const stringifyAttributes = (attributes = {}) => {
@@ -52,9 +52,9 @@ const stringifyAttributes = (attributes = {}) => {
 };
 
 /**
- * Stringify svg tree.
+ * Stringify SVG tree.
  *
- * @param   {Object} node Parsed svg.
+ * @param {Object} node Root node.
  * @returns {string}
  */
 const stringify = (node) => {

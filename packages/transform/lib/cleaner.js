@@ -1,14 +1,14 @@
 const Svgo = require('svgo');
 
 /**
- * Create Svgo instance.
+ * Svgo instance.
  */
 const cleaner = new Svgo();
 
 /**
- * Clean and optimize SVG.
+ * Clean-up SVG.
  *
- * @param   {string} svg     The SVG string.
+ * @param {string} svg SVG string.
  * @returns {string}
  */
 const clean = async (svg) => {

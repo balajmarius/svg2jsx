@@ -1,54 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`transform tests allow prettier config options 1`] = `
-"<svg data-test=\\"svg-test\\" />
+"import React from \\"react\\"
+
+function Icon() {
+  return <svg data-test=\\"svg-test\\" />
+}
+
+export default Icon
 "
 `;
 
 exports[`transform tests clean attributes 1`] = `
-"<svg fill=\\"red\\" />
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg fill=\\"red\\" />;
+}
+
+export default Icon;
 "
 `;
 
 exports[`transform tests convert attributes 1`] = `
-"<svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg className=\\"test\\" data-name=\\"svg\\" fillRule=\\"evenodd\\" />;
+}
+
+export default Icon;
 "
 `;
 
 exports[`transform tests convert inline styles to style objects 1`] = `
-"<svg style={{ marginLeft: 20, paddingTop: 20 }} />
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg style={{ marginLeft: 20, paddingTop: 20 }} />;
+}
+
+export default Icon;
 "
 `;
 
 exports[`transform tests convert nested nodes 1`] = `
-"<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-  <defs>
-    <clipPath id=\\"a\\">
-      <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
-    </clipPath>
-  </defs>
-  <circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
-</svg>;
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+      <defs>
+        <clipPath id=\\"a\\">
+          <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
+        </clipPath>
+      </defs>
+      <circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
+    </svg>
+  );
+}
+
+export default Icon;
 "
 `;
 
-exports[`transform tests create class component 1`] = `"<svg data-test=\\"svg-test\\"></svg>"`;
+exports[`transform tests create class component 1`] = `
+"import React from \\"react\\";
+
+class Icon extends React.Component {
+  render() {
+    return <svg data-test=\\"svg-test\\" />;
+  }
+}
+
+export default Icon;
+"
+`;
+
+exports[`transform tests create functional component 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg data-test=\\"svg-test\\" />;
+}
+
+export default Icon;
+"
+`;
 
 exports[`transform tests don't convert "clip-path" 1`] = `
-"<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-  <path clip-path=\\"url(#SVGID_2_134rwd)\\" d=\\"M43 24c1.1-1.5 2.3-3\\" />
-</svg>
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+      <path clip-path=\\"url(#SVGID_2_134rwd)\\" d=\\"M43 24c1.1-1.5 2.3-3\\" />
+    </svg>
+  );
+}
+
+export default Icon;
 "
 `;
 
 exports[`transform tests quote string style values 1`] = `
-"<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-  <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
-</svg>
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+      <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
+    </svg>
+  );
+}
+
+export default Icon;
 "
 `;
 
 exports[`transform tests remove unnecessary nodes 1`] = `
-"<svg />
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg />;
+}
+
+export default Icon;
 "
 `;

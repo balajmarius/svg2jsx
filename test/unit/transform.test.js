@@ -88,15 +88,15 @@ describe('transform tests', () => {
 
   test('create functional component', async () => {
     const transformed = await transform('<svg data-test="svg-test" />', {
-      componentType: 'functional',
+      type: 'functional',
     });
 
     expect(transformed).toMatchSnapshot();
   });
 
-  test.only('create class component', async () => {
+  test('create class component', async () => {
     const transformed = await transform('<svg data-test="svg-test" />', {
-      componentType: 'class',
+      type: 'class',
     });
 
     expect(transformed).toMatchSnapshot();
