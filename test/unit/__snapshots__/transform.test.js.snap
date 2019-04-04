@@ -21,16 +21,18 @@ exports[`transform tests convert inline styles to style objects 1`] = `
 `;
 
 exports[`transform tests convert nested nodes 1`] = `
-"<svg width=\\"660\\" height=\\"220\\" style={{ outline: \\"1px solid red\\" }}>
+"<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
   <defs>
     <clipPath id=\\"a\\">
-      <path d=\\"M0 0l75 100 150 75-25-125z\\" />
+      <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
     </clipPath>
   </defs>
-  ><circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
-</svg>
+  <circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
+</svg>;
 "
 `;
+
+exports[`transform tests create class component 1`] = `"<svg data-test=\\"svg-test\\"></svg>"`;
 
 exports[`transform tests don't convert "clip-path" 1`] = `
 "<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">

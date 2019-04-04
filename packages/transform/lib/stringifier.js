@@ -59,19 +59,19 @@ const stringifyAttributes = (attributes = {}) => {
  */
 const stringify = (node) => {
   const attributes = stringifyAttributes(node.attributes);
-  const buffer = `<${node.name}${attributes}`;
+  const buffer = `<${node.name}${attributes}>`;
 
   if (node.children.length) {
     const childrensBuffer = node.children.reduce((accumulator, childrenNode) => {
       const children = stringify(childrenNode);
 
-      return accumulator + '>' + children;
+      return accumulator + children;
     }, buffer);
 
     return childrensBuffer + `</${node.name}>`;
   }
 
-  return buffer + '/>';
+  return buffer + `</${node.name}>`;
 };
 
 module.exports = stringify;
