@@ -51,9 +51,7 @@ function stringify(node) {
   const buffer = `<${node.name}${attributes}>`;
 
   const childrensBuffer = node.children.reduce((accumulator, childrenNode) => {
-    const children = stringify(childrenNode);
-
-    return accumulator + children;
+    return accumulator + stringify(childrenNode);
   }, buffer);
 
   return childrensBuffer + `</${node.name}>`;
