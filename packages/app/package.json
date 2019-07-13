@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "@svg2jsx/app",
+  "version": "1.0.0",
+  "description": "The svg2jsx UI.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@svg2jsx/transform": "1.0.0",
+    "body-parser": "1.18.3",
+    "brace": "0.11.1",
+    "compression": "^1.7.4",
+    "express": "4.16.4",
+    "next": "8.0.1",
+    "prop-types": "15.7.2",
+    "react": "16.8.2",
+    "react-ace": "6.4.0",
+    "react-copy-to-clipboard": "5.0.1",
+    "react-dom": "16.8.2",
+    "react-dropzone": "10.0.5",
+    "styled-components": "4.1.3"
+  }
+}
