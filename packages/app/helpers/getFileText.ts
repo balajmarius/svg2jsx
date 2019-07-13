@@ -1,3 +1,5 @@
+import pretty from 'pretty';
+
 export default function getFileText(
   file: File,
 ): Promise<string | ArrayBuffer | DOMException> {
@@ -5,7 +7,7 @@ export default function getFileText(
 
   return new Promise((resolve, reject) => {
     fileReader.onload = () => {
-      resolve(fileReader.result);
+      resolve(pretty(fileReader.result));
     };
     fileReader.onerror = () => {
       reject(new DOMException('Problem parsing file'));
