@@ -18,7 +18,7 @@ function stringifyStyle(style = {}) {
     }
 
     return accumulator + `${proprietyName}: ${propriety}, `;
-  }, '');
+  }, String());
 }
 
 /**
@@ -34,11 +34,13 @@ function stringifyAttributes(attributes = {}) {
     const isStyleAttribute = isPlainObject(attribute);
 
     if (isStyleAttribute) {
-      return accumulator + ` ${attributeName}={{ ${stringifyStyle(attribute)} }}`;
+      return (
+        accumulator + ` ${attributeName}={{ ${stringifyStyle(attribute)} }}`
+      );
     }
 
     return accumulator + ` ${attributeName}="${attribute}"`;
-  }, '');
+  }, String());
 }
 
 /**

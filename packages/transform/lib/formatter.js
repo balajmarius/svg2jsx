@@ -6,7 +6,7 @@ const template = require('lodash.template');
  * @readonly
  * @type {Map<string, string>}
  */
-const templates = {
+const TEMPLATES = {
   class: `
     import React from "react";
 
@@ -36,8 +36,10 @@ const templates = {
  * @return {string}
  */
 function reactify(svg, { type = 'functional' }) {
-  const compile = template(templates[type]);
-  const component = compile({ svg });
+  const compile = template(TEMPLATES[type]);
+  const component = compile({
+    svg,
+  });
 
   return component;
 }
