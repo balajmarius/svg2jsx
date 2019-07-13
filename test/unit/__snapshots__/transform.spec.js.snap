@@ -22,7 +22,7 @@ export default Icon;
 "
 `;
 
-exports[`transform tests convert animations 1`] = `
+exports[`transform tests convert "background: none" elements 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
