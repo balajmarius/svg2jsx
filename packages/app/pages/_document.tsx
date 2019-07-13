@@ -4,7 +4,9 @@ import { RenderPageResult, AppType } from 'next-server/dist/lib/utils';
 import { ServerStyleSheet } from 'styled-components';
 
 class Root extends Document<DocumentInitialProps> {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const initialRenderPage = ctx.renderPage;
 
@@ -13,12 +15,11 @@ class Root extends Document<DocumentInitialProps> {
       const initialStyles = initialProps.styles;
       const styleTags = sheet.getStyleElement();
 
-      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> => {
-        return initialRenderPage({
+      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
+        initialRenderPage({
           enhanceApp: (App: AppType) => (props): ReactElement =>
             sheet.collectStyles(<App {...props} />),
         });
-      };
 
       return {
         ...initialProps,
