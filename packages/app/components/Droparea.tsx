@@ -22,7 +22,7 @@ function Droparea({ children, onDrop }: DropareaType) {
   const inputProps = getInputProps();
 
   return (
-    <Dropable {...rootProps}>
+    <Dropable {...rootProps} onClick={undefined}>
       <input {...inputProps} accept="image/svg+xml" multiple={false} />
       {children(rootProps)}
     </Dropable>
