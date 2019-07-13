@@ -19,8 +19,8 @@ function Headings({ primary, secondary, inverse }: HeadingsType) {
       <GridCell>
         <Text
           align={align}
-          display="monospace"
           size="medium"
+          display="monospace"
           textColor="lightGrey"
         >
           {secondary}
