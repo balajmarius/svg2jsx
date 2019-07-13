@@ -2,15 +2,16 @@ import React, { Fragment, ReactElement } from 'react';
 import Head from 'next/head';
 import { createGlobalStyle } from 'styled-components';
 
-/**
- * Types
- */
-interface Props {
-  children: ReactElement;
+import color from '../styles/color';
+import fontSize from '../styles/fontSize';
+import fontFamily from '../styles/fontFamily';
+
+interface LayoutType {
+  children: ReactElement[];
 }
 
 const CSSReset = createGlobalStyle`
-  html {    
+  html {
     box-sizing: border-box;
   }
   html, body {
@@ -29,9 +30,15 @@ const CSSReset = createGlobalStyle`
     border: 0;
     outline: 0;
   }
+  body {
+    color: ${color.white};
+    background: ${color.black};
+    font-size: ${fontSize.base};
+    font-family: ${fontFamily.sans};
+  }
 `;
 
-function Layout({ children }: Props) {
+function Layout({ children }: LayoutType) {
   return (
     <Fragment>
       <Head>
@@ -40,7 +47,10 @@ function Layout({ children }: Props) {
         <meta name="description" content="Convert SVG to valid JSX" />
         <meta name="keywords" content="svg, jsx, svg2jsx" />
         <meta name="author" content="Bălaj Marius" />
-        <meta name="copyright" content="Copyright Bălaj Marius 2019. All Rights Reserved." />
+        <meta
+          name="copyright"
+          content="Copyright Bălaj Marius 2019. All Rights Reserved."
+        />
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <CSSReset />
         <title>Editor - Convert SVG to valid JSX</title>

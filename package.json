@@ -15,14 +15,19 @@
     "packages/transform"
   ],
   "scripts": {
-    "lint": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
+    "lint:js": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
+    "lint:ts": "./node_modules/.bin/tslint 'packages/**/*.ts?(x)'",
     "test": "./node_modules/.bin/jest test/unit/",
     "app:development": "NODE_ENV=development && node packages/app/server.js",
     "app:build": "./node_modules/.bin/next build packages/app",
     "app:start": "./node_modules/.bin/next start packages/app"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "@types/node": "12.6.2",
+    "@types/react": "16.8.23",
+    "@types/react-copy-to-clipboard": "4.2.6",
+    "@types/styled-components": "4.1.18",
+    "babel-eslint": "10.0.1",
     "babel-plugin-styled-components": "1.10.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
@@ -33,6 +38,9 @@
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-react": "7.12.4",
     "jest": "24.1.0",
-    "prettier": "1.16.4"
+    "prettier": "1.16.4",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.5.3"
   }
 }
