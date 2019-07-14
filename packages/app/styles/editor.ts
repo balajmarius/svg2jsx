@@ -2,16 +2,17 @@ import color from './color';
 import fontSize from './fontSize';
 import fontFamily from './fontFamily';
 
+declare const ace: AceType;
+
 interface AceType {
   define(name: string, dependencies: string[], create: Function): void;
 }
-
-declare const ace: AceType;
 
 function createStyle(require: Function, exports: any): void {
   const style = `
     .ace_editor {
       min-width: 100%;
+      min-height: 100%;
       line-height: 1.6;
       font-size: ${fontSize.normal};
       font-family: ${fontFamily.monospace};
@@ -36,7 +37,7 @@ function createStyle(require: Function, exports: any): void {
     .ace_xml.ace_keyword {
       color: ${color.white};
     }
-    .ace_active-line, .ace_marker-layer .ace_selection {
+    .ace_marker-layer .ace_selection {
       background: ${color.darkGrey};
     }
     .ace_type, .ace_keyword {
@@ -50,12 +51,14 @@ function createStyle(require: Function, exports: any): void {
     }
   `;
 
-  const className = 'ace_svg2jsx';
-
   exports.cssText = style;
-  exports.cssClass = className;
+  exports.cssClass = 'ace_svg2jsx';
 
-  require('../lib/dom').importCssString(style, className);
+  require('../lib/dom').importCssString(style, 'ace_svg2jsx');
 }
 
-ace.define('ace/theme/svg2jsx', ['require', 'exports', 'module', 'ace/lib/dom'], createStyle);
+ace.define(
+  'ace/theme/svg2jsx',
+  ['require', 'exports', 'module', 'ace/lib/dom'],
+  createStyle,
+);
