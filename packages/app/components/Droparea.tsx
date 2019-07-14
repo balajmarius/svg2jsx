@@ -11,6 +11,7 @@ interface DropareaType {
 
 const Dropable = styled.div`
   outline: 0;
+  height: 100%;
   position: relative;
   border-right: 1px solid ${color.codGrey};
 `;

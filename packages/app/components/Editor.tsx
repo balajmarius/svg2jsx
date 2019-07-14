@@ -3,8 +3,7 @@ import AceEditor from 'react-ace';
 
 import 'brace/mode/jsx';
 import 'brace/mode/xml';
-
-import '../styles/editorStyle';
+import '../styles/editor';
 
 interface EditorType {
   mode: string;

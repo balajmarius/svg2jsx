@@ -36,6 +36,10 @@ const CSSReset = createGlobalStyle`
     font-size: ${fontSize.base};
     font-family: ${fontFamily.sans};
   }
+  #__next {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+  }
 `;
 
 function Layout({ children }: LayoutType) {

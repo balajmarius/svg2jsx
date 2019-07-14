@@ -11,6 +11,7 @@ type JustifyType =
 
 export interface GridType {
   gap?: number;
+  fullHeight?: boolean;
   align?: 'left' | 'right' | 'center';
   direction?: 'rtl' | 'ltr';
   justify?: JustifyType;
@@ -22,8 +23,9 @@ const Grid = styled.div<GridType>`
   align-items: ${({ align }) => align};
   direction: ${({ direction }) => direction};
   justify-content: ${({ justify }) => justify};
-  grid-template-columns: ${({ columns }) => columns};
   grid-column-gap: ${({ gap }) => gap}px;
+  grid-template-columns: ${({ columns }) => columns};
+  height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};
 `;
 
 Grid.defaultProps = {

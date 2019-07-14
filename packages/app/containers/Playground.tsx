@@ -6,7 +6,7 @@ import { DropEvent } from 'react-dropzone';
 import color from '../styles/color';
 
 import Text from '../components/Text';
-import Grid from '../components/Grid';
+import Grid, { GridType } from '../components/Grid';
 import GridCell from '../components/GridCell';
 import Droparea from '../components/Droparea';
 import Editor from '../components/Editor';
@@ -18,6 +18,10 @@ interface PlaygroundType {
   onChange(value: string): void;
   onDrop?(acceptedFiles: File[], rejectedFiles: File[], event: DropEvent): void;
 }
+
+const Root = styled(Grid)<GridType>`
+  flex-grow: 1;
+`;
 
 const Button = styled.button`
   top: 3px;
@@ -37,8 +41,8 @@ const Button = styled.button`
 
 function Playground({ svg, jsx, onChange, onDrop }: PlaygroundType) {
   return (
-    <Grid columns="1fr 1fr" gap={2}>
-      <GridCell>
+    <Grid columns="1fr 1fr" gap={2} fullHeight>
+      <GridCell fullHeight>
         <Droparea onDrop={onDrop}>
           {({ onClick }) => (
             <Fragment>
@@ -48,7 +52,7 @@ function Playground({ svg, jsx, onChange, onDrop }: PlaygroundType) {
           )}
         </Droparea>
       </GridCell>
-      <GridCell>
+      <GridCell fullHeight>
         {jsx ? (
           <CopyToClipboard text={jsx}>
             <Button>
