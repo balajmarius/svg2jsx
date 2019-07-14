@@ -1,12 +1,18 @@
+import axios from 'axios';
+
 import useSetState from './useSetState';
 
-import post, { ConfigType } from '../helpers/post';
 import { VariantType } from '../helpers/getVariantColor';
 
 interface TransformerType {
   jsx?: string;
   variant: VariantType;
   loading?: boolean;
+}
+
+export interface ConfigType {
+  jsxSingleQuote: boolean;
+  type: 'functional' | 'class';
 }
 
 export default function useTransformer() {
@@ -16,17 +22,17 @@ export default function useTransformer() {
     variant: VariantType.CLEAR,
   });
 
-  async function transform(svg: string, config: ConfigType) {
+  async function transform(svg: string, config: ConfigType): Promise<void> {
     try {
       setTransformer({
         loading: true,
       });
-      const { jsx } = await post('/', {
+      const { data } = await axios.post('/', {
         svg,
         config,
       });
       setTransformer({
-        jsx,
+        jsx: data.jsx,
         variant: VariantType.SUCCESS,
       });
     } catch {
@@ -36,7 +42,6 @@ export default function useTransformer() {
       });
     } finally {
       setTransformer({
-        copied: false,
         loading: false,
       });
     }
