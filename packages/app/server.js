@@ -22,7 +22,14 @@ function createServer() {
 
   server.get('*', (req, res) => handle(req, res));
 
-  server.post('/', async (req, res) => {});
+  server.post('/', async (req, res) => {
+    try {
+      const jsx = await transform(req.body.svg, req.body.config);
+      res.send({ jsx });
+    } catch (error) {
+      res.status(500).send({ error });
+    }
+  });
 
   server.listen(port);
 }
