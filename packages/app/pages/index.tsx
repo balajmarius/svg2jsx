@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
-import { VariantType } from '../helpers/getVariantColor';
-
 import useConfig from '../hooks/useConfig';
 import useEditor from '../hooks/useEditor';
 import useTransformer from '../hooks/useTransformer';
@@ -32,12 +30,12 @@ function HomePage() {
 
   return (
     <Layout>
-      <NavBar loading variant={VariantType.CLEAR} />
+      <NavBar loading variant={transformer.variant} />
 
       <SettingsBar
         type={config.type}
         jsxSingleQuote={config.jsxSingleQuote}
-        variant={VariantType.CLEAR}
+        variant={transformer.variant}
         onChangeType={setType}
         onChangeQuote={setQuote}
       />
