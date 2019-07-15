@@ -39,6 +39,7 @@ const CSSReset = createGlobalStyle`
   #__next {
     display: grid;
     grid-template-rows: auto auto 1fr;
+    height: 100%;
   }
 `;
 
