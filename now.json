@@ -1,6 +1,7 @@
 {
   "version": 2,
   "name": "svg2jsx",
+  "forwardNpm": true,
   "alias": ["svg2jsx.com"],
   "builds": [{ "src": "packages/app/package.json", "use": "@now/next" }],
   "routes": [{ "src": "/(.*)", "dest": "/packages/app/$1" }]
