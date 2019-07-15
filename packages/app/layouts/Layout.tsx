@@ -57,9 +57,9 @@ function Layout({ children }: LayoutType) {
           content="Copyright Bălaj Marius 2019. All Rights Reserved."
         />
         <link rel="shortcut icon" href="/static/favicon.ico" />
-        <CSSReset />
         <title>Editor - Convert SVG to valid JSX</title>
       </Head>
+      <CSSReset />
       {children}
     </Fragment>
   );
