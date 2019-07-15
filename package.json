@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "svg2jsx",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Transform SVG to valid JSX",
   "main": "index.js",
   "repository": "https://github.com/balajmarius/svg2jsx-gui.git",
