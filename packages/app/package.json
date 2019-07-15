@@ -6,7 +6,7 @@
   "main": "server.js",
   "license": "MIT",
   "engines": {
-    "node": ">=11.x"
+    "node": ">=10.x"
   },
   "dependencies": {
     "@svg2jsx/transform": "1.0.0",

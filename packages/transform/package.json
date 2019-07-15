@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "engines": {
-    "node": ">=11.x"
+    "node": ">=10.x"
   },
   "dependencies": {
     "css-to-object": "1.1.0",
