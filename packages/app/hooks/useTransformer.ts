@@ -27,7 +27,7 @@ export default function useTransformer() {
       setTransformer({
         loading: true,
       });
-      const { data } = await axios.post('/', {
+      const { data } = await axios.post('/api/transform', {
         svg,
         config,
       });
