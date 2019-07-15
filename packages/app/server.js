@@ -9,7 +9,7 @@ const dev = process.env.NODE_ENV !== 'production';
 
 const app = next({
   dev,
-  dir: './packages/app',
+  dir: 'packages/app',
 });
 
 const handle = app.getRequestHandler();
