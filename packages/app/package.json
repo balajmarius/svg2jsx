@@ -5,6 +5,9 @@
   "description": "The svg2jsx UI",
   "main": "server.js",
   "license": "MIT",
+  "engines": {
+    "node": ">=11.x"
+  },
   "dependencies": {
     "@svg2jsx/transform": "1.0.0",
     "axios": "0.19.0",
