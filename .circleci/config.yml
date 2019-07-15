@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:11.6.0
-    working_directory: ~/svg2jsx
+    working_directory: ~/svg2jsx-gui
 
     steps:
       - checkout
