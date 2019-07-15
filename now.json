@@ -1,5 +1,6 @@
 {
   "version": 2,
   "name": "svg2jsx",
-  "builds": [{ "src": "packages/app/package.json", "use": "@now/next" }]
+  "builds": [{ "src": "packages/app/package.json", "use": "@now/next" }],
+  "routes": [{ "src": "/(.*)", "dest": "/packages/app/$1" }]
 }

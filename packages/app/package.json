@@ -3,7 +3,7 @@
   "name": "@svg2jsx/app",
   "version": "1.0.0",
   "description": "The svg2jsx UI",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "dependencies": {
     "@svg2jsx/transform": "1.0.0",
