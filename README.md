@@ -7,17 +7,17 @@
 ## Develop
 
 ```bash
-yarn development
+npm run development
 ```
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
 ## Start
 
 ```bash
-yarn start
+npm run start
 ```

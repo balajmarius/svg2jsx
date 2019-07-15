@@ -1,0 +1,4 @@
+{
+  "packages": ["packages/app", "packages/transform"],
+  "version": "1.0.0"
+}
