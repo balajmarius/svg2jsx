@@ -57,7 +57,7 @@ function Playground({ svg, jsx, onChange, onDrop }: PlaygroundType) {
           <CopyToClipboard text={jsx}>
             <Button>
               <Text size="normal" display="monospace">
-                Copy to Clipboard
+                Copy
               </Text>
             </Button>
           </CopyToClipboard>
