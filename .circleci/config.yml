@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.6.0
+    working_directory: ~/svg2jsx-gui
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+            - dependencies-
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Lint JS
+          command: yarn lint:js
+      - run:
+          name: Lint TS
+          command: yarn lint:ts
+      - run:
+          name: Unit Test
+          command: yarn test

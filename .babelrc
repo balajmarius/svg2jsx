@@ -1,7 +1,4 @@
 {
-  "presets": [
-    [
-      "es2015", { "modules": false }
-    ]
-  ]
+  "presets": ["next/babel"],
+  "plugins": ["babel-plugin-styled-components"]
 }

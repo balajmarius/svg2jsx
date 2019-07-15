@@ -1,24 +1,23 @@
-# svg2jsx 🍭
-> Converts SVG to valid JSX
+# svg2jsx 🍃
 
-### [Live 👈](http://svg2jsx.herokuapp.com/)
+> Transform SVG into valid JSX
 
-<img src="https://media.giphy.com/media/3ohzdFDUko7qK0xF4I/giphy.gif"/>
+<img src="https://olddesignshop.com/wp-content/uploads/2014/03/OldDesignShop_CleaningLadyDusting.jpg" width="300px" height="auto" />
 
-### Install ⚙️
+## Develop
 
-```
-yarn
-```
-
-### Start 🏃
-
-```
-yarn start:development
+```bash
+yarn development:app
 ```
 
-### Build 😷
+## Build
 
+```bash
+yarn build:app
 ```
-yarn build
+
+## Start
+
+```bash
+yarn start:app
 ```

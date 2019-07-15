@@ -1,0 +1,4 @@
+.circleci/
+node_modules/
+test/
+packages/app/.next/
