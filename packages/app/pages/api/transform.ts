@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
 
 import httpStatusCode from '../../utils/httpStatusCode';
 
-export default async function(
+export default async function (
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {
