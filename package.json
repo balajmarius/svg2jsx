@@ -15,9 +15,9 @@
     "packages/transform"
   ],
   "scripts": {
+    "test": "jest test/unit/",
     "lint:js": "eslint 'packages/**/*.js?(x)'",
     "lint:ts": "tslint 'packages/**/*.ts?(x)'",
-    "test": "jest test/unit/",
     "development": "NODE_ENV=development && next dev ./packages/app",
     "build": "next build packages/app",
     "start": "next start packages/app"
