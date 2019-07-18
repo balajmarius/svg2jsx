@@ -10,7 +10,7 @@ export default async function (
   try {
     const jsx = await transform(req.body.svg, req.body.config);
     res.status(httpStatusCode.OK).send({ jsx });
-  } catch (error) {
+  } catch {
     res.status(httpStatusCode.BAD_REQUEST);
   }
 }
