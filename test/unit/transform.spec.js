@@ -2,7 +2,9 @@ const transform = require('../../packages/transform');
 
 describe('transform tests', () => {
   test('clean attributes', async () => {
-    const transformed = await transform('<svg id=" test " strok="blue" fill="   red" />');
+    const transformed = await transform(
+      '<svg id=" test " strok="blue" fill="   red" />',
+    );
 
     expect(transformed).toEqual(expect.not.stringMatching(/strok/));
     expect(transformed).toMatchSnapshot();
@@ -16,7 +18,9 @@ describe('transform tests', () => {
   });
 
   test('convert attributes', async () => {
-    const transformed = await transform('<svg class="test" data-name="svg" fill-rule="evenodd"/>');
+    const transformed = await transform(
+      '<svg class="test" data-name="svg" fill-rule="evenodd"/>',
+    );
 
     expect(transformed).toEqual(expect.stringMatching(/className=/));
     expect(transformed).toEqual(expect.not.stringMatching(/class=/));
@@ -28,7 +32,9 @@ describe('transform tests', () => {
   });
 
   test('convert inline styles to style objects', async () => {
-    const transformed = await transform('<svg style="margin-left:20px;padding-top:20px;" />');
+    const transformed = await transform(
+      '<svg style="margin-left:20px;padding-top:20px;" />',
+    );
 
     expect(transformed).toEqual(expect.stringMatching(/marginLeft: 20/));
     expect(transformed).toEqual(expect.stringMatching(/paddingTop: 20/));
@@ -114,6 +120,6 @@ describe('transform tests', () => {
     );
 
     expect(transformed).toMatchSnapshot();
-    expect(transformed.match(/background:\s*"0 0"\s/g)).toHaveLength(1);
+    expect(transformed.match(/background:\s*"none"\s/g)).toHaveLength(1);
   });
 });
