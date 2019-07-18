@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import color from '../styles/color';
-import getStripes from '../helpers/getStripes';
+import getStripes from '../utils/getStripes';
 
 import Text, { TextType } from './Text';
 import Grid from './Grid';
