@@ -1,7 +1,7 @@
 import transform from '@svg2jsx/transform';
 import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
 
-export default async function route(
+export default async function (
   req: NextApiRequest,
   res: NextApiResponse,
 ): Promise<void> {

@@ -8,11 +8,18 @@ import '../styles/editor';
 interface EditorType {
   mode: string;
   value: string;
+  debounceChangePeriod?: number;
   isReadOnly?: boolean;
   onChange(value: string): void;
 }
 
-function Editor({ value, mode, isReadOnly, onChange }: EditorType) {
+function Editor({
+  value,
+  mode,
+  isReadOnly,
+  debounceChangePeriod,
+  onChange,
+}: EditorType) {
   return (
     <AceEditor
       mode={mode}
@@ -20,6 +27,7 @@ function Editor({ value, mode, isReadOnly, onChange }: EditorType) {
       theme="svg2jsx"
       readOnly={isReadOnly}
       showPrintMargin={false}
+      debounceChangePeriod={debounceChangePeriod}
       editorProps={{ $blockScrolling: Infinity }}
       setOptions={{ showFoldWidgets: false }}
       onChange={onChange}
@@ -29,6 +37,7 @@ function Editor({ value, mode, isReadOnly, onChange }: EditorType) {
 
 Editor.defaultProps = {
   isReadOnly: false,
+  debounceChangePeriod: 400,
   onChange: undefined,
 };
 
