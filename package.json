@@ -15,12 +15,12 @@
     "packages/transform"
   ],
   "scripts": {
-    "lint:js": "./node_modules/.bin/eslint 'packages/**/*.js?(x)'",
-    "lint:ts": "./node_modules/.bin/tslint 'packages/**/*.ts?(x)'",
-    "test": "./node_modules/.bin/jest test/unit/",
-    "development": "NODE_ENV=development && node packages/app/server.js",
-    "build": "./node_modules/.bin/next build packages/app",
-    "start": "./node_modules/.bin/next start packages/app"
+    "lint:js": "eslint 'packages/**/*.js?(x)'",
+    "lint:ts": "tslint 'packages/**/*.ts?(x)'",
+    "test": "jest test/unit/",
+    "development": "NODE_ENV=development && next dev ./packages/app",
+    "build": "next build packages/app",
+    "start": "next start packages/app"
   },
   "devDependencies": {
     "@types/node": "12.6.2",
