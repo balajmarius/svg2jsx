@@ -2,8 +2,8 @@ import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import color from '../styles/color';
-import getStripes from '../helpers/getStripes';
-import getVariantColor, { VariantType } from '../helpers/getVariantColor';
+import getStripes from '../utils/getStripes';
+import getVariantColor, { VariantType } from '../utils/getVariantColor';
 
 import Grid from '../components/Grid';
 import GridCell from '../components/GridCell';
