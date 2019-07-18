@@ -20,7 +20,8 @@
     "lint:ts": "tslint 'packages/**/*.ts?(x)'",
     "development": "NODE_ENV=development && next dev ./packages/app",
     "build": "next build packages/app",
-    "start": "next start packages/app"
+    "start": "next start packages/app",
+    "deploy": "now --target production"
   },
   "devDependencies": {
     "@types/node": "12.6.2",

@@ -37,7 +37,7 @@ function Editor({
 
 Editor.defaultProps = {
   isReadOnly: false,
-  debounceChangePeriod: 400,
+  debounceChangePeriod: 300,
   onChange: undefined,
 };
 
