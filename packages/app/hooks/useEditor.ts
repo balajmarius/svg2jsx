@@ -1,5 +1,5 @@
 import useSetState from './useSetState';
-import getFileText from '../helpers/getFileText';
+import getFileText from '../utils/getFileText';
 
 interface EditorType {
   svg?: string;

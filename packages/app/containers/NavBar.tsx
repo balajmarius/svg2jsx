@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import color from '../styles/color';
-import getVariantColor, { VariantType } from '../helpers/getVariantColor';
+import getVariantColor, { VariantType } from '../utils/getVariantColor';
 
 import Text from '../components/Text';
 import Link from '../components/Link';

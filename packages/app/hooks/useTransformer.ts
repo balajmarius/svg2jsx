@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import useSetState from './useSetState';
 
-import { VariantType } from '../helpers/getVariantColor';
+import { VariantType } from '../utils/getVariantColor';
 
 interface TransformerType {
   jsx?: string;
