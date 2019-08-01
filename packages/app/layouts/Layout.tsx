@@ -6,7 +6,7 @@ import color from '../styles/color';
 import fontSize from '../styles/fontSize';
 import fontFamily from '../styles/fontFamily';
 
-interface LayoutType {
+interface ILayout {
   children: ReactElement[];
 }
 
@@ -43,7 +43,7 @@ const CSSReset = createGlobalStyle`
   }
 `;
 
-function Layout({ children }: LayoutType) {
+function Layout({ children }: ILayout) {
   return (
     <Fragment>
       <Head>

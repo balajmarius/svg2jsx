@@ -2,13 +2,13 @@ import { ChangeEvent } from 'react';
 
 import useSetState from './useSetState';
 
-interface ConfigType {
+interface IConfig {
   type: 'functional' | 'class';
   jsxSingleQuote: boolean;
 }
 
 export default function useConfig() {
-  const [config, setConfig] = useSetState(<ConfigType>{
+  const [config, setConfig] = useSetState(<IConfig>{
     type: 'functional',
     jsxSingleQuote: false,
   });

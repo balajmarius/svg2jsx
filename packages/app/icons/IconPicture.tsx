@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon, { IconType } from '../components/Icon';
+import Icon, { IIcon } from '../components/Icon';
 
-function IconPicture(props: IconType) {
+function IconPicture(props: IIcon) {
   return (
     <Icon viewBox="0 0 51.79 41.075" width={51} height={41} {...props}>
       <path d="M50.9 0H.9a.893.893 0 0 0-.9.893v39.289a.893.893 0 0 0 .893.893h50a.893.893 0 0 0 .893-.893V.893A.893.893 0 0 0 50.9 0zM50 39.289H1.786V1.786H50z" />

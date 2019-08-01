@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon, { IconType } from '../components/Icon';
+import Icon, { IIcon } from '../components/Icon';
 
-function IconGear(props: IconType) {
+function IconGear(props: IIcon) {
   return (
     <Icon viewBox="0 0 21 21" width={21} height={21} {...props}>
       <circle cx="1.81" cy="1.81" r="1.81" transform="translate(8.69 8.69)" />

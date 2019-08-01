@@ -9,7 +9,7 @@ type JustifyType =
   | 'initial'
   | 'inherit';
 
-export interface GridType {
+export interface IGrid {
   gap?: number;
   fullHeight?: boolean;
   align?: 'left' | 'right' | 'center';
@@ -18,7 +18,7 @@ export interface GridType {
   columns?: string;
 }
 
-const Grid = styled.div<GridType>`
+const Grid = styled.div<IGrid>`
   display: grid;
   align-items: ${({ align }) => align};
   direction: ${({ direction }) => direction};

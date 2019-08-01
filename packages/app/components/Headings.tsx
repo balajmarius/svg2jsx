@@ -4,13 +4,13 @@ import Text from './Text';
 import Grid from './Grid';
 import GridCell from './GridCell';
 
-interface HeadingsType {
+interface IHeadings {
   primary: string;
   secondary: string;
   inverse?: boolean;
 }
 
-function Headings({ primary, secondary, inverse }: HeadingsType) {
+function Headings({ primary, secondary, inverse }: IHeadings) {
   const align = inverse ? 'left' : 'right';
   const direction = inverse ? 'rtl' : 'ltr';
 

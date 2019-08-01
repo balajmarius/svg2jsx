@@ -13,16 +13,16 @@ import IconLogo from '../icons/IconLogo';
 import IconStar from '../icons/IconStar';
 import IconGithub from '../icons/IconGithub';
 
-interface NavBarType {
+interface INavBar {
   loading: boolean;
   variant: VariantType;
 }
 
-interface HeaderType {
+interface IHeader {
   variant: VariantType;
 }
 
-const Header = styled.header<HeaderType>`
+const Header = styled.header<IHeader>`
   padding: 15px 25px;
   transition: 300ms linear;
   border-bottom: 2px solid ${color.black};
@@ -38,7 +38,7 @@ const TextStar = styled(Text)`
   margin: 0 5px 0 7px;
 `;
 
-function NavBar({ variant }: NavBarType) {
+function NavBar({ variant }: INavBar) {
   return (
     <Header variant={variant}>
       <Grid columns="auto auto">
