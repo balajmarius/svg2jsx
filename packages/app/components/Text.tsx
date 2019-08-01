@@ -4,7 +4,7 @@ import color, { ColorType } from '../styles/color';
 import fontSize, { FontSizeType } from '../styles/fontSize';
 import fontFamily, { FontFamilyType } from '../styles/fontFamily';
 
-export interface TextType {
+export interface IText {
   size?: FontSizeType;
   display?: FontFamilyType;
   textColor?: ColorType;
@@ -12,7 +12,7 @@ export interface TextType {
   align?: 'left' | 'right' | 'center';
 }
 
-const Text = styled.span<TextType>`
+const Text = styled.span<IText>`
   display: block;
   text-align: ${({ align }) => align};
   color: ${({ textColor }) => color[textColor]};

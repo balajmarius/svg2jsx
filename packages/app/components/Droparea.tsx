@@ -4,7 +4,7 @@ import { useDropzone, DropEvent } from 'react-dropzone';
 
 import color from '../styles/color';
 
-interface DropareaType {
+interface IDroparea {
   children: Function;
   onDrop?(acceptedFiles: File[], rejectedFiles: File[], event: DropEvent): void;
 }
@@ -16,7 +16,7 @@ const Dropable = styled.div`
   border-right: 1px solid ${color.codGrey};
 `;
 
-function Droparea({ children, onDrop }: DropareaType) {
+function Droparea({ children, onDrop }: IDroparea) {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const rootProps = getRootProps();

@@ -1,12 +1,12 @@
 import useSetState from './useSetState';
 import getFileText from '../utils/getFileText';
 
-interface EditorType {
+interface IEditor {
   svg?: string;
 }
 
 export default function useEditor() {
-  const [editor, setEditor] = useSetState(<EditorType>{
+  const [editor, setEditor] = useSetState(<IEditor>{
     svg: undefined,
   });
 

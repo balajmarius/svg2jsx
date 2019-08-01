@@ -5,17 +5,17 @@ import PropTypes from 'prop-types';
 import color from '../styles/color';
 import getStripes from '../utils/getStripes';
 
-import Text, { TextType } from './Text';
+import Text, { IText } from './Text';
 import Grid from './Grid';
 import GridCell from './GridCell';
 
 import IconPicture from '../icons/IconPicture';
 
-interface TutorialType {
+interface ITutorial {
   onClick(event: MouseEvent<HTMLElement>): void;
 }
 
-interface ButtonType extends TutorialType {}
+interface ButtonType extends ITutorial {}
 
 const Modal = styled.div`
   top: 20%;
@@ -45,7 +45,7 @@ const Separator = styled.div`
   background: ${getStripes('bottom', 'darkGrey')};
 `;
 
-const Ring = styled(Text)<TextType>`
+const Ring = styled(Text)<IText>`
   width: 30px;
   height: 30px;
   display: flex;
@@ -57,7 +57,7 @@ const Ring = styled(Text)<TextType>`
   border: 2px solid ${color.black};
 `;
 
-function Tutorial({ onClick }: TutorialType) {
+function Tutorial({ onClick }: ITutorial) {
   return (
     <Modal>
       <Grid columns="auto 1fr" gap={20}>

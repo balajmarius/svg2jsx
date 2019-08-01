@@ -5,17 +5,17 @@ import color from '../styles/color';
 
 import Text from './Text';
 
-interface SwitchType {
+interface ISwitch {
   checked?: boolean;
   label: string;
   onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-interface InputType {
+interface IInput {
   onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-interface KnobType {
+interface IKnob {
   checked: boolean;
 }
 
@@ -33,13 +33,13 @@ const Bar = styled.div`
   background: ${color.black};
 `;
 
-const Input = styled.input<InputType>`
+const Input = styled.input<IInput>`
   left: -999em;
   visibility: hidden;
   position: absolute;
 `;
 
-const Knob = styled.div<KnobType>`
+const Knob = styled.div<IKnob>`
   margin: 2px;
   width: 15px;
   height: 15px;
@@ -49,7 +49,7 @@ const Knob = styled.div<KnobType>`
   background: ${({ checked }) => (checked ? color.green : color.grey)};
 `;
 
-function Switch({ label, checked, onChange }: SwitchType) {
+function Switch({ label, checked, onChange }: ISwitch) {
   return (
     <Label>
       <Text textColor="lightGrey" fontWeight="bold" size="tiny">

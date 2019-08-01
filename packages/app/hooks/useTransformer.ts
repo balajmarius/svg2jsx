@@ -4,25 +4,25 @@ import useSetState from './useSetState';
 
 import { VariantType } from '../utils/getVariantColor';
 
-interface TransformerType {
+interface ITransformer {
   jsx?: string;
   variant: VariantType;
   loading?: boolean;
 }
 
-export interface ConfigType {
+export interface IConfig {
   jsxSingleQuote: boolean;
   type: 'functional' | 'class';
 }
 
 export default function useTransformer() {
-  const [transformer, setTransformer] = useSetState(<TransformerType>{
+  const [transformer, setTransformer] = useSetState(<ITransformer>{
     jsx: undefined,
     loading: false,
     variant: VariantType.CLEAR,
   });
 
-  async function transform(svg: string, config: ConfigType): Promise<void> {
+  async function transform(svg: string, config: IConfig): Promise<void> {
     try {
       setTransformer({
         loading: true,

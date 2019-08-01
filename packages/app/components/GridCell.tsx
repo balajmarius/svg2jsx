@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export interface GridCellType {
+export interface IGridCell {
   column?: string;
   fullHeight?: boolean;
 }
 
-const GridCell = styled.div<GridCellType>`
+const GridCell = styled.div<IGridCell>`
   position: relative;
   grid-column: ${({ column }) => column};
   height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};

@@ -14,7 +14,7 @@ import IconGear from '../icons/IconGear';
 import IconCross from '../icons/IconCross';
 import IconCheckMark from '../icons/IconCheckMark';
 
-interface SettingsBarType {
+interface ISettingsBar {
   variant: VariantType;
   jsxSingleQuote: boolean;
   type: 'functional' | 'class';
@@ -22,7 +22,7 @@ interface SettingsBarType {
   onChangeQuote(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-interface StatusType {
+interface IStatus {
   variant: VariantType;
 }
 
@@ -32,7 +32,7 @@ const Section = styled.section`
   background: ${getStripes('left', 'grey')};
 `;
 
-const Status = styled.div<StatusType>`
+const Status = styled.div<IStatus>`
   width: 40px;
   height: 40px;
   display: flex;
@@ -50,7 +50,7 @@ function SettingsBar({
   jsxSingleQuote,
   onChangeType,
   onChangeQuote,
-}: SettingsBarType) {
+}: ISettingsBar) {
   const isFunctional = type === 'functional';
 
   return (

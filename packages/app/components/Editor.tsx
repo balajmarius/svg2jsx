@@ -5,7 +5,7 @@ import 'brace/mode/jsx';
 import 'brace/mode/xml';
 import '../styles/editor';
 
-interface EditorType {
+interface IEditor {
   mode: string;
   value: string;
   debounceChangePeriod?: number;
@@ -19,7 +19,7 @@ function Editor({
   isReadOnly,
   debounceChangePeriod,
   onChange,
-}: EditorType) {
+}: IEditor) {
   return (
     <AceEditor
       mode={mode}
