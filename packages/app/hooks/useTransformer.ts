@@ -16,7 +16,7 @@ export interface IConfig {
 }
 
 export default function useTransformer() {
-  const [transformer, setTransformer] = useSetState(<ITransformer>{
+  const [transformer, setTransformer] = useSetState<ITransformer>({
     jsx: undefined,
     loading: false,
     variant: VariantType.CLEAR,

@@ -1,10 +1,8 @@
 import { useReducer } from 'react';
 
-export default function useSetState(
-  initialState: Object = {},
-): [any, Function] {
+export default function useSetState<T>(initialState: T): [T, Function] {
   return useReducer(
-    (prevState: Object, state: Object) => ({
+    (prevState: T, state: T) => ({
       ...prevState,
       ...state,
     }),

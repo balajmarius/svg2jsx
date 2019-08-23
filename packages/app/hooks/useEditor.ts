@@ -6,7 +6,7 @@ interface IEditor {
 }
 
 export default function useEditor() {
-  const [editor, setEditor] = useSetState(<IEditor>{
+  const [editor, setEditor] = useSetState<IEditor>({
     svg: undefined,
   });
 

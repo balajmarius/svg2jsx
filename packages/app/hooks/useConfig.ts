@@ -8,7 +8,7 @@ interface IConfig {
 }
 
 export default function useConfig() {
-  const [config, setConfig] = useSetState(<IConfig>{
+  const [config, setConfig] = useSetState<IConfig>({
     type: 'functional',
     jsxSingleQuote: false,
   });
