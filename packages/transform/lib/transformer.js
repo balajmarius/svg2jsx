@@ -1,3 +1,4 @@
+const isString = require('lodash.isstring');
 const camelCase = require('lodash.camelcase');
 const nativeCSS = require('css-to-object');
 
@@ -31,6 +32,10 @@ function transformStyle(style) {
  * @returns {string}
  */
 function transform(node) {
+  if (isString(node)) {
+    return node;
+  }
+
   const attributeNames = Object.keys(node.attributes);
 
   const attributes = attributeNames.reduce((accumulator, attributeName) => {
