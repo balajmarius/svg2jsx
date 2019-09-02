@@ -103,6 +103,21 @@ export default Icon;
 "
 `;
 
+exports[`transform tests convert text elements 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg viewBox=\\"0 0 100 100\\">
+      <text>svg2jsx</text>
+    </svg>
+  );
+}
+
+export default Icon;
+"
+`;
+
 exports[`transform tests create class component 1`] = `
 "import React from \\"react\\";
 

@@ -122,4 +122,15 @@ describe('transform tests', () => {
     expect(transformed).toMatchSnapshot();
     expect(transformed.match(/background:\s*"none"\s/g)).toHaveLength(1);
   });
+
+  test('convert text elements', async () => {
+    const transformed = await transform(
+      `<svg width="200px" height="200px" viewBox="0 0 100 100">
+        <text>svg2jsx</text>
+      </svg>`,
+    );
+
+    expect(transformed).toMatchSnapshot();
+    expect(transformed.match(/<text>svg2jsx<\/text>/g)).toHaveLength(1);
+  });
 });
