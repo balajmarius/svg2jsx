@@ -49,6 +49,10 @@ function stringifyAttributes(attributes = {}) {
  * @returns {string}
  */
 function stringify(node) {
+  if (isString(node)) {
+    return node;
+  }
+
   const attributes = stringifyAttributes(node.attributes);
   const buffer = `<${node.name}${attributes}>`;
 
