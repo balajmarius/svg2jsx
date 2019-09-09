@@ -2,16 +2,15 @@
 
 > Transform SVG into valid JSX
 
-##### transform(`svg`, `config`)
+#### transform(`svg`, `config`)
 
-##### Parameters
+#### Parameters
 
-- _svg_ `String`
-  The SVG string to be transformed
-- _config_ `Map`
-  - _type_ `functional | class` The type of the resulting component
-  - _jsxSingleQuote_ `boolean` Either double or single quotes in JSX attributes
+- **svg** `String` The SVG string to be transformed
+- **_config_** `Map`
+  - **type** `functional | class` The type of the resulting component
+  - **jsxSingleQuote** `Boolean` Either double or single quotes in JSX attributes
 
-##### Returns
+#### Returns
 
 `Promise<String>` JSX string
