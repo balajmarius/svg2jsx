@@ -119,8 +119,8 @@ describe('transform tests', () => {
       </svg>`,
     );
 
-    expect(transformed).toMatchSnapshot();
     expect(transformed.match(/background:\s*"none"\s/g)).toHaveLength(1);
+    expect(transformed).toMatchSnapshot();
   });
 
   test('convert text elements', async () => {
@@ -130,8 +130,8 @@ describe('transform tests', () => {
       </svg>`,
     );
 
-    expect(transformed).toMatchSnapshot();
     expect(transformed.match(/<text>svg2jsx<\/text>/g)).toHaveLength(1);
+    expect(transformed).toMatchSnapshot();
   });
 
   test('keep dimensions attributes', async () => {
@@ -141,8 +141,8 @@ describe('transform tests', () => {
       </svg>`,
     );
 
-    expect(transformed).toMatchSnapshot();
     expect(transformed.match(/width="125"/g)).toHaveLength(1);
     expect(transformed.match(/height="125"/g)).toHaveLength(1);
+    expect(transformed).toMatchSnapshot();
   });
 });
