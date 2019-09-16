@@ -38,7 +38,7 @@ const cleaner = new Svgo({
     { mergePaths: true },
     { convertShapeToPath: true },
     { sortAttrs: true },
-    { removeDimensions: true },
+    { removeDimensions: false },
   ],
 });
 
