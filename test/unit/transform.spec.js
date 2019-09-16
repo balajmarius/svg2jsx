@@ -133,4 +133,16 @@ describe('transform tests', () => {
     expect(transformed).toMatchSnapshot();
     expect(transformed.match(/<text>svg2jsx<\/text>/g)).toHaveLength(1);
   });
+
+  test('keep dimensions attributes', async () => {
+    const transformed = await transform(
+      `<svg width="125px" height="125px" viewBox="0 0 125 125">
+        <path d="M49 3L49 27L61 15L49 3" fill="#ff0000"></path>
+      </svg>`,
+    );
+
+    expect(transformed).toMatchSnapshot();
+    expect(transformed.match(/width="125"/g)).toHaveLength(1);
+    expect(transformed.match(/height="125"/g)).toHaveLength(1);
+  });
 });

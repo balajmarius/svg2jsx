@@ -29,6 +29,8 @@ function Icon() {
   return (
     <svg
       xmlns=\\"http://www.w3.org/2000/svg\\"
+      width=\\"200\\"
+      height=\\"200\\"
       className=\\"lds-reload\\"
       preserveAspectRatio=\\"xMidYMid\\"
       viewBox=\\"0 0 100 100\\"
@@ -108,7 +110,7 @@ exports[`transform tests convert text elements 1`] = `
 
 function Icon() {
   return (
-    <svg viewBox=\\"0 0 100 100\\">
+    <svg width=\\"200\\" height=\\"200\\" viewBox=\\"0 0 100 100\\">
       <text>svg2jsx</text>
     </svg>
   );
@@ -149,6 +151,21 @@ function Icon() {
   return (
     <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
       <path d=\\"M43 24c1.1-1.5 2.3-3\\" clip-path=\\"url(#SVGID_2_134rwd)\\" />
+    </svg>
+  );
+}
+
+export default Icon;
+"
+`;
+
+exports[`transform tests keep dimensions attributes 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg width=\\"125\\" height=\\"125\\" viewBox=\\"0 0 125 125\\">
+      <path fill=\\"red\\" d=\\"M49 3v24l12-12L49 3\\" />
     </svg>
   );
 }
