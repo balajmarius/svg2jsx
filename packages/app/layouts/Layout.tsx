@@ -56,7 +56,7 @@ function Layout({ children }: ILayout) {
           name="copyright"
           content="Copyright Bălaj Marius 2019. All Rights Reserved."
         />
-        <link rel="shortcut icon" href="static/favicon.ico" />
+        <link rel="shortcut icon" href="/static/favicon.ico" />
         <title>Editor - Convert SVG to valid JSX</title>
       </Head>
       <CSSReset />

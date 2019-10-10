@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
+import { ConfigType } from '@svg2jsx/transform';
 
 import color from '../styles/color';
 import getStripes from '../utils/getStripes';
@@ -14,10 +15,8 @@ import IconGear from '../icons/IconGear';
 import IconCross from '../icons/IconCross';
 import IconCheckMark from '../icons/IconCheckMark';
 
-interface ISettingsBar {
+interface ISettingsBar extends ConfigType {
   variant: VariantType;
-  jsxSingleQuote: boolean;
-  type: 'functional' | 'class';
   onChangeType(event: ChangeEvent<HTMLInputElement>): void;
   onChangeQuote(event: ChangeEvent<HTMLInputElement>): void;
 }
