@@ -1,5 +1,5 @@
 import transform from '@svg2jsx/transform';
-import { NextApiRequest, NextApiResponse } from 'next/dist/next-server/lib/utils';
+import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
 
 import httpStatusCode from '../../utils/httpStatusCode';
 

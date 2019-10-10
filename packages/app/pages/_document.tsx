@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement } from 'react';
 import Document, { DocumentContext, DocumentInitialProps } from 'next/document';
-import { AppType, RenderPageResult } from 'next/dist/next-server/lib/utils';
+import { AppType, RenderPageResult } from 'next-server/dist/lib/utils';
 import { ServerStyleSheet } from 'styled-components';
 
 class Root extends Document<DocumentInitialProps> {
