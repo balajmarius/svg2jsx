@@ -1,14 +1,10 @@
 import { ChangeEvent } from 'react';
+import { ConfigType } from '@svg2jsx/transform';
 
 import useSetState from './useSetState';
 
-interface IConfig {
-  type: 'functional' | 'class';
-  jsxSingleQuote: boolean;
-}
-
 export default function useConfig() {
-  const [config, setConfig] = useSetState<IConfig>({
+  const [config, setConfig] = useSetState<ConfigType>({
     type: 'functional',
     jsxSingleQuote: false,
   });

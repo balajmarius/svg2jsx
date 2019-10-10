@@ -14,7 +14,6 @@ import IconStar from '../icons/IconStar';
 import IconGithub from '../icons/IconGithub';
 
 interface INavBar {
-  loading: boolean;
   variant: VariantType;
 }
 

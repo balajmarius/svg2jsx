@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ConfigType } from '@svg2jsx/transform';
 
 import useSetState from './useSetState';
 
@@ -10,11 +11,6 @@ interface ITransformer {
   loading?: boolean;
 }
 
-export interface IConfig {
-  jsxSingleQuote: boolean;
-  type: 'functional' | 'class';
-}
-
 export default function useTransformer() {
   const [transformer, setTransformer] = useSetState<ITransformer>({
     jsx: undefined,
@@ -22,7 +18,7 @@ export default function useTransformer() {
     variant: VariantType.CLEAR,
   });
 
-  async function transform(svg: string, config: IConfig): Promise<void> {
+  async function transform(svg: string, config: ConfigType): Promise<void> {
     try {
       setTransformer({
         loading: true,

@@ -30,7 +30,7 @@ function HomePage() {
 
   return (
     <Layout>
-      <NavBar loading variant={transformer.variant} />
+      <NavBar variant={transformer.variant} />
 
       <SettingsBar
         type={config.type}
