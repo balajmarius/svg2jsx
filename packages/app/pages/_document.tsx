@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement } from 'react';
 import Document, { DocumentContext, DocumentInitialProps } from 'next/document';
-import { RenderPageResult, AppType } from 'next-server/dist/lib/utils';
+import { AppType, RenderPageResult } from 'next/dist/next-server/lib/utils';
 import { ServerStyleSheet } from 'styled-components';
 
 class Root extends Document<DocumentInitialProps> {
@@ -12,12 +12,10 @@ class Root extends Document<DocumentInitialProps> {
 
     try {
       const initialProps = await Document.getInitialProps(ctx);
-      const initialStyles = initialProps.styles;
-      const styleTags = sheet.getStyleElement();
 
       ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
         initialRenderPage({
-          enhanceApp: (App: AppType) => (props): ReactElement =>
+          enhanceApp: (App: AppType) => (props: any): ReactElement =>
             sheet.collectStyles(<App {...props} />),
         });
 
@@ -29,8 +27,8 @@ class Root extends Document<DocumentInitialProps> {
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata"
             />
-            {initialStyles}
-            {styleTags}
+            {initialProps.styles}
+            {sheet.getStyleElement()}
           </Fragment>
         ),
       };
