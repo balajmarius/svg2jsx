@@ -1322,6 +1322,11 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
+ace-builds@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.6.tgz#ff6abd5f31472f33c1958ab99e0de6b63db3c964"
+  integrity sha512-JpuzcHQxTO6Nk8Q1Y8fVQAaxpimziAvVe/CX4h39ig0iHTtBNuySOGHUxmno8mNe4IMbjO8RJICmsrQKTdTWpQ==
+
 acorn-globals@^4.1.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/acorn-globals/-/acorn-globals-4.3.2.tgz#4e2c2313a597fd589720395f6354b41cd5ec8006"
@@ -1875,7 +1880,7 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-brace@0.11.1, brace@^0.11.1:
+brace@0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/brace/-/brace-0.11.1.tgz#4896fcc9d544eef45f4bb7660db320d3b379fe58"
   integrity sha1-SJb8ydVE7vRfS7dmDbMg07N5/lg=
@@ -6050,12 +6055,12 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-ace@7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-7.0.4.tgz#92fccafc0dda11824172bf5c1a3c633313e36800"
-  integrity sha512-Otk0c2aLr1ZqPQaUEONc4UGAEA/h/P7vAUPLHbEPUVFX67G8Ke6yoe390AQun3NlWdNvpVZ/N7lOJHz0yUl6Fg==
+react-ace@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-8.0.0.tgz#e6fc155ec3cf240e92bdf2e156a50458a78ed0a4"
+  integrity sha512-EvU14vXbZpAenb1ZVKdn8yTQs/shZ9RghFulHtt67bBXT6sjrNHcfOEXHYtSEmwMb6pQVVNNuulzzd8o+Uouig==
   dependencies:
-    brace "^0.11.1"
+    ace-builds "^1.4.6"
     diff-match-patch "^1.0.4"
     lodash.get "^4.4.2"
     lodash.isequal "^4.5.0"
