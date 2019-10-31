@@ -17,6 +17,6 @@
     "react-copy-to-clipboard": "5.0.1",
     "react-dom": "16.11.0",
     "react-dropzone": "10.1.10",
-    "styled-components": "4.4.0"
+    "styled-components": "4.4.1"
   }
 }
