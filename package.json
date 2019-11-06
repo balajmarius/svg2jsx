@@ -42,6 +42,6 @@
     "prettier": "1.18.2",
     "tslint": "5.20.0",
     "tslint-config-airbnb": "5.11.2",
-    "typescript": "3.6.4"
+    "typescript": "3.7.2"
   }
 }
