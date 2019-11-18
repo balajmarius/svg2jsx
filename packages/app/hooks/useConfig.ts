@@ -7,6 +7,7 @@ export default function useConfig() {
   const [config, setConfig] = useSetState<ConfigType>({
     type: 'functional',
     jsxSingleQuote: false,
+    memo: false,
   });
 
   function setQuote({ target }: ChangeEvent<HTMLInputElement>): void {
@@ -21,9 +22,16 @@ export default function useConfig() {
     });
   }
 
+  function setMemo({ target }: ChangeEvent<HTMLInputElement>): void {
+    setConfig({
+      memo: target.checked,
+    });
+  }
+
   return {
     config,
     setQuote,
     setType,
+    setMemo,
   };
 }

@@ -16,7 +16,7 @@ const Playground = dynamic(() => import('../containers/Playground'), {
 });
 
 function HomePage() {
-  const { config, setQuote, setType } = useConfig();
+  const { config, setQuote, setType, setMemo } = useConfig();
   const { editor, setSvg, setFile } = useEditor();
   const { transformer, transform, clear } = useTransformer();
 
@@ -26,7 +26,7 @@ function HomePage() {
     } else {
       clear();
     }
-  }, [config.jsxSingleQuote, config.type, editor.svg]);
+  }, [config.jsxSingleQuote, config.type, config.memo, editor.svg]);
 
   return (
     <Layout>
@@ -35,9 +35,11 @@ function HomePage() {
       <SettingsBar
         type={config.type}
         jsxSingleQuote={config.jsxSingleQuote}
+        memo={config.memo}
         variant={transformer.variant}
         onChangeType={setType}
         onChangeQuote={setQuote}
+        onChangeMemo={setMemo}
       />
 
       <Playground
