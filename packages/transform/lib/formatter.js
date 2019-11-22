@@ -10,7 +10,7 @@ const TEMPLATES = {
   class: `
     import React from "react";
 
-    class Icon extends React.Component {
+    class Icon extends <%= parentComponent %> {
       render() {
         return <%= svg %>;
       }
@@ -25,7 +25,7 @@ const TEMPLATES = {
       return <%= svg %>;
     }
 
-    export default Icon;
+    export default <%= exportComponent %>;
   `,
 };
 
@@ -35,10 +35,16 @@ const TEMPLATES = {
  * @param {string="functional","class"} config.type Desired component type.
  * @return {string}
  */
-function reactify(svg, { type = 'functional' }) {
+function reactify(svg, { type = 'functional', memo }) {
+  const data = {
+    parentComponent: memo ? `React.PureComponent` : `React.Component`,
+    exportComponent: memo ? `React.memo(Icon)` : `Icon`,
+  };
+
   const compile = template(TEMPLATES[type]);
   const component = compile({
     svg,
+    ...data,
   });
 
   return component;

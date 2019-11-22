@@ -18,8 +18,10 @@ interface ISettingsBar {
   variant: VariantType;
   jsxSingleQuote: boolean;
   type: 'functional' | 'class';
+  memo: boolean;
   onChangeType(event: ChangeEvent<HTMLInputElement>): void;
   onChangeQuote(event: ChangeEvent<HTMLInputElement>): void;
+  onChangeMemo(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 interface IStatus {
@@ -48,8 +50,10 @@ function SettingsBar({
   variant,
   type,
   jsxSingleQuote,
+  memo,
   onChangeType,
   onChangeQuote,
+  onChangeMemo,
 }: ISettingsBar) {
   const isFunctional = type === 'functional';
 
@@ -57,7 +61,7 @@ function SettingsBar({
     <Section>
       <Grid columns="1fr 2fr 1fr">
         <GridCell>
-          <Grid columns="auto auto" justify="flex-start" gap={20}>
+          <Grid columns="auto auto auto" justify="flex-start" gap={20}>
             <Switch
               label="Functional"
               checked={isFunctional}
@@ -68,6 +72,7 @@ function SettingsBar({
               checked={jsxSingleQuote}
               onChange={onChangeQuote}
             />
+            <Switch label="Memo" checked={memo} onChange={onChangeMemo} />
           </Grid>
         </GridCell>
         <GridCell>
