@@ -43,8 +43,5 @@
     "tslint": "5.20.0",
     "tslint-config-airbnb": "5.11.2",
     "typescript": "3.6.4"
-  },
-  "dependencies": {
-    "serialize-javascript": "2.1.1"
   }
 }
