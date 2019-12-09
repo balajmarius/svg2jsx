@@ -1,6 +1,5 @@
 import React, { Fragment, ReactElement } from 'react';
 import Document, { DocumentContext, DocumentInitialProps } from 'next/document';
-import { AppType, RenderPageResult } from 'next-server/dist/lib/utils';
 import { ServerStyleSheet } from 'styled-components';
 
 class Root extends Document<DocumentInitialProps> {
@@ -13,9 +12,9 @@ class Root extends Document<DocumentInitialProps> {
     try {
       const initialProps = await Document.getInitialProps(ctx);
 
-      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
+      ctx.renderPage = (): any | Promise<any> =>
         initialRenderPage({
-          enhanceApp: (App: AppType) => (props: any): ReactElement =>
+          enhanceApp: (App: any) => (props: any): ReactElement =>
             sheet.collectStyles(<App {...props} />),
         });
 
