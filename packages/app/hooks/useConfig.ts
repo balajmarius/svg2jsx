@@ -5,9 +5,10 @@ import useSetState from './useSetState';
 
 export default function useConfig() {
   const [config, setConfig] = useSetState<ConfigType>({
-    type: 'functional',
-    jsxSingleQuote: false,
     memo: false,
+    cleanupIDs: true,
+    jsxSingleQuote: false,
+    type: 'functional',
   });
 
   function setQuote({ target }: ChangeEvent<HTMLInputElement>): void {
@@ -28,10 +29,17 @@ export default function useConfig() {
     });
   }
 
+  function setIDs({ target }: ChangeEvent<HTMLInputElement>): void {
+    setConfig({
+      cleanupIDs: target.checked,
+    });
+  }
+
   return {
     config,
     setQuote,
     setType,
+    setIDs,
     setMemo,
   };
 }
