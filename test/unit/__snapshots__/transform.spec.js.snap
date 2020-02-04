@@ -4,7 +4,7 @@ exports[`transform tests allow prettier config options 1`] = `
 "import React from \\"react\\"
 
 function Icon() {
-  return <svg data-test=\\"svg-test\\" />
+  return <svg data-test=\\"svg-test\\"></svg>
 }
 
 export default Icon
@@ -15,7 +15,7 @@ exports[`transform tests clean attributes 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
-  return <svg fill=\\"red\\" />;
+  return <svg fill=\\"red\\"></svg>;
 }
 
 export default Icon;
@@ -42,8 +42,8 @@ function Icon() {
           stroke=\\"#eca611\\"
           strokeWidth=\\"12\\"
           d=\\"M50 15a35 35 0 1024.787 10.213\\"
-        />
-        <path fill=\\"#eca611\\" d=\\"M49 3v24l12-12L49 3\\" />
+        ></path>
+        <path fill=\\"#eca611\\" d=\\"M49 3v24l12-12L49 3\\"></path>
         <animateTransform
           attributeName=\\"transform\\"
           begin=\\"0s\\"
@@ -53,7 +53,7 @@ function Icon() {
           repeatCount=\\"indefinite\\"
           type=\\"rotate\\"
           values=\\"0 50 50;360 50 50\\"
-        />
+        ></animateTransform>
       </g>
     </svg>
   );
@@ -67,7 +67,7 @@ exports[`transform tests convert attributes 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
-  return <svg fillRule=\\"evenodd\\" className=\\"test\\" data-name=\\"svg\\" />;
+  return <svg fillRule=\\"evenodd\\" className=\\"test\\" data-name=\\"svg\\"></svg>;
 }
 
 export default Icon;
@@ -78,7 +78,7 @@ exports[`transform tests convert inline styles to style objects 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
-  return <svg style={{ marginLeft: 20, paddingTop: 20 }} />;
+  return <svg style={{ marginLeft: 20, paddingTop: 20 }}></svg>;
 }
 
 export default Icon;
@@ -93,10 +93,16 @@ function Icon() {
     <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
       <defs>
         <clipPath id=\\"a\\">
-          <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
+          <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\"></path>
         </clipPath>
       </defs>
-      <circle cx=\\"110\\" cy=\\"110\\" r=\\"100\\" fill=\\"#9c6\\" clip-path=\\"url(#a)\\" />
+      <circle
+        cx=\\"110\\"
+        cy=\\"110\\"
+        r=\\"100\\"
+        fill=\\"#9c6\\"
+        clip-path=\\"url(#a)\\"
+      ></circle>
     </svg>
   );
 }
@@ -125,7 +131,7 @@ exports[`transform tests create class component 1`] = `
 
 class Icon extends React.Component {
   render() {
-    return <svg data-test=\\"svg-test\\" />;
+    return <svg data-test=\\"svg-test\\"></svg>;
   }
 }
 
@@ -137,7 +143,7 @@ exports[`transform tests create functional component 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
-  return <svg data-test=\\"svg-test\\" />;
+  return <svg data-test=\\"svg-test\\"></svg>;
 }
 
 export default Icon;
@@ -150,9 +156,20 @@ exports[`transform tests don't convert "clip-path" 1`] = `
 function Icon() {
   return (
     <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-      <path d=\\"M43 24c1.1-1.5 2.3-3\\" clip-path=\\"url(#SVGID_2_134rwd)\\" />
+      <path d=\\"M43 24c1.1-1.5 2.3-3\\" clip-path=\\"url(#SVGID_2_134rwd)\\"></path>
     </svg>
   );
+}
+
+export default Icon;
+"
+`;
+
+exports[`transform tests keep ID attribute 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return <svg id=\\"svg-test\\"></svg>;
 }
 
 export default Icon;
@@ -165,7 +182,7 @@ exports[`transform tests keep dimensions attributes 1`] = `
 function Icon() {
   return (
     <svg width=\\"125\\" height=\\"125\\" viewBox=\\"0 0 125 125\\">
-      <path fill=\\"red\\" d=\\"M49 3v24l12-12L49 3\\" />
+      <path fill=\\"red\\" d=\\"M49 3v24l12-12L49 3\\"></path>
     </svg>
   );
 }
@@ -180,7 +197,7 @@ exports[`transform tests quote string style values 1`] = `
 function Icon() {
   return (
     <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-      <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\" />
+      <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\"></path>
     </svg>
   );
 }
@@ -193,7 +210,7 @@ exports[`transform tests remove unnecessary nodes 1`] = `
 "import React from \\"react\\";
 
 function Icon() {
-  return <svg />;
+  return <svg></svg>;
 }
 
 export default Icon;

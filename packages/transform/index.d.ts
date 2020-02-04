@@ -1,5 +1,6 @@
 export interface ConfigType {
   type: 'functional' | 'class';
+  cleanupIDs: boolean;
   jsxSingleQuote: boolean;
   memo: boolean;
 }

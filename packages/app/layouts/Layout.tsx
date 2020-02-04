@@ -52,10 +52,7 @@ function Layout({ children }: ILayout) {
         <meta name="description" content="Convert SVG to valid JSX" />
         <meta name="keywords" content="svg, jsx, svg2jsx" />
         <meta name="author" content="Bălaj Marius" />
-        <meta
-          name="copyright"
-          content="Copyright Bălaj Marius 2019. All Rights Reserved."
-        />
+        <meta name="copyright" content="Copyright Bălaj Marius 2019. All Rights Reserved." />
         <link rel="shortcut icon" href="static/favicon.ico" />
         <title>Editor - Convert SVG to valid JSX</title>
       </Head>

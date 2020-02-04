@@ -2,9 +2,7 @@ const transform = require('../../packages/transform');
 
 describe('transform tests', () => {
   test('clean attributes', async () => {
-    const transformed = await transform(
-      '<svg id=" test " strok="blue" fill="   red" />',
-    );
+    const transformed = await transform('<svg id=" test " strok="blue" fill="   red" />');
 
     expect(transformed).toEqual(expect.not.stringMatching(/strok/));
     expect(transformed).toMatchSnapshot();
@@ -13,14 +11,12 @@ describe('transform tests', () => {
   test('remove unnecessary nodes', async () => {
     const transformed = await transform('<svg id="test"><g><g></g></g></svg>');
 
-    expect(transformed).toEqual(expect.stringMatching(/<svg \/>/));
+    expect(transformed).toEqual(expect.stringMatching(/<svg><\/svg>/));
     expect(transformed).toMatchSnapshot();
   });
 
   test('convert attributes', async () => {
-    const transformed = await transform(
-      '<svg class="test" data-name="svg" fill-rule="evenodd"/>',
-    );
+    const transformed = await transform('<svg class="test" data-name="svg" fill-rule="evenodd"/>');
 
     expect(transformed).toEqual(expect.stringMatching(/className=/));
     expect(transformed).toEqual(expect.not.stringMatching(/class=/));
@@ -32,9 +28,7 @@ describe('transform tests', () => {
   });
 
   test('convert inline styles to style objects', async () => {
-    const transformed = await transform(
-      '<svg style="margin-left:20px;padding-top:20px;" />',
-    );
+    const transformed = await transform('<svg style="margin-left:20px;padding-top:20px;" />');
 
     expect(transformed).toEqual(expect.stringMatching(/marginLeft: 20/));
     expect(transformed).toEqual(expect.stringMatching(/paddingTop: 20/));
@@ -143,6 +137,15 @@ describe('transform tests', () => {
 
     expect(transformed.match(/width="125"/g)).toHaveLength(1);
     expect(transformed.match(/height="125"/g)).toHaveLength(1);
+    expect(transformed).toMatchSnapshot();
+  });
+
+  test('keep ID attribute', async () => {
+    const transformed = await transform('<svg id="svg-test" />', {
+      cleanupIDs: false,
+    });
+
+    expect(transformed.match(/id="svg-test"/g)).toHaveLength(1);
     expect(transformed).toMatchSnapshot();
   });
 });

@@ -43,8 +43,8 @@ function reactify(svg, { type = 'functional', memo }) {
 
   const compile = template(TEMPLATES[type]);
   const component = compile({
-    svg,
     ...data,
+    svg,
   });
 
   return component;
@@ -53,7 +53,7 @@ function reactify(svg, { type = 'functional', memo }) {
 /**
  * Creates React component and formats with Prettier.
  * @param {string} svg Transformed SVG string.
- * @param {Object=} config Component type and Prettier config.
+ * @param {Object=} config Component type, SVGO and Prettier config.
  * @return {string}
  */
 function format(svg, config) {

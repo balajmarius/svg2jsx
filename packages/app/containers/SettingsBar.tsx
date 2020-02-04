@@ -15,12 +15,14 @@ import IconCross from '../icons/IconCross';
 import IconCheckMark from '../icons/IconCheckMark';
 
 interface ISettingsBar {
+  memo: boolean;
   variant: VariantType;
+  cleanupIDs: boolean;
   jsxSingleQuote: boolean;
   type: 'functional' | 'class';
-  memo: boolean;
   onChangeType(event: ChangeEvent<HTMLInputElement>): void;
   onChangeQuote(event: ChangeEvent<HTMLInputElement>): void;
+  onChangeIDs(event: ChangeEvent<HTMLInputElement>): void;
   onChangeMemo(event: ChangeEvent<HTMLInputElement>): void;
 }
 
@@ -47,12 +49,14 @@ const Status = styled.div<IStatus>`
 `;
 
 function SettingsBar({
-  variant,
   type,
-  jsxSingleQuote,
   memo,
+  variant,
+  jsxSingleQuote,
+  cleanupIDs,
   onChangeType,
   onChangeQuote,
+  onChangeIDs,
   onChangeMemo,
 }: ISettingsBar) {
   const isFunctional = type === 'functional';
@@ -61,17 +65,10 @@ function SettingsBar({
     <Section>
       <Grid columns="1fr 2fr 1fr">
         <GridCell>
-          <Grid columns="auto auto auto" justify="flex-start" gap={20}>
-            <Switch
-              label="Functional"
-              checked={isFunctional}
-              onChange={onChangeType}
-            />
-            <Switch
-              label="Single quotes"
-              checked={jsxSingleQuote}
-              onChange={onChangeQuote}
-            />
+          <Grid columns="auto auto auto auto" justify="flex-start" gap={20}>
+            <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
+            <Switch label="Single quotes" checked={jsxSingleQuote} onChange={onChangeQuote} />
+            <Switch label="Remove IDs" checked={cleanupIDs} onChange={onChangeIDs} />
             <Switch label="Memo" checked={memo} onChange={onChangeMemo} />
           </Grid>
         </GridCell>
