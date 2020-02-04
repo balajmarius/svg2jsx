@@ -11,7 +11,7 @@ const format = require('./lib/formatter');
  * @returns {string}
  */
 async function transformer(svg, config = {}) {
-  const cleaned = await clean(svg);
+  const cleaned = await clean(svg, config);
   const parsed = parse(cleaned.data);
   const transformed = transform(parsed);
   const morphed = stringify(transformed);
