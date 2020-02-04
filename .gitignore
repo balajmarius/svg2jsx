@@ -1,5 +1,6 @@
-server/public/
-.DS_Store
 *.log
-node_modules
 .next
+.vscode
+.DS_Store
+node_modules
+server/public/
