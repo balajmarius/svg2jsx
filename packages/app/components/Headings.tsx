@@ -17,12 +17,7 @@ function Headings({ primary, secondary, inverse }: IHeadings) {
   return (
     <Grid columns="1fr auto" direction={direction} gap={10}>
       <GridCell>
-        <Text
-          align={align}
-          size="medium"
-          display="monospace"
-          textColor="lightGrey"
-        >
+        <Text align={align} size="medium" display="monospace" textColor="lightGrey">
           {secondary}
         </Text>
       </GridCell>

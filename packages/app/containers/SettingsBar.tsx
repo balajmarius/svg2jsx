@@ -46,15 +46,7 @@ const Status = styled.div<IStatus>`
   background: ${({ variant }) => getVariantColor(variant)};
 `;
 
-function SettingsBar({
-  variant,
-  type,
-  jsxSingleQuote,
-  memo,
-  onChangeType,
-  onChangeQuote,
-  onChangeMemo,
-}: ISettingsBar) {
+function SettingsBar({ type, memo, variant, jsxSingleQuote, onChangeType, onChangeQuote, onChangeMemo }: ISettingsBar) {
   const isFunctional = type === 'functional';
 
   return (
@@ -62,16 +54,8 @@ function SettingsBar({
       <Grid columns="1fr 2fr 1fr">
         <GridCell>
           <Grid columns="auto auto auto" justify="flex-start" gap={20}>
-            <Switch
-              label="Functional"
-              checked={isFunctional}
-              onChange={onChangeType}
-            />
-            <Switch
-              label="Single quotes"
-              checked={jsxSingleQuote}
-              onChange={onChangeQuote}
-            />
+            <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
+            <Switch label="Single quotes" checked={jsxSingleQuote} onChange={onChangeQuote} />
             <Switch label="Memo" checked={memo} onChange={onChangeMemo} />
           </Grid>
         </GridCell>

@@ -42,12 +42,7 @@ function HomePage() {
         onChangeMemo={setMemo}
       />
 
-      <Playground
-        svg={editor.svg}
-        jsx={transformer.jsx}
-        onDrop={setFile}
-        onChange={setSvg}
-      />
+      <Playground svg={editor.svg} jsx={transformer.jsx} onDrop={setFile} onChange={setSvg} />
     </Layout>
   );
 }

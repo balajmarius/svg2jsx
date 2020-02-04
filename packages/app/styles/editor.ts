@@ -57,8 +57,4 @@ function createStyle(require: Function, exports: any): void {
   require('../lib/dom').importCssString(style, 'ace_svg2jsx');
 }
 
-ace.define(
-  'ace/theme/svg2jsx',
-  ['require', 'exports', 'module', 'ace/lib/dom'],
-  createStyle,
-);
+ace.define('ace/theme/svg2jsx', ['require', 'exports', 'module', 'ace/lib/dom'], createStyle);

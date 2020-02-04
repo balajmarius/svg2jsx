@@ -34,9 +34,7 @@ function stringifyAttributes(attributes = {}) {
     const isStyleAttribute = isPlainObject(attribute);
 
     if (isStyleAttribute) {
-      return (
-        accumulator + ` ${attributeName}={{ ${stringifyStyle(attribute)} }}`
-      );
+      return accumulator + ` ${attributeName}={{ ${stringifyStyle(attribute)} }}`;
     }
 
     return accumulator + ` ${attributeName}="${attribute}"`;

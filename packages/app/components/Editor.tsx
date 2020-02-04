@@ -13,13 +13,7 @@ interface IEditor {
   onChange(value: string): void;
 }
 
-function Editor({
-  value,
-  mode,
-  isReadOnly,
-  debounceChangePeriod,
-  onChange,
-}: IEditor) {
+function Editor({ value, mode, isReadOnly, debounceChangePeriod, onChange }: IEditor) {
   return (
     <AceEditor
       mode={mode}
