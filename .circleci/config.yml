@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:11.6.0
+      - image: circleci/node:11.15.0
     working_directory: ~/svg2jsx
 
     steps:
