@@ -1,20 +1,19 @@
-import React, { Fragment, ReactElement } from 'react';
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document';
-import { AppType, RenderPageResult } from 'next-server/dist/lib/utils';
+import { Fragment } from 'react';
 import { ServerStyleSheet } from 'styled-components';
+import Document from 'next/document';
 
-class Root extends Document<DocumentInitialProps> {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+class Root extends Document {
+  static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
-    const initialRenderPage = ctx.renderPage;
+    const originalRenderPage = ctx.renderPage;
 
     try {
-      const initialProps = await Document.getInitialProps(ctx);
-
-      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
-        initialRenderPage({
-          enhanceApp: (App: AppType) => (props: any): ReactElement => sheet.collectStyles(<App {...props} />),
+      ctx.renderPage = (): any =>
+        originalRenderPage({
+          enhanceApp: (App: any) => (props: unknown): unknown => sheet.collectStyles(<App {...props} />),
         });
+
+      const initialProps = await Document.getInitialProps(ctx);
 
       return {
         ...initialProps,
