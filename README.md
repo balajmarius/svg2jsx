@@ -7,7 +7,7 @@
 ## Develop
 
 ```bash
-yarn development
+yarn dev
 ```
 
 ## Build
