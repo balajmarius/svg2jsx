@@ -17,7 +17,7 @@ const Playground = dynamic(() => import('../containers/Playground'), {
 
 function HomePage() {
   const { config, setQuote, setType, setMemo, setIDs } = useConfig();
-  const { editor, setSvg, setFile } = useEditor();
+  const { editor, setSvg, setFile, setCopy } = useEditor();
   const { transformer, transform, clear } = useTransformer();
 
   useEffect(() => {
@@ -44,7 +44,14 @@ function HomePage() {
         onChangeMemo={setMemo}
       />
 
-      <Playground svg={editor.svg} jsx={transformer.jsx} onDrop={setFile} onChange={setSvg} />
+      <Playground 
+        svg={editor.svg} 
+        jsx={transformer.jsx} 
+        copy={editor.copy} 
+        onDrop={setFile} 
+        onChange={setSvg} 
+        onCopy={setCopy}
+      />
     </Layout>
   );
 }

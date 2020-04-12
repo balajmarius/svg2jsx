@@ -15,8 +15,10 @@ import Tutorial from '../components/Tutorial';
 interface IPlayground {
   svg: string;
   jsx: string;
+  copy: string;
   onChange(value: string): void;
   onDrop?(acceptedFiles: File[], rejectedFiles: File[], event: DropEvent): void;
+  onCopy(): void
 }
 
 const Button = styled.button`
@@ -35,7 +37,7 @@ const Button = styled.button`
   }
 `;
 
-function Playground({ svg, jsx, onChange, onDrop }: IPlayground) {
+function Playground({ svg, jsx, onChange, onDrop, copy, onCopy }: IPlayground) {
   return (
     <Grid columns="1fr 1fr" gap={2} fullHeight>
       <GridCell fullHeight>
@@ -50,10 +52,10 @@ function Playground({ svg, jsx, onChange, onDrop }: IPlayground) {
       </GridCell>
       <GridCell fullHeight>
         {jsx ? (
-          <CopyToClipboard text={jsx}>
+          <CopyToClipboard text={jsx} onCopy={onCopy}>
             <Button>
               <Text size="normal" display="monospace">
-                Copy
+                {copy}
               </Text>
             </Button>
           </CopyToClipboard>
