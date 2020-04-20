@@ -12,6 +12,7 @@
     "pinVersions": true,
     "supportPolicy": ["lts_latest"]
   },
+  "ignoreDeps": ["react-ace"],
   "pinDigests": false,
   "prCreation": "immediate",
   "rangeStrategy": "pin",
