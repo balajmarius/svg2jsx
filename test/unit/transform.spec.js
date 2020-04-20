@@ -149,7 +149,7 @@ describe('transform tests', () => {
     expect(transformed).toMatchSnapshot();
   });
 
-  test("doesn't rename any attributes", async () => {
+  test('keep attribute values', async () => {
     const transformed = await transform(
       `<svg viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
         <circle id="svg-test" cx="5" cy="5" r="4" stroke="blue"/>
