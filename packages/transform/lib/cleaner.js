@@ -46,7 +46,7 @@ const PLUGINS = [
 async function clean(svg, { cleanupIDs = true }) {
   const cleaner = new Svgo({
     full: true,
-    plugins: [...PLUGINS, { cleanupIDs }],
+    plugins: [...PLUGINS, { cleanupIDs: cleanupIDs && { minify: false } }],
   });
 
   try {
