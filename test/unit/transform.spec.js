@@ -70,11 +70,11 @@ describe('transform tests', () => {
     const transformed = await transform(`
       <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
         <defs>
-          <clipPath id="path-1">
+          <clipPath id="svg-test">
             <path style="margin-left: auto;" d="M43,24c1.1-1.5,2.3-3"/>
           </clipPath>
         </defs>
-        <circle cx="110" cy="110" r="100" fill="#9c6" clip-path="url(#path-1)" />
+        <circle cx="110" cy="110" r="100" fill="#9c6" clip-path="url(#svg-test)" />
       </svg>      
     `);
 
@@ -146,6 +146,19 @@ describe('transform tests', () => {
     });
 
     expect(transformed.match(/id="svg-test"/g)).toHaveLength(1);
+    expect(transformed).toMatchSnapshot();
+  });
+
+  test("doesn't rename any attributes", async () => {
+    const transformed = await transform(
+      `<svg viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
+        <circle id="svg-test" cx="5" cy="5" r="4" stroke="blue"/>
+        <use href="#svg-test" x="20" fill="white" stroke="red"/>
+      </svg>`,
+    );
+
+    expect(transformed.match(/id="svg-test"/g)).toHaveLength(1);
+    expect(transformed.match(/href="#svg-test"/g)).toHaveLength(1);
     expect(transformed).toMatchSnapshot();
   });
 });
