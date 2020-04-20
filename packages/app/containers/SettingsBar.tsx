@@ -63,7 +63,7 @@ function SettingsBar({
 
   return (
     <Section>
-      <Grid columns="1fr 2fr 1fr">
+      <Grid columns="2fr 1fr 2fr">
         <GridCell>
           <Grid columns="auto auto auto auto" justify="flex-start" gap={20}>
             <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
