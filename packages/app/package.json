@@ -9,14 +9,14 @@
     "@svg2jsx/transform": "1.0.0",
     "axios": "0.19.2",
     "brace": "0.11.1",
-    "next": "9.3.5",
+    "next": "9.3.6",
     "pretty": "2.0.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-ace": "7.0.5",
     "react-copy-to-clipboard": "5.0.2",
     "react-dom": "16.13.1",
-    "react-dropzone": "10.2.2",
+    "react-dropzone": "11.0.1",
     "styled-components": "5.1.0"
   }
 }
