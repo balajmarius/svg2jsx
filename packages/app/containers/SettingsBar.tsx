@@ -20,10 +20,12 @@ interface ISettingsBar {
   cleanupIDs: boolean;
   jsxSingleQuote: boolean;
   type: 'functional' | 'class';
+  reactNative: boolean;
   onChangeType(event: ChangeEvent<HTMLInputElement>): void;
   onChangeQuote(event: ChangeEvent<HTMLInputElement>): void;
   onChangeIDs(event: ChangeEvent<HTMLInputElement>): void;
   onChangeMemo(event: ChangeEvent<HTMLInputElement>): void;
+  onChangeReactNative(event: ChangeEvent<HTMLInputElement>): void;
 }
 
 interface IStatus {
@@ -31,7 +33,7 @@ interface IStatus {
 }
 
 const Section = styled.section`
-  padding: 10px 50px;
+  padding: 10px 20px;
   border-bottom: 2px solid ${color.black};
   background: ${getStripes('left', 'grey')};
 `;
@@ -54,10 +56,12 @@ function SettingsBar({
   variant,
   jsxSingleQuote,
   cleanupIDs,
+  reactNative,
   onChangeType,
   onChangeQuote,
   onChangeIDs,
   onChangeMemo,
+  onChangeReactNative,
 }: ISettingsBar) {
   const isFunctional = type === 'functional';
 
@@ -65,11 +69,12 @@ function SettingsBar({
     <Section>
       <Grid columns="2fr 1fr 2fr">
         <GridCell>
-          <Grid columns="auto auto auto auto" justify="flex-start" gap={20}>
+          <Grid columns="auto auto auto auto auto" justify="flex-start" gap={20}>
             <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
             <Switch label="Remove IDs" checked={cleanupIDs} onChange={onChangeIDs} />
             <Switch label="Single quotes" checked={jsxSingleQuote} onChange={onChangeQuote} />
             <Switch label="Memo" checked={memo} onChange={onChangeMemo} />
+            <Switch label="React Native" checked={reactNative} onChange={onChangeReactNative} />
           </Grid>
         </GridCell>
         <GridCell>

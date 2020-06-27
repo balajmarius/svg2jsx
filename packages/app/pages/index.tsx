@@ -16,7 +16,7 @@ const Playground = dynamic(() => import('../containers/Playground'), {
 });
 
 function HomePage() {
-  const { config, setQuote, setType, setMemo, setIDs } = useConfig();
+  const { config, setQuote, setType, setMemo, setIDs, setReactNative } = useConfig();
   const { editor, setSvg, setFile } = useEditor();
   const { transformer, transform, clear } = useTransformer();
 
@@ -36,12 +36,14 @@ function HomePage() {
         type={config.type}
         jsxSingleQuote={config.jsxSingleQuote}
         memo={config.memo}
+        reactNative={config.reactNative}
         cleanupIDs={config.cleanupIDs}
         variant={transformer.variant}
         onChangeType={setType}
         onChangeQuote={setQuote}
         onChangeIDs={setIDs}
         onChangeMemo={setMemo}
+        onChangeReactNative={setReactNative}
       />
 
       <Playground svg={editor.svg} jsx={transformer.jsx} onDrop={setFile} onChange={setSvg} />

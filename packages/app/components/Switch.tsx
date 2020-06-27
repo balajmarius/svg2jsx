@@ -27,7 +27,7 @@ const Label = styled.label`
 `;
 
 const Bar = styled.div`
-  width: 30px;
+  width: 25px;
   margin: 0 0 0 10px;
   border-radius: 30px;
   background: ${color.black};

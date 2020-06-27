@@ -8,6 +8,7 @@ export default function useConfig() {
     memo: false,
     cleanupIDs: true,
     jsxSingleQuote: false,
+    reactNative: false,
     type: 'functional',
   });
 
@@ -35,11 +36,18 @@ export default function useConfig() {
     });
   }
 
+  function setReactNative({ target }: ChangeEvent<HTMLInputElement>): void {
+    setConfig({
+      reactNative: target.checked,
+    });
+  }
+
   return {
     config,
     setQuote,
     setType,
     setIDs,
     setMemo,
+    setReactNative,
   };
 }
