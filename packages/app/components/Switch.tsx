@@ -23,12 +23,13 @@ const Label = styled.label`
   display: inline-flex;
   cursor: pointer;
   align-items: center;
+  justify-content: space-between;
   text-transform: uppercase;
 `;
 
 const Bar = styled.div`
-  width: 25px;
-  margin: 0 0 0 10px;
+  width: 30px;
+  margin: 5px;
   border-radius: 30px;
   background: ${color.black};
 `;

@@ -69,7 +69,7 @@ function SettingsBar({
     <Section>
       <Grid columns="2fr 1fr 2fr">
         <GridCell>
-          <Grid columns="auto auto auto auto auto" justify="flex-start" gap={20}>
+          <Grid columns="1fr 1fr 1fr" justify="center" gap={10}>
             <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
             <Switch label="Remove IDs" checked={cleanupIDs} onChange={onChangeIDs} />
             <Switch label="Single quotes" checked={jsxSingleQuote} onChange={onChangeQuote} />

@@ -36,8 +36,8 @@ function HomePage() {
         type={config.type}
         jsxSingleQuote={config.jsxSingleQuote}
         memo={config.memo}
-        reactNative={config.reactNative}
         cleanupIDs={config.cleanupIDs}
+        reactNative={config.reactNative}
         variant={transformer.variant}
         onChangeType={setType}
         onChangeQuote={setQuote}
