@@ -3,6 +3,7 @@ const parse = require('./lib/parser');
 const transform = require('./lib/transformer');
 const stringify = require('./lib/stringifier');
 const format = require('./lib/formatter');
+const getAlternativeImports = require('./lib/getAlternativeImports');
 
 /**
  * Clean-up and transform SVG into valid JSX.
@@ -11,11 +12,15 @@ const format = require('./lib/formatter');
  * @returns {string}
  */
 async function transformer(svg, config = {}) {
+  let imports = [];
   const cleaned = await clean(svg, config);
-  const parsed = parse(cleaned.data);
+  const parsed = parse(cleaned.data, config);
+  if (config.reactNative) {
+    imports = getAlternativeImports(parsed);
+  }
   const transformed = transform(parsed);
   const morphed = stringify(transformed);
-  const formatted = format(morphed, config);
+  const formatted = format(morphed, config, imports);
 
   return formatted;
 }
