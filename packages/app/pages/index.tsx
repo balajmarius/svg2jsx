@@ -26,7 +26,7 @@ function HomePage() {
     } else {
       clear();
     }
-  }, [config.jsxSingleQuote, config.type, config.cleanupIDs, config.memo, editor.svg]);
+  }, [config.jsxSingleQuote, config.type, config.cleanupIDs, config.memo, editor.svg, config.reactNative]);
 
   return (
     <Layout>
