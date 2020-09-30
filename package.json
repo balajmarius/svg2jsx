@@ -5,7 +5,7 @@
   "description": "Transform SVG to valid JSX",
   "main": "index.js",
   "repository": "https://github.com/balajmarius/svg2jsx-gui.git",
-  "author": "Balaj Marius <balajmarius93@gmail.com>",
+  "author": "Balaj Marius <balajmarius@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": "12.16.2"
