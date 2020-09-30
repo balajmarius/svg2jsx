@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { DropEvent } from 'react-dropzone';
+import { DropEvent, FileRejection } from 'react-dropzone';
 
 import color from '../styles/color';
 
@@ -16,7 +16,7 @@ interface IPlayground {
   svg: string;
   jsx: string;
   onChange(value: string): void;
-  onDrop?(acceptedFiles: File[], rejectedFiles: File[], event: DropEvent): void;
+  onDrop?(acceptedFiles: File[], rejectedFiles: FileRejection[], event: DropEvent): void;
 }
 
 const Button = styled.button`
