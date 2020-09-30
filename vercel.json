@@ -2,6 +2,6 @@
   "version": 2,
   "name": "svg2jsx",
   "alias": ["svg2jsx.com"],
-  "builds": [{ "src": "packages/app/package.json", "use": "@now/next" }],
+  "builds": [{ "src": "packages/app/package.json", "use": "@vercel/next" }],
   "routes": [{ "src": "/(.*)", "dest": "/packages/app/$1" }]
 }
