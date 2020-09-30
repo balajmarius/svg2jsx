@@ -3,5 +3,5 @@
   "name": "svg2jsx",
   "alias": ["svg2jsx.com"],
   "builds": [{ "src": "packages/app/package.json", "use": "@vercel/next" }],
-  "routes": [{ "src": "/(.*)", "dest": "/packages/app/$1" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/packages/app/$1" }]
 }
