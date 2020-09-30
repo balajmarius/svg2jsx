@@ -5,10 +5,10 @@
   "description": "Transform SVG to valid JSX",
   "main": "index.js",
   "repository": "https://github.com/balajmarius/svg2jsx-gui.git",
-  "author": "Balaj Marius <balajmarius93@gmail.com>",
+  "author": "Balaj Marius <balajmarius@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "12.16.2"
+    "node": "12.18.3"
   },
   "workspaces": [
     "packages/app",
@@ -21,7 +21,7 @@
     "dev": "NODE_ENV=development && next dev ./packages/app",
     "build": "next build packages/app",
     "start": "next start packages/app",
-    "deploy": "now --target production"
+    "deploy": "vercel --target production"
   },
   "devDependencies": {
     "@types/node": "13.13.0",

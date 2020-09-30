@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useDropzone, DropEvent } from 'react-dropzone';
+import { useDropzone, DropEvent, FileRejection } from 'react-dropzone';
 
 import color from '../styles/color';
 
 interface IDroparea {
   children: Function;
-  onDrop?(acceptedFiles: File[], rejectedFiles: File[], event: DropEvent): void;
+  onDrop?(acceptedFiles: File[], rejectedFiles: FileRejection[], event: DropEvent): void;
 }
 
 const Dropable = styled.div`

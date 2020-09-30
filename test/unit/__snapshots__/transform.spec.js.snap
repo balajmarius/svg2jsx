@@ -150,22 +150,6 @@ export default Icon;
 "
 `;
 
-exports[`transform tests doesn't rename any attributes 1`] = `
-"import React from \\"react\\";
-
-function Icon() {
-  return (
-    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 30 10\\">
-      <circle id=\\"svg-test\\" cx=\\"5\\" cy=\\"5\\" r=\\"4\\" stroke=\\"#00f\\"></circle>
-      <use x=\\"20\\" fill=\\"#fff\\" stroke=\\"red\\" href=\\"#svg-test\\"></use>
-    </svg>
-  );
-}
-
-export default Icon;
-"
-`;
-
 exports[`transform tests don't convert "clip-path" 1`] = `
 "import React from \\"react\\";
 
@@ -186,6 +170,22 @@ exports[`transform tests keep ID attribute 1`] = `
 
 function Icon() {
   return <svg id=\\"svg-test\\"></svg>;
+}
+
+export default Icon;
+"
+`;
+
+exports[`transform tests keep attribute values 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 30 10\\">
+      <circle id=\\"svg-test\\" cx=\\"5\\" cy=\\"5\\" r=\\"4\\" stroke=\\"#00f\\"></circle>
+      <use x=\\"20\\" fill=\\"#fff\\" stroke=\\"red\\" href=\\"#svg-test\\"></use>
+    </svg>
+  );
 }
 
 export default Icon;
