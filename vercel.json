@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "svg2jsx",
+  "alias": ["svg2jsx.com"],
+  "builds": [{ "src": "packages/app/package.json", "use": "@vercel/next" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/packages/app/$1" }]
+}

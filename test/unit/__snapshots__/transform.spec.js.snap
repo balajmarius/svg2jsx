@@ -92,7 +92,7 @@ function Icon() {
   return (
     <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
       <defs>
-        <clipPath id=\\"a\\">
+        <clipPath id=\\"svg-test\\">
           <path style={{ marginLeft: \\"auto\\" }} d=\\"M43 24c1.1-1.5 2.3-3\\"></path>
         </clipPath>
       </defs>
@@ -101,7 +101,7 @@ function Icon() {
         cy=\\"110\\"
         r=\\"100\\"
         fill=\\"#9c6\\"
-        clip-path=\\"url(#a)\\"
+        clip-path=\\"url(#svg-test)\\"
       ></circle>
     </svg>
   );
@@ -170,6 +170,22 @@ exports[`transform tests keep ID attribute 1`] = `
 
 function Icon() {
   return <svg id=\\"svg-test\\"></svg>;
+}
+
+export default Icon;
+"
+`;
+
+exports[`transform tests keep attribute values 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 30 10\\">
+      <circle id=\\"svg-test\\" cx=\\"5\\" cy=\\"5\\" r=\\"4\\" stroke=\\"#00f\\"></circle>
+      <use x=\\"20\\" fill=\\"#fff\\" stroke=\\"red\\" href=\\"#svg-test\\"></use>
+    </svg>
+  );
 }
 
 export default Icon;
