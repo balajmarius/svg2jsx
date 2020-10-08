@@ -9,7 +9,7 @@
     "@svg2jsx/transform": "1.0.0",
     "axios": "0.20.0",
     "brace": "0.11.1",
-    "next": "9.5.3",
+    "next": "9.5.4",
     "pretty": "2.0.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
