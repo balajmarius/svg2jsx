@@ -44,14 +44,14 @@ describe('transform tests', () => {
     expect(transformed).toMatchSnapshot();
   });
 
-  test('don\'t convert "clip-path"', async () => {
+  test('convert "clip-path"', async () => {
     const transformed = await transform(`
       <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45">
         <path clip-path="url(#SVGID_2_134rwd)" d="M43,24c1.1-1.5,2.3-3"/>
       </svg>
     `);
 
-    expect(transformed).toEqual(expect.stringMatching(/clip-path=/));
+    expect(transformed).toEqual(expect.stringMatching(/clipPath=/));
     expect(transformed).toMatchSnapshot();
   });
 
