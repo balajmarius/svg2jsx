@@ -63,6 +63,21 @@ export default Icon;
 "
 `;
 
+exports[`transform tests convert "clip-path" 1`] = `
+"import React from \\"react\\";
+
+function Icon() {
+  return (
+    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
+      <path d=\\"M43 24c1.1-1.5 2.3-3\\" clipPath=\\"url(#SVGID_2_134rwd)\\"></path>
+    </svg>
+  );
+}
+
+export default Icon;
+"
+`;
+
 exports[`transform tests convert attributes 1`] = `
 "import React from \\"react\\";
 
@@ -101,7 +116,7 @@ function Icon() {
         cy=\\"110\\"
         r=\\"100\\"
         fill=\\"#9c6\\"
-        clip-path=\\"url(#svg-test)\\"
+        clipPath=\\"url(#svg-test)\\"
       ></circle>
     </svg>
   );
@@ -144,21 +159,6 @@ exports[`transform tests create functional component 1`] = `
 
 function Icon() {
   return <svg data-test=\\"svg-test\\"></svg>;
-}
-
-export default Icon;
-"
-`;
-
-exports[`transform tests don't convert "clip-path" 1`] = `
-"import React from \\"react\\";
-
-function Icon() {
-  return (
-    <svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 45 45\\">
-      <path d=\\"M43 24c1.1-1.5 2.3-3\\" clip-path=\\"url(#SVGID_2_134rwd)\\"></path>
-    </svg>
-  );
 }
 
 export default Icon;
