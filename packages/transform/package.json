@@ -1,12 +1,10 @@
 {
-  "name": "@balajmarius/svg2jsx",
-  "version": "2.0.2",
+  "private": true,
+  "name": "@svg2jsx/transform",
+  "version": "2.0.1",
   "description": "The svg2jsx transformer",
   "main": "index.js",
   "license": "MIT",
-  "engines": {
-    "node": ">=12.18.3"
-  },
   "dependencies": {
     "css-to-object": "1.1.0",
     "lodash.camelcase": "4.3.0",
