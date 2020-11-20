@@ -9,7 +9,6 @@ const nativeCSS = require('css-to-object');
  */
 const CUSTOM_ATTRIBUTES = {
   class: 'className',
-  'clip-path': 'clip-path',
 };
 
 /**
