@@ -8,7 +8,7 @@
   "author": "Balaj Marius <balajmarius@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "12.18.3"
+    "node": ">=12.18.3"
   },
   "workspaces": [
     "packages/app",
