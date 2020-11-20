@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "engines": {
-    "node": "14.15.1"
+    "node": ">=12.18.3"
   },
   "dependencies": {
     "css-to-object": "1.1.0",
