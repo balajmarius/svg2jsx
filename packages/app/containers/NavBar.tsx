@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import color from '../styles/color';
 import getVariantColor, { VariantType } from '../utils/getVariantColor';
 
 import Text from '../components/Text';
@@ -25,7 +24,7 @@ const Header = styled.header<HeaderProps>`
   padding: 15px 25px;
   transition: 300ms linear;
   background-size: 300% 100%;
-  border-bottom: 2px solid ${color.black};
+  border-bottom: 2px solid ${({ theme }) => theme.color.black};
   background-color: ${({ variant }) => getVariantColor(variant)};
 `;
 

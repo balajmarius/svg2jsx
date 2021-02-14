@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { DropEvent, FileRejection } from 'react-dropzone';
 
-import color from '../styles/color';
-
 import Text from '../components/Text';
 import Grid from '../components/Grid';
 import GridCell from '../components/GridCell';
@@ -25,13 +23,13 @@ const Button = styled.button`
   z-index: 100;
   padding: 10px;
   cursor: pointer;
-  color: ${color.lightGrey};
-  background: ${color.grey};
+  color: ${({ theme }) => theme.color.lightGrey};
+  background: ${({ theme }) => theme.color.grey};
   transition: 150ms ease-in-out;
   border-radius: 2px;
   position: absolute;
   &:active {
-    background: ${color.charade};
+    background: ${({ theme }) => theme.color.charade};
   }
 `;
 

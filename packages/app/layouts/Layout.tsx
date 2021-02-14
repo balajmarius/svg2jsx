@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement } from 'react';
 import Head from 'next/head';
-import { createGlobalStyle } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import color from '../styles/color';
 import fontSize from '../styles/fontSize';
@@ -44,6 +44,12 @@ const CSSReset = createGlobalStyle`
 `;
 
 const Layout: React.FC<Props> = ({ children }: Props) => {
+  const theme = {
+    color,
+    fontSize,
+    fontFamily,
+  };
+
   return (
     <Fragment>
       <Head>
@@ -57,7 +63,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
         <title>Editor - Convert SVG to valid JSX</title>
       </Head>
       <CSSReset />
-      {children}
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </Fragment>
   );
 };

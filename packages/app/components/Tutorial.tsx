@@ -2,7 +2,6 @@ import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import color from '../styles/color';
 import getStripes from '../utils/getStripes';
 
 import Text, { TextProps } from './Text';
@@ -25,15 +24,15 @@ const Modal = styled.div`
   text-align: center;
   border-radius: 15px;
   margin: 0 0 0 -125px;
-  background: ${color.darkGrey};
+  background: ${({ theme }) => theme.color.darkGrey};
 `;
 
 const Button = styled.button<Props>`
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 30px;
-  color: ${color.white};
-  background: ${color.purple};
+  color: ${({ theme }) => theme.color.white};
+  background: ${({ theme }) => theme.color.purple};
 `;
 
 const Separator = styled.div`
@@ -51,8 +50,8 @@ const Ring = styled(Text)<TextProps>`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  background: ${color.grey};
-  border: 2px solid ${color.black};
+  background: ${({ theme }) => theme.color.grey};
+  border: 2px solid ${({ theme }) => theme.color.black};
 `;
 
 const Tutorial: React.FC<Props> = ({ onClick }: Props) => {

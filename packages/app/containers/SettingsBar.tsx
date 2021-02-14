@@ -1,7 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import color from '../styles/color';
 import getStripes from '../utils/getStripes';
 import getVariantColor, { VariantType } from '../utils/getVariantColor';
 
@@ -32,7 +31,7 @@ interface IStatus {
 
 const Section = styled.section`
   padding: 10px 50px;
-  border-bottom: 2px solid ${color.black};
+  border-bottom: 2px solid ${({ theme }) => theme.color.black};
   background: ${getStripes('left', 'grey')};
 `;
 
@@ -44,7 +43,7 @@ const Status = styled.div<IStatus>`
   border-radius: 40px;
   justify-content: center;
   transition: 300ms linear;
-  border: 2px solid ${color.black};
+  border: 2px solid ${({ theme }) => theme.color.black};
   background: ${({ variant }) => getVariantColor(variant)};
 `;
 

@@ -1,8 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import color from '../styles/color';
-
 import Text from './Text';
 
 interface SwitchProps {
@@ -30,7 +28,7 @@ const Bar = styled.div`
   width: 30px;
   margin: 0 0 0 10px;
   border-radius: 30px;
-  background: ${color.black};
+  background: ${({ theme }) => theme.color.black};
 `;
 
 const Input = styled.input<InputProps>`
@@ -46,7 +44,7 @@ const Knob = styled.div<KnobProps>`
   border-radius: 15px;
   transition: 150ms ease-in-out;
   transform: ${({ checked }) => (checked ? 'translateX(11px)' : 'none')};
-  background: ${({ checked }) => (checked ? color.green : color.grey)};
+  background: ${({ checked, theme }) => (checked ? theme.color.green : theme.color.grey)};
 `;
 
 const Switch: React.FC<SwitchProps> = ({ label, checked, onChange }: SwitchProps) => {
