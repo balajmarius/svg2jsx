@@ -4,10 +4,7 @@
   "rules": {
     "radix": "off",
     "arrow-parens": "off",
-    "prefer-template": "off",
-    "react/jsx-filename-extension": false,
-    "react/prop-types": false,
-    "import/prefer-default-export": false
+    "prefer-template": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {
