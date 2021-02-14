@@ -5,17 +5,17 @@ import color from '../styles/color';
 
 import Text from './Text';
 
-interface ISwitch {
+interface SwitchProps {
   checked?: boolean;
   label: string;
   onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-interface IInput {
+interface InputProps {
   onChange(event: ChangeEvent<HTMLInputElement>): void;
 }
 
-interface IKnob {
+interface KnobProps {
   checked: boolean;
 }
 
@@ -33,13 +33,13 @@ const Bar = styled.div`
   background: ${color.black};
 `;
 
-const Input = styled.input<IInput>`
+const Input = styled.input<InputProps>`
   left: -999em;
   visibility: hidden;
   position: absolute;
 `;
 
-const Knob = styled.div<IKnob>`
+const Knob = styled.div<KnobProps>`
   margin: 2px;
   width: 15px;
   height: 15px;
@@ -49,7 +49,7 @@ const Knob = styled.div<IKnob>`
   background: ${({ checked }) => (checked ? color.green : color.grey)};
 `;
 
-function Switch({ label, checked, onChange }: ISwitch) {
+const Switch: React.FC<SwitchProps> = ({ label, checked, onChange }: SwitchProps) => {
   return (
     <Label>
       <Text textColor="lightGrey" fontWeight="bold" size="tiny">
@@ -61,7 +61,7 @@ function Switch({ label, checked, onChange }: ISwitch) {
       <Input type="checkbox" checked={checked} onChange={onChange} />
     </Label>
   );
-}
+};
 
 Switch.defaultProps = {
   checked: true,

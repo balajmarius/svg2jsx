@@ -13,19 +13,19 @@ import IconLogo from '../icons/IconLogo';
 import IconStar from '../icons/IconStar';
 import IconGithub from '../icons/IconGithub';
 
-interface INavBar {
+interface Props {
   variant: VariantType;
 }
 
-interface IHeader {
+interface HeaderProps {
   variant: VariantType;
 }
 
-const Header = styled.header<IHeader>`
+const Header = styled.header<HeaderProps>`
   padding: 15px 25px;
   transition: 300ms linear;
-  border-bottom: 2px solid ${color.black};
   background-size: 300% 100%;
+  border-bottom: 2px solid ${color.black};
   background-color: ${({ variant }) => getVariantColor(variant)};
 `;
 
@@ -37,7 +37,7 @@ const TextStar = styled(Text)`
   margin: 0 5px 0 7px;
 `;
 
-function NavBar({ variant }: INavBar) {
+const NavBar: React.FC<Props> = ({ variant }: Props) => {
   return (
     <Header variant={variant}>
       <Grid columns="auto auto">
@@ -57,6 +57,6 @@ function NavBar({ variant }: INavBar) {
       </Grid>
     </Header>
   );
-}
+};
 
 export default NavBar;

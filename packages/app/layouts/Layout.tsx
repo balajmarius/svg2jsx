@@ -6,7 +6,7 @@ import color from '../styles/color';
 import fontSize from '../styles/fontSize';
 import fontFamily from '../styles/fontFamily';
 
-interface ILayout {
+interface Props {
   children: ReactElement[];
 }
 
@@ -43,7 +43,7 @@ const CSSReset = createGlobalStyle`
   }
 `;
 
-function Layout({ children }: ILayout) {
+const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <Fragment>
       <Head>
@@ -60,6 +60,6 @@ function Layout({ children }: ILayout) {
       {children}
     </Fragment>
   );
-}
+};
 
 export default Layout;

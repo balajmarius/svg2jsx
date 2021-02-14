@@ -3,17 +3,18 @@ import AceEditor from 'react-ace';
 
 import 'brace/mode/jsx';
 import 'brace/mode/xml';
+
 import '../styles/editor';
 
-interface IEditor {
+interface Props {
   mode: string;
   value: string;
   debounceChangePeriod?: number;
   isReadOnly?: boolean;
-  onChange(value: string): void;
+  onChange?(value: string): void;
 }
 
-function Editor({ value, mode, isReadOnly, debounceChangePeriod, onChange }: IEditor) {
+const Editor: React.FC<Props> = ({ value, mode, isReadOnly, debounceChangePeriod, onChange }: Props) => {
   return (
     <AceEditor
       mode={mode}
@@ -27,7 +28,7 @@ function Editor({ value, mode, isReadOnly, debounceChangePeriod, onChange }: IEd
       onChange={onChange}
     />
   );
-}
+};
 
 Editor.defaultProps = {
   isReadOnly: false,

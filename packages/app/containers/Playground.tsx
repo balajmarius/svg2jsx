@@ -6,13 +6,13 @@ import { DropEvent, FileRejection } from 'react-dropzone';
 import color from '../styles/color';
 
 import Text from '../components/Text';
-import Grid, { IGrid } from '../components/Grid';
+import Grid from '../components/Grid';
 import GridCell from '../components/GridCell';
 import Droparea from '../components/Droparea';
 import Editor from '../components/Editor';
 import Tutorial from '../components/Tutorial';
 
-interface IPlayground {
+interface Props {
   svg: string;
   jsx: string;
   onChange(value: string): void;
@@ -35,7 +35,7 @@ const Button = styled.button`
   }
 `;
 
-function Playground({ svg, jsx, onChange, onDrop }: IPlayground) {
+const Playground: React.FC<Props> = ({ svg, jsx, onChange, onDrop }: Props) => {
   return (
     <Grid columns="1fr 1fr" gap={2} fullHeight>
       <GridCell fullHeight>
@@ -62,6 +62,6 @@ function Playground({ svg, jsx, onChange, onDrop }: IPlayground) {
       </GridCell>
     </Grid>
   );
-}
+};
 
 export default Playground;

@@ -4,13 +4,13 @@ import Text from './Text';
 import Grid from './Grid';
 import GridCell from './GridCell';
 
-interface IHeadings {
+interface HeadingsProps {
   primary: string;
   secondary: string;
   inverse?: boolean;
 }
 
-function Headings({ primary, secondary, inverse }: IHeadings) {
+const Headings: React.FC<HeadingsProps> = ({ primary, secondary, inverse }: HeadingsProps) => {
   const align = inverse ? 'left' : 'right';
   const direction = inverse ? 'rtl' : 'ltr';
 
@@ -28,7 +28,7 @@ function Headings({ primary, secondary, inverse }: IHeadings) {
       </GridCell>
     </Grid>
   );
-}
+};
 
 Headings.defaultProps = {
   inverse: false,

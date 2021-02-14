@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { useDropzone, DropEvent, FileRejection } from 'react-dropzone';
+import { useDropzone, DropEvent, FileRejection, DropzoneRootProps } from 'react-dropzone';
 
 import color from '../styles/color';
 
-interface IDroparea {
-  children: Function;
+interface Props {
+  children(rootProps: DropzoneRootProps): ReactNode;
   onDrop?(acceptedFiles: File[], rejectedFiles: FileRejection[], event: DropEvent): void;
 }
 
@@ -16,7 +16,7 @@ const Dropable = styled.div`
   border-right: 1px solid ${color.codGrey};
 `;
 
-function Droparea({ children, onDrop }: IDroparea) {
+const Droparea: React.FC<Props> = ({ children, onDrop }: Props) => {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const rootProps = getRootProps();
@@ -28,6 +28,6 @@ function Droparea({ children, onDrop }: IDroparea) {
       {children(rootProps)}
     </Dropable>
   );
-}
+};
 
 export default Droparea;

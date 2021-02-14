@@ -1,15 +1,8 @@
 import styled from 'styled-components';
 
-type JustifyType =
-  | 'flex-start'
-  | 'flex-end'
-  | 'center'
-  | 'space-between'
-  | 'space-around'
-  | 'initial'
-  | 'inherit';
+type JustifyType = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'initial' | 'inherit';
 
-export interface IGrid {
+export interface GridProps {
   gap?: number;
   fullHeight?: boolean;
   align?: 'left' | 'right' | 'center';
@@ -18,7 +11,7 @@ export interface IGrid {
   columns?: string;
 }
 
-const Grid = styled.div<IGrid>`
+const Grid = styled.div<GridProps>`
   display: grid;
   align-items: ${({ align }) => align};
   direction: ${({ direction }) => direction};

@@ -5,17 +5,15 @@ import PropTypes from 'prop-types';
 import color from '../styles/color';
 import getStripes from '../utils/getStripes';
 
-import Text, { IText } from './Text';
+import Text, { TextProps } from './Text';
 import Grid from './Grid';
 import GridCell from './GridCell';
 
 import IconPicture from '../icons/IconPicture';
 
-interface ITutorial {
+interface Props {
   onClick(event: MouseEvent<HTMLElement>): void;
 }
-
-interface ButtonType extends ITutorial {}
 
 const Modal = styled.div`
   top: 20%;
@@ -30,7 +28,7 @@ const Modal = styled.div`
   background: ${color.darkGrey};
 `;
 
-const Button = styled.button<ButtonType>`
+const Button = styled.button<Props>`
   cursor: pointer;
   padding: 15px 30px;
   border-radius: 30px;
@@ -45,7 +43,7 @@ const Separator = styled.div`
   background: ${getStripes('bottom', 'darkGrey')};
 `;
 
-const Ring = styled(Text)<IText>`
+const Ring = styled(Text)<TextProps>`
   width: 30px;
   height: 30px;
   display: flex;
@@ -57,7 +55,7 @@ const Ring = styled(Text)<IText>`
   border: 2px solid ${color.black};
 `;
 
-function Tutorial({ onClick }: ITutorial) {
+const Tutorial: React.FC<Props> = ({ onClick }: Props) => {
   return (
     <Modal>
       <Grid columns="auto 1fr" gap={20}>
@@ -78,7 +76,7 @@ function Tutorial({ onClick }: ITutorial) {
       </Button>
     </Modal>
   );
-}
+};
 
 Tutorial.propTypes = {
   onClick: PropTypes.func.isRequired,

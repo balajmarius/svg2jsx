@@ -14,7 +14,7 @@ import IconGear from '../icons/IconGear';
 import IconCross from '../icons/IconCross';
 import IconCheckMark from '../icons/IconCheckMark';
 
-interface ISettingsBar {
+interface Props {
   memo: boolean;
   variant: VariantType;
   cleanupIDs: boolean;
@@ -48,7 +48,7 @@ const Status = styled.div<IStatus>`
   background: ${({ variant }) => getVariantColor(variant)};
 `;
 
-function SettingsBar({
+const SettingsBar: React.FC<Props> = ({
   type,
   memo,
   variant,
@@ -58,7 +58,7 @@ function SettingsBar({
   onChangeQuote,
   onChangeIDs,
   onChangeMemo,
-}: ISettingsBar) {
+}: Props) => {
   const isFunctional = type === 'functional';
 
   return (
@@ -92,6 +92,6 @@ function SettingsBar({
       </Grid>
     </Section>
   );
-}
+};
 
 export default SettingsBar;

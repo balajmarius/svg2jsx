@@ -5,10 +5,10 @@ import fontFamily from './fontFamily';
 declare const ace: AceType;
 
 interface AceType {
-  define(name: string, dependencies: string[], create: Function): void;
+  define(name: string, dependencies: string[], create: any): void;
 }
 
-function createStyle(require: Function, exports: any): void {
+function createStyle(require: any, exports: any): void {
   const style = `
     .ace_editor {
       min-width: 100%;
@@ -54,6 +54,7 @@ function createStyle(require: Function, exports: any): void {
   exports.cssText = style;
   exports.cssClass = 'ace_svg2jsx';
 
+  // eslint-disable-next-line
   require('../lib/dom').importCssString(style, 'ace_svg2jsx');
 }
 

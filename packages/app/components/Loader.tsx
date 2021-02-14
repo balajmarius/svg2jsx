@@ -14,7 +14,7 @@ const Gutter = styled.div`
   border-left: 48px solid ${color.codGrey};
 `;
 
-function Loader() {
+const Loader: React.FC = () => {
   return (
     <Grid columns="1fr 1fr" gap={2} fullHeight>
       <GridCell fullHeight>
@@ -29,6 +29,6 @@ function Loader() {
       </GridCell>
     </Grid>
   );
-}
+};
 
 export default Loader;
