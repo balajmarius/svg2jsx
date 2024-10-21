@@ -12,6 +12,7 @@ declare const ace: AceEditor;
 
 const createAceEditorStylesheet = (require: RequireType, exports: ExportsType) => {
   exports.cssClass = "ace_svg2jsx";
+
   require("../lib/dom").importCssString(null, "ace_svg2jsx");
 };
 
