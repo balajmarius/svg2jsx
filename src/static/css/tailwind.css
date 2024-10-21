@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .ace_svg2jsx {
+    @apply min-w-full min-h-full font-mono leading-relaxed subpixel-antialiased;
+
+    .ace_scroller {
+      @apply pt-4;
+    }
+    .ace_gutter {
+      @apply text-gray-150 bg-gray-300 text-gray-50 pt-4;
+    }
+    .ace_gutter-cell {
+      @apply px-6;
+    }
+
+    .ace_selection {
+      @apply bg-gray-150;
+    }
+    .ace_keyword {
+      @apply text-white;
+    }
+    .ace_comment {
+      @apply text-gray-150;
+    }
+    .ace_type,
+    .ace_keyword {
+      @apply text-green-50;
+    }
+    .ace_operator,
+    .ace_punctuation {
+      @apply text-pink-50;
+    }
+    .ace_name,
+    .ace_class,
+    .ace_string,
+    .ace_numeric,
+    .ace_attribute-value {
+      @apply text-purple-50;
+    }
+  }
+}
