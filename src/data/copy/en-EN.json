@@ -1,0 +1,18 @@
+{
+  "META_DESCRIPTION": "Convert SVG to valid JSX",
+  "META_KEYWORDS": "svg, jsx, svg2jsx",
+  "META_COPYRIGHT": "Copyright Bălaj Marius 2024. All Rights Reserved.",
+  "META_TITLE": "Editor — Convert SVG to valid JSX.",
+  "APPBAR_TITLE": "SVG 2 JSX",
+  "APPBAR_STAR": "Star on",
+  "APPBAR_SETTINGS_INPUT": "Input",
+  "APPBAR_SETTINGS_OUTPUT": "Output",
+  "APPBAR_SETTINGS_SVG": "SVG",
+  "APPBAR_SETTINGS_JSX": "JSX",
+  "APPBAR_SETTINGS_IDS": "IDs",
+  "APPBAR_SETTINGS_QUOTES": "Quotes",
+  "APPBAR_SETTINGS_MEMO": "Memo",
+  "APPBAR_SETTINGS_TYPESCRIPT": "Typescript",
+  "APP_CODEDECK_TUTORIAL_DRAG_AND_DROP": "Drag and drop your file here",
+  "APP_CODEDECK_TUTORIAL_UPLOAD_YOUR_FILE": "Upload your file"
+}
