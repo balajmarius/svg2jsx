@@ -16,7 +16,7 @@ export const Switch: React.FC<SwitchProps> = ({ children, value, ...props }) => 
               className={twMerge(
                 "transition-all rounded-full w-4 h-4",
                 isSelected ? "ml-4" : "mr-4",
-                isSelected ? "bg-green-100 group-hover:bg-green-50" : "bg-gray-100 group-hover:bg-gray-50",
+                isSelected ? "bg-green-100 group-hover:bg-green-50" : "bg-gray-100 group-hover:bg-gray-50"
               )}
             />
           </div>
