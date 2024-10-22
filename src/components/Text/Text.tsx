@@ -18,16 +18,16 @@ const defaultTextVariantMapping: TextVariantMapping = {
 
 const defaultTextVariantCSSMapping: TextVariantMapping = {
   title: "text-lg font-bold",
-  subtitle: "text-lg",
+  subtitle: "text-lg leading-6",
   body: "text-base text-gray-50 font-mono",
   caption: "text-xs font-bold",
-  overline: "text-xs text-gray-50 font-bold uppercase",
+  overline: "text-xs font-bold uppercase",
 };
 
 export const Text: React.FC<TextProps> = ({ variant = "body", cx, ...props }) => {
   return React.createElement(defaultTextVariantMapping[variant], {
     ...props,
-    className: twMerge(cx, defaultTextVariantCSSMapping[variant]),
+    className: twMerge(defaultTextVariantCSSMapping[variant], cx),
   });
 };
 

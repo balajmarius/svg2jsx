@@ -39,6 +39,17 @@ const config: Config = {
       borderWidth: ({ theme }) => ({
         xl: theme("width.14"),
       }),
+      backgroundImage: ({ theme }) => ({
+        "appbar-1": `linear-gradient(
+          to left,
+          ${theme("colors.gray.100")},
+          ${theme("colors.gray.100")} calc(${theme("width.1/2")} - ${theme("width.px")}),
+          ${theme("colors.gray.250")} calc(${theme("width.1/2")} - ${theme("width.px")}),
+          ${theme("colors.gray.250")} calc(${theme("width.1/2")} + ${theme("width.px")}),
+          ${theme("colors.gray.100")} calc(${theme("width.1/2")} + ${theme("width.px")}),
+          ${theme("colors.gray.100")}
+        )`,
+      }),
     },
   },
 };

@@ -10,8 +10,8 @@ export interface AppBarSettingsProps extends React.HtmlHTMLAttributes<HTMLDivEle
 
 export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
   return (
-    <div className="bg-gray-100 border-b-2 border-gray-250 grid grid-cols-12 py-3 px-14 relative" {...props}>
-      <div className="col-span-4 flex items-center justify-start gap-4">
+    <div className="bg-appbar-1 border-b-2 border-gray-250 grid grid-cols-12 py-3 px-14 relative" {...props}>
+      <div className="col-span-4 flex items-center justify-start gap-4 text-gray-50">
         <Switch name="cleanupIDs">
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_IDS" />

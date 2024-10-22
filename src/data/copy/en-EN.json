@@ -13,6 +13,7 @@
   "APPBAR_SETTINGS_QUOTES": "Quotes",
   "APPBAR_SETTINGS_MEMO": "Memo",
   "APPBAR_SETTINGS_TYPESCRIPT": "Typescript",
-  "APP_CODEDECK_TUTORIAL_DRAG_AND_DROP": "Drag and drop your file here",
-  "APP_CODEDECK_TUTORIAL_UPLOAD_YOUR_FILE": "Upload your file"
+  "APPBAR_CODE_DECK_COPY": "Copy",
+  "INFO_DRAG_AND_DROP": "Drag and drop your file here",
+  "INFO_UPLOAD_YOUR_FILE": "Upload your file"
 }

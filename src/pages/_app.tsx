@@ -23,11 +23,9 @@ const robotoSans400 = Roboto({
 export default ({ Component, pageProps }: AppProps) => {
   return (
     <IntlProvider locale="en-EN" messages={copy}>
-      <AppBarCodeDeckStore>
-        <div className={twMerge(robotoSans400.variable, inconsolata400.variable, "font-sans flex flex-col h-screen")}>
-          <Component {...pageProps} />
-        </div>
-      </AppBarCodeDeckStore>
+      <div className={twMerge(robotoSans400.variable, inconsolata400.variable, "font-sans flex flex-col h-screen")}>
+        <Component {...pageProps} />
+      </div>
     </IntlProvider>
   );
 };

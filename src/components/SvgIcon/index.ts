@@ -4,5 +4,7 @@ export { SvgIconStar } from "./SvgIconStar";
 export { SvgIconGithub } from "./SvgIconGithub";
 export { SvgIconGear } from "./SvgIconGear";
 export { SvgIconSkeleton } from "./SvgIconSkeleton";
+export { SvgIconSvg } from "./SvgIconSvg";
+export { SvgIconClipboard } from "./SvgIconClipboard";
 
 export * from "./types";

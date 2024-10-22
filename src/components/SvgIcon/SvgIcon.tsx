@@ -13,6 +13,7 @@ const defaultSvgIconSizeMapping: SvgIconSizeMapping = {
   md: "w-5",
   lg: "w-10",
   xl: "w-16",
+  full: "w-full",
 };
 
 export const SvgIcon: React.FC<SvgIconProps> = ({ cx, size = "md", ...props }) => {
