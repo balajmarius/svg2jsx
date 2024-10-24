@@ -1,37 +1,42 @@
-import React from "react";
+import React, { memo } from "react";
 import { FormattedMessage } from "react-intl";
+
+import { useCodeDeck } from "@/hooks/useCodeDeck";
 
 import { SvgIconGear } from "@/components/SvgIcon";
 
 import { Text } from "@/components/Text";
-import { Switch } from "@/components/Switch";
+import { Checkbox } from "@/components/Checkbox";
 
 export interface AppBarSettingsProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
 export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
+  const { memo, typescript, jsxSingleQuotes, cleanupIDs, setMemo, setTypeScript, setJsxSingleQuotes, setCleanupIDs } =
+    useCodeDeck();
+
   return (
     <div className="bg-appbar-1 border-b-2 border-gray-250 grid grid-cols-12 py-3 px-14 relative" {...props}>
       <div className="col-span-4 flex items-center justify-start gap-4 text-gray-50">
-        <Switch name="cleanupIDs">
+        <Checkbox name="cleanupIDs" checked={cleanupIDs} onChange={setCleanupIDs}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_IDS" />
           </Text>
-        </Switch>
-        <Switch name="jsxSingleQuotes">
+        </Checkbox>
+        <Checkbox name="jsxSingleQuotes" checked={jsxSingleQuotes} onChange={setJsxSingleQuotes}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_QUOTES" />
           </Text>
-        </Switch>
-        <Switch name="memo">
+        </Checkbox>
+        <Checkbox name="memo" checked={memo} onChange={setMemo}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_MEMO" />
           </Text>
-        </Switch>
-        <Switch name="typescript">
+        </Checkbox>
+        <Checkbox name="typescript" checked={typescript} onChange={setTypeScript}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_TYPESCRIPT" />
           </Text>
-        </Switch>
+        </Checkbox>
       </div>
 
       <div className="col-span-4 flex items-center justify-center gap-3">

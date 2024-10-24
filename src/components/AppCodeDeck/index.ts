@@ -1,3 +1,1 @@
-import AppCodeDeck from "./AppCodeDeck";
-
-export default AppCodeDeck;
+export { AppCodeDeck } from "./AppCodeDeck";

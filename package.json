@@ -17,7 +17,6 @@
     "next": "^15.0.0",
     "react": "^18",
     "react-ace": "^12.0.0",
-    "react-aria-components": "^1.4.1",
     "react-dom": "^18",
     "react-dropzone": "^14.2.10",
     "react-intl": "^6.8.0",
