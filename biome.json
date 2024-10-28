@@ -21,8 +21,13 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "performance": {
+        "noAccumulatingSpread": "off"
+      },
       "style": {
-        "useImportType": "off"
+        "useImportType": "off",
+        "useTemplate": "off",
+        "noUnusedTemplateLiteral": "off"
       }
     }
   },

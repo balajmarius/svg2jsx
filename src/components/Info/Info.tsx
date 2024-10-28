@@ -3,14 +3,15 @@ import { FormattedMessage } from "react-intl";
 
 import { Text } from "@/components/Text";
 import { Button } from "@/components/Button";
-import { SvgIconStar, SvgIconSvg } from "@/components/SvgIcon";
+import { SvgIconSvg } from "@/components/SvgIcon";
 import { twMerge } from "tailwind-merge";
 
 export interface InfoProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   isDragActive?: boolean;
+  onClick?: () => void;
 }
 
-export const Info: React.FC<InfoProps> = ({ isDragActive }) => {
+export const Info: React.FC<InfoProps> = ({ isDragActive, onClick }) => {
   return (
     <div
       className={twMerge(
@@ -31,7 +32,7 @@ export const Info: React.FC<InfoProps> = ({ isDragActive }) => {
 
       <div className="grid grid-cols-12 px-8 py-6">
         <div className="col-span-12">
-          <Button variant="contained">
+          <Button variant="contained" onClick={onClick}>
             <Text variant="title">
               <FormattedMessage id="INFO_UPLOAD_YOUR_FILE" />
             </Text>

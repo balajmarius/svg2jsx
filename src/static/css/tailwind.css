@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-  .ace_svg2jsx {
-    @apply min-w-full min-h-full font-mono leading-relaxed subpixel-antialiased;
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 
-    .ace_scroller {
-      @apply pt-4;
-    }
+  .ace_svg2jsx {
+    @apply min-w-full min-h-full font-mono subpixel-antialiased;
+
     .ace_gutter {
-      @apply text-gray-150 bg-gray-300 text-gray-50 pt-4;
+      @apply text-gray-150 bg-gray-300 text-gray-50;
     }
     .ace_gutter-cell {
       @apply px-6;
     }
-
     .ace_selection {
       @apply bg-gray-150;
     }

@@ -14,15 +14,15 @@ import { Dropzone } from "@/components/Dropzone";
 export interface AppCodeDeckProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
 export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
-  const { svg, jsx, setSvg } = useCodeDeck();
+  const { svg, jsx, setSvg, drop, copy } = useCodeDeck();
 
   return (
     <div className="grid grid-cols-12 h-full">
       <div className="col-span-6 relative">
-        <Dropzone>
-          {({ isDragActive }) => (
+        <Dropzone onDrop={drop}>
+          {({ isDragActive, open }) => (
             <>
-              {svg ? null : <Info isDragActive={isDragActive} />}
+              {svg ? null : <Info isDragActive={isDragActive} onClick={open} />}
               <Editor mode="svg" value={svg} onChange={setSvg} />
             </>
           )}
@@ -31,12 +31,14 @@ export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
 
       <div className="col-span-6 relative">
         <div className="absolute z-50 top-2 right-2">
-          <Button variant="text">
-            <SvgIconClipboard size="sm" />
-            <Text variant="overline">
-              <FormattedMessage id="APPBAR_CODE_DECK_COPY" />
-            </Text>
-          </Button>
+          {jsx ? (
+            <Button variant="text" onClick={copy}>
+              <SvgIconClipboard size="sm" />
+              <Text variant="overline">
+                <FormattedMessage id="APPBAR_CODE_DECK_COPY" />
+              </Text>
+            </Button>
+          ) : null}
         </div>
 
         <Editor mode="jsx" readOnly value={jsx} />

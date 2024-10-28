@@ -7,22 +7,33 @@ import { SvgIconGear } from "@/components/SvgIcon";
 
 import { Text } from "@/components/Text";
 import { Checkbox } from "@/components/Checkbox";
+import { twMerge } from "tailwind-merge";
 
 export interface AppBarSettingsProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
 export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
-  const { memo, typescript, jsxSingleQuotes, cleanupIDs, setMemo, setTypeScript, setJsxSingleQuotes, setCleanupIDs } =
-    useCodeDeck();
+  const {
+    memo,
+    typescript,
+    jsxSingleQuote,
+    cleanupIds,
+    isSuccess,
+    isError,
+    setMemo,
+    setTypeScript,
+    setJsxSingleQuote,
+    setCleanupIds,
+  } = useCodeDeck();
 
   return (
     <div className="bg-appbar-1 border-b-2 border-gray-250 grid grid-cols-12 py-3 px-14 relative" {...props}>
       <div className="col-span-4 flex items-center justify-start gap-4 text-gray-50">
-        <Checkbox name="cleanupIDs" checked={cleanupIDs} onChange={setCleanupIDs}>
+        <Checkbox name="cleanupIds" checked={cleanupIds} onChange={setCleanupIds}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_IDS" />
           </Text>
         </Checkbox>
-        <Checkbox name="jsxSingleQuotes" checked={jsxSingleQuotes} onChange={setJsxSingleQuotes}>
+        <Checkbox name="jsxSingleQuote" checked={jsxSingleQuote} onChange={setJsxSingleQuote}>
           <Text variant="overline">
             <FormattedMessage id="APPBAR_SETTINGS_QUOTES" />
           </Text>
@@ -39,7 +50,7 @@ export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
         </Checkbox>
       </div>
 
-      <div className="col-span-4 flex items-center justify-center gap-3">
+      <div className="col-span-4 flex-center gap-3">
         <Text variant="body" cx="w-12 text-right">
           <FormattedMessage id="APPBAR_SETTINGS_INPUT" />
         </Text>
@@ -47,7 +58,13 @@ export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
           <FormattedMessage id="APPBAR_SETTINGS_SVG" />
         </Text>
 
-        <div className="bg-purple-100 border-2 border-gray-250 flex items-center justify-center w-10 h-10 rounded-full">
+        <div
+          className={twMerge(
+            "bg-purple-100 border-2 border-gray-250 size-10 flex-center	rounded-full transition-all duration-300 ease-linear",
+            isError && "bg-red-50",
+            isSuccess && "bg-green-100",
+          )}
+        >
           <SvgIconGear />
         </div>
 

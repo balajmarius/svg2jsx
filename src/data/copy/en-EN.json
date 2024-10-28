@@ -10,10 +10,12 @@
   "APPBAR_SETTINGS_SVG": "SVG",
   "APPBAR_SETTINGS_JSX": "JSX",
   "APPBAR_SETTINGS_IDS": "Remove IDs",
+  "APPBAR_SETTINGS_REACTIFY": "Reactify",
   "APPBAR_SETTINGS_QUOTES": "Quotes",
   "APPBAR_SETTINGS_MEMO": "Memo",
   "APPBAR_SETTINGS_TYPESCRIPT": "Typescript",
   "APPBAR_CODE_DECK_COPY": "Copy",
+  "APPBAR_CODE_DECK_COPIED": "Copied",
   "INFO_DRAG_AND_DROP": "Drag and drop your file here",
   "INFO_UPLOAD_YOUR_FILE": "Upload your file"
 }

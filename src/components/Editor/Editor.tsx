@@ -31,12 +31,14 @@ const editorDefaultProps = {
 
 export const Editor: React.FC<EditorProps> = ({ mode, value, readOnly, onChange }) => {
   const config = useMemo(() => resolveConfig(tailwindConfig), []);
-  const [fontSize] = config.theme.fontSize.sm;
+
+  const [fontSize, { lineHeight }] = config.theme.fontSize.sm;
 
   return (
     <AceEditor
       {...editorDefaultProps}
       fontSize={fontSize}
+      lineHeight={lineHeight}
       theme="svg2jsx"
       mode={mode}
       value={value}
