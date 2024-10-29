@@ -7,7 +7,7 @@ export const useLocalStorageToggle = (key: string, defaultValue?: boolean) => {
 
   useEffect(() => {
     store(value);
-  }, [value]);
+  }, [value, store]);
 
   return [value, toggle] as const;
 };
