@@ -1,12 +1,12 @@
 {
   "name": "svg2jsx",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest --config jest.config.ts",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest --config jest.config.ts",
     "lint": "biome ci ./src/**/*",
     "format": "biome format ./src/**/* --write",
     "prepare": "husky"
@@ -57,6 +57,6 @@
     "typescript": "^5.6.3"
   },
   "engines": {
-    "node": ">=19.0.0"
+    "node": ">=18.20.0"
   }
 }

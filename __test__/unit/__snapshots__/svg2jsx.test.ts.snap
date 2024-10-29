@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`svg2jsx tests clean attributes 1`] = `"<svg id="test" fill="red"></svg>"`;
+
+exports[`svg2jsx tests convert attributes 1`] = `"<svg fillRule="evenodd" className="test" data-name="svg"></svg>"`;
+
+exports[`svg2jsx tests convert inline styles to style objects 1`] = `"<svg style={{ marginLeft: "20px", paddingTop: "20px",  }}></svg>"`;
+
+exports[`svg2jsx tests convert nested nodes 1`] = `"<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 45 45"><defs><clipPath id="svg-test"></clipPath></defs><circle cx="110" cy="110" r="100" fill="#9c6" clipPath="url(#svg-test)"></circle></svg>"`;
+
+exports[`svg2jsx tests convert text elements 1`] = `"<svg width="200" height="200" viewBox="0 0 100 100"><text>svg2jsx</text></svg>"`;
+
+exports[`svg2jsx tests keep attribute values 1`] = `"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 10"><circle id="svg-test" cx="5" cy="5" r="4" stroke="#00f"></circle><use x="20" fill="#fff" stroke="red" href="#svg-test"></use></svg>"`;
+
+exports[`svg2jsx tests keep dimensions attributes 1`] = `"<svg width="125" height="125" viewBox="0 0 125 125"><path fill="red" d="M49 3v24l12-12z"></path></svg>"`;
+
+exports[`svg2jsx tests quote string style values 1`] = `"<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 45 45"><path d="M12 9.9c-1.1 0-2.1.9-2.1 2.1 0 1.1.9 2.1 2.1 2.1 1.1 0 2.1-.9 2.1-2.1 0-1.1-1-2.1-2.1-2.1" style={{ marginLeft: "auto",  }}></path></svg>"`;
+
+exports[`svg2jsx tests remove unnecessary nodes 1`] = `"<svg></svg>"`;

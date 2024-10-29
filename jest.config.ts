@@ -1,4 +1,4 @@
-import type { Config } from "jest";
+import { type Config } from "jest";
 
 import jest from "next/jest.js";
 
@@ -8,10 +8,11 @@ const createJestConfig = jest({
 
 const config: Config = {
   coverageProvider: "v8",
-  testEnvironment: "jsdom",
+  testEnvironment: "node",
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
   },
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
 };
 
 export default createJestConfig(config);

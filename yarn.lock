@@ -368,11 +368,6 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@custom-react-hooks/use-clipboard@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@custom-react-hooks/use-clipboard/-/use-clipboard-1.5.1.tgz#afa2b013ab4b73ec1062af2d490f98d979c9b828"
-  integrity sha512-rXwbVk8GtqZHTJsEWl1ubkE/uEiZR1OpvErdCpvctKVbwwAulhYwfvrU9CvoVywcqbVoj8j+gHYcYXNCyUh4Xw==
-
 "@emnapi/runtime@^1.2.0":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.3.1.tgz#0fcaa575afc31f455fd33534c19381cfce6c6f60"

@@ -16,7 +16,7 @@ export type Data = {
 };
 
 export const svg2jsx = flow(
-  (svg: string, options: Options) => clean(svg, options.cleanupIds),
+  (svg: string, options: Options) => clean(svg, options?.cleanupIds),
   (svg: string) => parse(svg),
   (node: Node) => transform(node),
   (node: Node) => stringify(node),
