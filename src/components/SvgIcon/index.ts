@@ -5,5 +5,6 @@ export { SvgIconGithub } from "./SvgIconGithub";
 export { SvgIconGear } from "./SvgIconGear";
 export { SvgIconSvg } from "./SvgIconSvg";
 export { SvgIconClipboard } from "./SvgIconClipboard";
+export { SvgIconPending } from "./SvgIconPending";
 
 export * from "./types";

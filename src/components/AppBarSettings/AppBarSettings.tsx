@@ -7,7 +7,7 @@ import { useCodeDeck } from "@/hooks/useCodeDeck";
 
 import { Text } from "@/components/Text";
 import { Checkbox } from "@/components/Checkbox";
-import { SvgIconGear } from "@/components/SvgIcon";
+import { SvgIconGear, SvgIconPending } from "@/components/SvgIcon";
 
 export interface AppBarSettingsProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
@@ -19,6 +19,7 @@ export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
     cleanupIds,
     isSuccess,
     isError,
+    isPending,
     setMemo,
     setTypeScript,
     setJsxSingleQuote,
@@ -68,10 +69,10 @@ export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
           className={twMerge(
             "bg-purple-100 border-2 border-gray-250 size-10 flex-center	rounded-full transition-all duration-300 ease-linear",
             isError && "bg-red-50",
-            isSuccess && "bg-green-100",
+            isSuccess && "bg-green-100"
           )}
         >
-          <SvgIconGear />
+          {isPending ? <SvgIconPending /> : <SvgIconGear />}
         </div>
 
         <Text variant="title" cx="w-9">

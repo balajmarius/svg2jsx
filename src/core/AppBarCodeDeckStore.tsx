@@ -17,6 +17,7 @@ export interface AppBarCodeDeckStoreContextType {
   cleanupIds?: boolean;
   isSuccess?: boolean;
   isError?: boolean;
+  isPending?: boolean;
   setSvg: (value: string | undefined) => void;
   setMemo: () => void;
   setTypeScript: () => void;
@@ -39,6 +40,7 @@ export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreConte
   cleanupIds: undefined,
   isSuccess: undefined,
   isError: undefined,
+  isPending: undefined,
   setSvg: () => {},
   setMemo: () => {},
   setTypeScript: () => {},
@@ -57,7 +59,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
   const [jsxSingleQuote, setJsxSingleQuote] = useLocalStorageToggle("jsxSingleQuote");
   const [cleanupIds, setCleanupIds] = useLocalStorageToggle("cleanupIds");
 
-  const { jsx, isSuccess, isError, mutate, reset } = useApi();
+  const { jsx, isSuccess, isError, isPending, mutate, reset } = useApi();
 
   const drop = useCallback(async ([file]: File[]) => {
     try {
@@ -86,7 +88,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
       }
     },
     EDITOR_DEBOUNCE_TIME,
-    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear],
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
   );
 
   return (
@@ -100,6 +102,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
         cleanupIds,
         isSuccess,
         isError,
+        isPending,
         setSvg,
         setMemo,
         setTypeScript,
