@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NEXT_PUBLIC_SSR=false next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --config jest.config.ts",
@@ -30,6 +30,7 @@
     "svg-parser": "^2.0.4",
     "svgo": "^3.3.2",
     "tailwind-merge": "^2.5.4",
+    "use-debounced-effect": "^2.0.1",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {

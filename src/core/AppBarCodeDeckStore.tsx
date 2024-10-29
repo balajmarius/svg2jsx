@@ -1,8 +1,11 @@
-import React, { createContext, useState, useEffect, useCallback } from "react";
-import { useToggle, useCopyToClipboard } from "usehooks-ts";
+import React, { createContext, useState, useCallback } from "react";
+import useDebouncedEffect from "use-debounced-effect";
+import { useCopyToClipboard } from "usehooks-ts";
 
 import { useApi } from "@/hooks/useApi";
+import { useLocalStorageToggle } from "@/hooks/useLocalStorageToggle";
 
+import { EDITOR_DEBOUNCE_TIME } from "@/utils/const";
 import { readAndFormatFileContents } from "@/utils/helpers";
 
 export interface AppBarCodeDeckStoreContextType {
@@ -46,13 +49,13 @@ export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreConte
 });
 
 export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ children }) => {
-  const [, copyToClipboard] = useCopyToClipboard();
   const [svg, setSvg] = useState<string | undefined>();
+  const [, copyToClipboard] = useCopyToClipboard();
 
-  const [memo, setMemo] = useToggle();
-  const [typescript, setTypeScript] = useToggle();
-  const [jsxSingleQuote, setJsxSingleQuote] = useToggle();
-  const [cleanupIds, setCleanupIds] = useToggle();
+  const [memo, setMemo] = useLocalStorageToggle("memo");
+  const [typescript, setTypeScript] = useLocalStorageToggle("typescript");
+  const [jsxSingleQuote, setJsxSingleQuote] = useLocalStorageToggle("jsxSingleQuote");
+  const [cleanupIds, setCleanupIds] = useLocalStorageToggle("cleanupIds");
 
   const { jsx, isSuccess, isError, mutate, reset } = useApi();
 
@@ -63,9 +66,9 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
     } catch (error) {}
   }, []);
 
-  const copy = useCallback(() => {
+  const copy = useCallback(async () => {
     if (jsx) {
-      copyToClipboard(jsx);
+      await copyToClipboard(jsx);
     }
   }, [jsx, copyToClipboard]);
 
@@ -74,13 +77,17 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
     setSvg(undefined);
   }, [reset]);
 
-  useEffect(() => {
-    if (svg) {
-      mutate({ input: { svg, options: { memo, typescript, jsxSingleQuote, cleanupIds } } });
-    } else {
-      clear();
-    }
-  }, [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]);
+  useDebouncedEffect(
+    () => {
+      if (svg) {
+        mutate({ input: { svg, options: { memo, typescript, jsxSingleQuote, cleanupIds } } });
+      } else {
+        clear();
+      }
+    },
+    EDITOR_DEBOUNCE_TIME,
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
+  );
 
   return (
     <AppBarCodeDeckStoreContext.Provider

@@ -14,5 +14,5 @@ export const useApi = () => {
     isError,
     reset,
     mutate,
-  };
+  } as const;
 };

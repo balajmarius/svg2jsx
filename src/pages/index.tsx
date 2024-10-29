@@ -3,8 +3,8 @@ import Head from "next/head";
 import copy from "@/data/copy/en-EN.json";
 
 import { AppBar } from "@/components/AppBar";
-import { AppBarSettings } from "@/components/AppBarSettings";
 import { AppCodeDeck } from "@/components/AppCodeDeck";
+import { AppBarSettings } from "@/components/AppBarSettings";
 
 export default () => {
   return (
