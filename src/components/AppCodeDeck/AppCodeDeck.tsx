@@ -14,7 +14,7 @@ import { Dropzone } from "@/components/Dropzone";
 export interface AppCodeDeckProps extends React.HtmlHTMLAttributes<HTMLDivElement> {}
 
 export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
-  const { svg, jsx, setSvg, drop, copy } = useCodeDeck();
+  const { svg, jsx, isCopied, setSvg, drop, copy } = useCodeDeck();
 
   return (
     <div className="grid grid-cols-12 h-full">
@@ -33,9 +33,13 @@ export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
         <div className="absolute z-50 top-2 right-2">
           {jsx ? (
             <Button variant="text" onClick={copy}>
-              <SvgIconClipboard size="sm" />
+              <SvgIconClipboard size="sm" copied={isCopied} />
               <Text variant="overline">
-                <FormattedMessage id="APPBAR_CODE_DECK_COPY" />
+                {isCopied ? (
+                  <FormattedMessage id="APPBAR_CODE_DECK_COPIED" />
+                ) : (
+                  <FormattedMessage id="APPBAR_CODE_DECK_COPY" />
+                )}
               </Text>
             </Button>
           ) : null}

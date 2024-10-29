@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from "react";
+import React, { createContext, useState, useCallback, useMemo } from "react";
 import useDebouncedEffect from "use-debounced-effect";
 import { useCopyToClipboard } from "usehooks-ts";
 
@@ -18,6 +18,7 @@ export interface AppBarCodeDeckStoreContextType {
   isSuccess?: boolean;
   isError?: boolean;
   isPending?: boolean;
+  isCopied?: boolean;
   setSvg: (value: string | undefined) => void;
   setMemo: () => void;
   setTypeScript: () => void;
@@ -41,6 +42,7 @@ export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreConte
   isSuccess: undefined,
   isError: undefined,
   isPending: undefined,
+  isCopied: undefined,
   setSvg: () => {},
   setMemo: () => {},
   setTypeScript: () => {},
@@ -52,7 +54,7 @@ export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreConte
 
 export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ children }) => {
   const [svg, setSvg] = useState<string | undefined>();
-  const [, copyToClipboard] = useCopyToClipboard();
+  const [copied, copyToClipboard] = useCopyToClipboard();
 
   const [memo, setMemo] = useLocalStorageToggle("memo");
   const [typescript, setTypeScript] = useLocalStorageToggle("typescript");
@@ -60,6 +62,12 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
   const [cleanupIds, setCleanupIds] = useLocalStorageToggle("cleanupIds");
 
   const { jsx, isSuccess, isError, isPending, mutate, reset } = useApi();
+
+  const isCopied = useMemo(() => {
+    if (copied) {
+      return btoa(jsx) === btoa(copied);
+    }
+  }, [jsx, copied]);
 
   const drop = useCallback(async ([file]: File[]) => {
     try {
@@ -70,7 +78,9 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
 
   const copy = useCallback(async () => {
     if (jsx) {
-      await copyToClipboard(jsx);
+      try {
+        await copyToClipboard(jsx);
+      } catch (error) {}
     }
   }, [jsx, copyToClipboard]);
 
@@ -88,7 +98,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
       }
     },
     EDITOR_DEBOUNCE_TIME,
-    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear],
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
   );
 
   return (
@@ -103,6 +113,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
         isSuccess,
         isError,
         isPending,
+        isCopied,
         setSvg,
         setMemo,
         setTypeScript,
