@@ -68,7 +68,7 @@ export const AppBarSettings: React.FC<AppBarSettingsProps> = (props) => {
           className={twMerge(
             "bg-purple-100 border-2 border-gray-250 size-10 flex-center	rounded-full transition-all duration-300 ease-linear",
             isError && "bg-red-50",
-            isSuccess && "bg-green-100"
+            isSuccess && "bg-green-100",
           )}
         >
           <SvgIconGear />
