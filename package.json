@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_PUBLIC_SSR=false next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --config jest.config.ts",
