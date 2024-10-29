@@ -1,3 +1,3 @@
 # svg2jsx 🍃
 
-> Transform SVG into valid JSX
+> Transform SVG to valid JSX
