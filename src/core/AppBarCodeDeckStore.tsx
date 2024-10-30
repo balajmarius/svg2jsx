@@ -25,11 +25,11 @@ export interface AppBarCodeDeckStoreContextType {
   setJsxSingleQuote: () => void;
   setCleanupIds: () => void;
   copy: () => void;
-  drop: (files: File[]) => Promise<void>;
+  drop: (files: ReadonlyArray<File>) => Promise<void>;
 }
 
 export interface AppBarCodeDeckStoreProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode | ReadonlyArray<React.ReactNode>;
 }
 
 export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreContextType>({
@@ -69,7 +69,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
     }
   }, [jsx, copied]);
 
-  const drop = useCallback(async ([file]: File[]) => {
+  const drop = useCallback(async ([file]: ReadonlyArray<File>) => {
     try {
       const fileContents = await readAndFormatFileContents(file);
       setSvg(fileContents);
@@ -98,7 +98,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
       }
     },
     EDITOR_DEBOUNCE_TIME,
-    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear],
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
   );
 
   return (

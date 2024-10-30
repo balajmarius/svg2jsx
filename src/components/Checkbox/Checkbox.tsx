@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 export interface CheckboxProps {
   name: string;
   checked?: boolean;
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode | ReadonlyArray<React.ReactNode>;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -18,7 +18,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ name, children, checked, onC
             className={twMerge(
               "transition-all rounded-full w-4 h-4",
               checked ? "ml-4" : "mr-4",
-              checked ? "bg-green-100 group-hover:bg-green-50" : "bg-gray-100 group-hover:bg-gray-50",
+              checked ? "bg-green-100 group-hover:bg-green-50" : "bg-gray-100 group-hover:bg-gray-50"
             )}
           />
         </div>

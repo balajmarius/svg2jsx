@@ -5,7 +5,11 @@ type RequireType = (module: string) => {
 };
 
 interface AceEditor {
-  define(name: string, dependencies: string[], create: (require: RequireType, exports: ExportsType) => void): void;
+  define(
+    name: string,
+    dependencies: ReadonlyArray<string>,
+    create: (require: RequireType, exports: ExportsType) => void
+  ): void;
 }
 
 declare const ace: AceEditor;

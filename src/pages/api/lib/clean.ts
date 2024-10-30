@@ -1,6 +1,6 @@
 import { optimize, type PluginConfig } from "svgo";
 
-const defaultSvgoConfig: PluginConfig[] = [
+const defaultSvgoConfig: Array<PluginConfig> = [
   "convertStyleToAttrs",
   "removeDoctype",
   "removeXMLProcInst",

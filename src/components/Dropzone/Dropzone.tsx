@@ -2,7 +2,7 @@ import React from "react";
 import { useDropzone, DropEvent, FileRejection, type DropzoneProps as ReactDropzoneProps } from "react-dropzone";
 
 export interface DropzoneProps extends ReactDropzoneProps {
-  onDrop: (files: File[]) => Promise<void>;
+  onDrop: (files: ReadonlyArray<File>) => Promise<void>;
 }
 
 export const Dropzone: React.FC<DropzoneProps> = ({ children, onDrop }) => {
