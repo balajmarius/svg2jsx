@@ -24,8 +24,8 @@ export interface AppBarCodeDeckStoreContextType {
   setTypeScript: () => void;
   setJsxSingleQuote: () => void;
   setCleanupIds: () => void;
-  copy: () => void;
-  drop: (files: ReadonlyArray<File>) => Promise<void>;
+  handleCopy: () => void;
+  handleDrop: (files: ReadonlyArray<File>) => Promise<void>;
 }
 
 export interface AppBarCodeDeckStoreProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
@@ -48,8 +48,8 @@ export const AppBarCodeDeckStoreContext = createContext<AppBarCodeDeckStoreConte
   setTypeScript: () => {},
   setJsxSingleQuote: () => {},
   setCleanupIds: () => {},
-  drop: async () => {},
-  copy: () => {},
+  handleDrop: async () => {},
+  handleCopy: () => {},
 });
 
 export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ children }) => {
@@ -69,25 +69,25 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
     }
   }, [jsx, copied]);
 
-  const drop = useCallback(async ([file]: ReadonlyArray<File>) => {
+  const clear = useCallback(() => {
+    reset();
+    setSvg(undefined);
+  }, [reset]);
+
+  const handleDrop = useCallback(async ([file]: ReadonlyArray<File>) => {
     try {
       const fileContents = await readAndFormatFileContents(file);
       setSvg(fileContents);
     } catch (error) {}
   }, []);
 
-  const copy = useCallback(async () => {
+  const handleCopy = useCallback(async () => {
     if (jsx) {
       try {
         await copyToClipboard(jsx);
       } catch (error) {}
     }
   }, [jsx, copyToClipboard]);
-
-  const clear = useCallback(() => {
-    reset();
-    setSvg(undefined);
-  }, [reset]);
 
   useDebouncedEffect(
     () => {
@@ -98,7 +98,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
       }
     },
     EDITOR_DEBOUNCE_TIME,
-    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear],
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
   );
 
   return (
@@ -119,8 +119,8 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
         setTypeScript,
         setJsxSingleQuote,
         setCleanupIds,
-        drop,
-        copy,
+        handleDrop,
+        handleCopy,
       }}
     >
       {children}
