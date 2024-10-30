@@ -98,7 +98,7 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
       }
     },
     EDITOR_DEBOUNCE_TIME,
-    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear]
+    [svg, memo, typescript, jsxSingleQuote, cleanupIds, mutate, clear],
   );
 
   return (

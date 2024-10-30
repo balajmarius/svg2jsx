@@ -8,7 +8,7 @@ interface AceEditor {
   define(
     name: string,
     dependencies: ReadonlyArray<string>,
-    create: (require: RequireType, exports: ExportsType) => void
+    create: (require: RequireType, exports: ExportsType) => void,
   ): void;
 }
 
