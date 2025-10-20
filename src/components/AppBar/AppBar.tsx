@@ -15,7 +15,7 @@ export const AppBar: React.FC<AppBarProps> = (props) => {
   return (
     <header
       className={twMerge(
-        "bg-purple-100 border-b-2 border-gray-250 grid grid-cols-12 py-4 px-6 duration-300 transition-all ease-linear",
+        "bg-blue-600 border-b-2 border-gray-250 grid grid-cols-12 py-4 px-6 duration-300 transition-all ease-linear",
         isError && "bg-red-50",
         isSuccess && "bg-green-100",
       )}
