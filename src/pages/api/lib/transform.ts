@@ -1,4 +1,4 @@
-import { camelCase } from "lodash";
+import camelCase from "lodash.camelcase";
 import type { Node } from "svg-parser";
 import styleToJS from "style-to-js";
 
