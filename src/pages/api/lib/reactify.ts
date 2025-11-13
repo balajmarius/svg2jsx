@@ -1,4 +1,4 @@
-import { template } from "lodash";
+import template from "lodash.template";
 import { format } from "prettier";
 
 import type { Options } from "@/utils/types";
