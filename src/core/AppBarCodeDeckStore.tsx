@@ -78,14 +78,14 @@ export const AppBarCodeDeckStore: React.FC<AppBarCodeDeckStoreProps> = ({ childr
     try {
       const fileContents = await readAndFormatFileContents(file);
       setSvg(fileContents);
-    } catch (error) {}
+    } catch {}
   }, []);
 
   const handleCopy = useCallback(async () => {
     if (jsx) {
       try {
         await copyToClipboard(jsx);
-      } catch (error) {}
+      } catch {}
     }
   }, [jsx, copyToClipboard]);
 
