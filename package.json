@@ -44,6 +44,7 @@
     "@types/is-number": "^7.0.5",
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.12",
+    "@types/lodash.camelcase": "^4.3.9",
     "@types/lodash.flow": "^3.5.9",
     "@types/lodash.template": "^4.5.3",
     "@types/pretty": "^2.0.3",
