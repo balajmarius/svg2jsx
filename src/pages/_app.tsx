@@ -1,6 +1,7 @@
 import "@/static/css/tailwind.css";
 
 import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/next";
 import { twMerge } from "tailwind-merge";
 import { Roboto, Inconsolata } from "next/font/google";
 import { IntlProvider } from "react-intl";
@@ -25,14 +26,19 @@ const client = new QueryClient();
 
 export default ({ Component, pageProps }: AppProps) => {
   return (
-    <IntlProvider locale="en-EN" messages={copy}>
-      <QueryClientProvider client={client}>
-        <AppBarCodeDeckStore>
-          <div className={twMerge(robotoSans400.variable, inconsolata400.variable, "font-sans flex flex-col h-screen")}>
-            <Component {...pageProps} />
-          </div>
-        </AppBarCodeDeckStore>
-      </QueryClientProvider>
-    </IntlProvider>
+    <>
+      <IntlProvider locale="en-EN" messages={copy}>
+        <QueryClientProvider client={client}>
+          <AppBarCodeDeckStore>
+            <div
+              className={twMerge(robotoSans400.variable, inconsolata400.variable, "font-sans flex flex-col h-screen")}
+            >
+              <Component {...pageProps} />
+            </div>
+          </AppBarCodeDeckStore>
+        </QueryClientProvider>
+      </IntlProvider>
+      <Analytics />
+    </>
   );
 };
