@@ -30,7 +30,7 @@
     "react-intl": "^6.8.0",
     "style-to-js": "^1.1.16",
     "svg-parser": "^2.0.4",
-    "svgo": "^3.3.2",
+    "svgo": "^3.3.4",
     "tailwind-merge": "^2.5.4",
     "use-debounced-effect": "^2.0.1",
     "usehooks-ts": "^3.1.0",
