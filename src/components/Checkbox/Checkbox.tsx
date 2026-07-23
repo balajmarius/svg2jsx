@@ -11,7 +11,10 @@ export interface CheckboxProps {
 export const Checkbox: React.FC<CheckboxProps> = ({ name, children, checked, onChange }) => {
   return (
     <>
-      <label className="group flex items-center gap-2 cursor-pointer" htmlFor={name}>
+      <label
+        className="group min-h-11 flex cursor-pointer items-center justify-between gap-2 md:min-h-0 md:justify-start"
+        htmlFor={name}
+      >
         {children}
         <div className="bg-gray-250 border-2 border-gray-250 rounded-3xl">
           <div

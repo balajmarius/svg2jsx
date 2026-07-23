@@ -33,7 +33,8 @@
     "svgo": "^3.3.2",
     "tailwind-merge": "^2.5.4",
     "use-debounced-effect": "^2.0.1",
-    "usehooks-ts": "^3.1.0"
+    "usehooks-ts": "^3.1.0",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",

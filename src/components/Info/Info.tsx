@@ -13,30 +13,32 @@ export interface InfoProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
 export const Info: React.FC<InfoProps> = ({ isDragActive, onClick }) => {
   return (
-    <div
-      className={twMerge(
-        "bg-gray-150 rounded-2xl w-64 absolute z-50 top-24 left-1/2 transform -translate-x-1/2",
-        isDragActive && "outline-dashed outline-2 outline-gray-50",
-      )}
-    >
-      <div className="grid grid-cols-12 gap-4 items-center px-8 py-6 border-b-2 border-gray-250">
-        <div className="col-span-4">
-          <SvgIconSvg size="full" />
-        </div>
-        <div className="col-span-8">
-          <Text variant="subtitle">
-            <FormattedMessage id="INFO_DRAG_AND_DROP" />
-          </Text>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-12 px-8 py-6">
-        <div className="col-span-12">
-          <Button variant="contained" onClick={onClick}>
-            <Text variant="title">
-              <FormattedMessage id="INFO_UPLOAD_YOUR_FILE" />
+    <div className="absolute top-0 right-0 bottom-0 left-0 z-30 ml-14 flex-center">
+      <div
+        className={twMerge(
+          "bg-gray-150 w-56 rounded-2xl md:w-64",
+          isDragActive && "outline-dashed outline-2 outline-gray-50",
+        )}
+      >
+        <div className="grid grid-cols-12 items-center gap-4 border-b-2 border-gray-250 px-4 py-3 md:px-8 md:py-6">
+          <div className="col-span-4">
+            <SvgIconSvg size="full" />
+          </div>
+          <div className="col-span-8">
+            <Text variant="subtitle">
+              <FormattedMessage id="INFO_DRAG_AND_DROP" />
             </Text>
-          </Button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 px-4 py-3 md:px-8 md:py-6">
+          <div className="col-span-12">
+            <Button variant="contained" onClick={onClick}>
+              <Text variant="title">
+                <FormattedMessage id="INFO_UPLOAD_YOUR_FILE" />
+              </Text>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

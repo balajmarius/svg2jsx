@@ -17,8 +17,8 @@ export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
   const { svg, jsx, isCopied, setSvg, handleDrop, handleCopy } = useCodeDeck();
 
   return (
-    <div className="grid grid-cols-12 h-full">
-      <div className="col-span-6 relative">
+    <div className="grid min-h-0 flex-1 grid-cols-12 grid-rows-2 md:grid-rows-1">
+      <div className="relative col-span-12 min-h-0 border-b-2 border-gray-300 md:col-span-6 md:border-b-0">
         <Dropzone onDrop={handleDrop}>
           {({ isDragActive, open }) => (
             <>
@@ -29,8 +29,8 @@ export const AppCodeDeck: React.FC<AppCodeDeckProps> = () => {
         </Dropzone>
       </div>
 
-      <div className="col-span-6 relative">
-        <div className="absolute z-50 top-2 right-2">
+      <div className="relative col-span-12 min-h-0 md:col-span-6">
+        <div className="absolute z-30 top-2 right-2">
           {jsx ? (
             <Button variant="text" onClick={handleCopy}>
               <SvgIconClipboard size="sm" copied={isCopied} />
