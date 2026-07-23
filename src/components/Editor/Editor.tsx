@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import AceEditor from "react-ace";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "tailwindcss/defaultConfig";
@@ -29,7 +29,7 @@ const editorDefaultProps = {
   },
 };
 
-export const Editor: React.FC<EditorProps> = ({ mode, value, readOnly, onChange }) => {
+export const Editor = React.memo<EditorProps>(({ mode, value, readOnly, onChange }) => {
   const config = useMemo(() => resolveConfig(tailwindConfig), []);
 
   const [fontSize, { lineHeight }] = config.theme.fontSize.sm;
@@ -48,6 +48,8 @@ export const Editor: React.FC<EditorProps> = ({ mode, value, readOnly, onChange 
       onChange={onChange}
     />
   );
-};
+});
+
+Editor.displayName = "Editor";
 
 export default Editor;

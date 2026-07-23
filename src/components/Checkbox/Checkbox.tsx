@@ -16,12 +16,12 @@ export const Checkbox: React.FC<CheckboxProps> = ({ name, children, checked, onC
         htmlFor={name}
       >
         {children}
-        <div className="bg-gray-250 border-2 border-gray-250 rounded-3xl">
+        <div className="bg-gray-250 border-2 border-gray-250 h-5 w-9 overflow-hidden rounded-3xl">
           <div
             className={twMerge(
-              "transition-all rounded-full w-4 h-4",
-              checked ? "ml-4" : "mr-4",
-              checked ? "bg-green-100 group-hover:bg-green-50" : "bg-gray-100 group-hover:bg-gray-50",
+              "h-4 w-4 rounded-full transition duration-150 ease-out motion-reduce:transition-none",
+              checked ? "translate-x-4" : "translate-x-0",
+              checked ? "bg-green-100 md:group-hover:bg-green-50" : "bg-gray-100 md:group-hover:bg-gray-50",
             )}
           />
         </div>
