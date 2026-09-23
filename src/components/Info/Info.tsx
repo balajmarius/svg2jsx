@@ -13,10 +13,10 @@ export interface InfoProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
 export const Info: React.FC<InfoProps> = ({ isDragActive, onClick }) => {
   return (
-    <div className="absolute top-0 right-0 bottom-0 left-0 z-30 ml-14 flex-center">
+    <div className="pointer-events-none absolute top-0 right-0 bottom-0 left-0 z-30 ml-14 flex-center">
       <div
         className={twMerge(
-          "bg-gray-150 w-56 rounded-2xl md:w-64",
+          "pointer-events-auto bg-gray-150 w-56 rounded-2xl md:w-64",
           isDragActive && "outline-dashed outline-2 outline-gray-50",
         )}
       >
