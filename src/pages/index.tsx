@@ -18,8 +18,8 @@ export default () => {
 
       <script
         type="application/ld+json"
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: Static JSON-LD with HTML characters escaped.
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD from trusted static metadata.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
       <AppBar />
